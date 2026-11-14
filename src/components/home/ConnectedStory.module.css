@@ -1,0 +1,316 @@
+/* The connected-system story. Real brand artwork and supplied photography;
+   every on-screen interface is an openly illustrative specimen. */
+.story {
+  background: var(--ix-paper);
+  color: var(--ix-ink);
+  overflow: hidden;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  color: var(--ix-blue);
+}
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(30px, 5.5vw, 86px);
+  align-items: center;
+  padding-block: clamp(92px, 10vw, 152px) clamp(104px, 12vw, 180px);
+}
+.copy { align-self: center; }
+.title {
+  margin: 30px 0 30px;
+  font-family: var(--font-sans);
+  font-size: clamp(54px, 6vw, 94px);
+  line-height: .99;
+  font-weight: 500;
+  letter-spacing: -.055em;
+  max-width: 11ch;
+}
+.lede {
+  font-size: clamp(16px, 1.25vw, 19px);
+  color: var(--ix-prose);
+  line-height: 1.65;
+  max-width: 42ch;
+}
+.inlineLink, .workflowCopy a {
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 33px;
+  border-bottom: 1px solid var(--ix-ink);
+  padding-bottom: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ix-ink);
+  text-decoration: none;
+}
+.inlineLink:hover, .workflowCopy a:hover { color: var(--ix-blue); border-color: var(--ix-blue); }
+.scene {
+  position: relative;
+  height: clamp(420px, 43vw, 610px);
+  min-width: 0;
+  isolation: isolate;
+}
+.sceneImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 81%;
+  height: 55%;
+  overflow: hidden;
+  background: var(--ix-deep);
+  z-index: 1;
+  border-radius: 5px;
+}
+.sceneImage img, .archPhoto img, .consoleThumb img, .playbackImage img { object-fit: cover; }
+.sceneImage img { object-position: center; }
+.sceneCaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+  padding: 7px 8px;
+  color: var(--ix-ink);
+  background: var(--ix-white);
+}
+.circuit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+  fill: none;
+  stroke: var(--ix-blue-bright);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+.circuit circle { fill: var(--ix-blue-bright); stroke: none; }
+.sceneConsole {
+  position: absolute;
+  left: 0;
+  bottom: 7%;
+  width: 68%;
+  min-height: 42%;
+  background: var(--ix-white);
+  z-index: 3;
+  border: 1px solid var(--ix-steel);
+  border-radius: 7px;
+  padding: clamp(10px, 1.7vw, 24px);
+}
+.consoleTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ix-line);
+}
+.consoleTop > span {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: .1em;
+  color: var(--ix-body);
+}
+.consolePreview { display: grid; grid-template-columns: 40% 1fr; gap: 18px; padding-top: 16px; }
+.consoleThumb { position: relative; aspect-ratio: 1.5; overflow: hidden; background: var(--ix-paper); }
+.consoleLines { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.consoleLines b { font-size: 16px; font-weight: 600; }
+.consoleLines span { font-size: 11px; color: var(--ix-body); }
+.consoleLines i { display: block; height: 5px; width: 80%; background: var(--ix-line); }
+.consoleLines i:last-child { width: 52%; }
+.sceneConsole > small { display: block; margin-top: 16px; font-size: 9px; color: var(--ix-muted); }
+.signalOne, .signalTwo {
+  display: flex; align-items: center; gap: 9px;
+  position: absolute; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .08em; color: var(--ix-ink); z-index: 4;
+}
+.signalOne b, .signalTwo b { color: var(--ix-blue); font-weight: 500; }
+.signalOne { left: 0; top: 16%; }
+.signalTwo { right: 0; bottom: 10%; }
+
+.architecture {
+  padding-block: clamp(80px, 9vw, 140px);
+  border-top: 1px solid var(--ix-line);
+}
+.archHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 9vw;
+  align-items: end;
+  margin-bottom: clamp(50px, 6vw, 88px);
+}
+.archHeader > .eyebrow { grid-column: 1 / -1; }
+.archHeader h3 {
+  font-size: clamp(43px, 5vw, 76px);
+  line-height: 1.035;
+  letter-spacing: -.05em;
+  font-weight: 500;
+}
+.archHeader h3 span { color: var(--ix-body); }
+.archHeader > p:last-child { max-width: 43ch; font-size: 16px; line-height: 1.65; color: var(--ix-body); }
+.archGrid {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  gap: clamp(36px, 6vw, 100px);
+  align-items: stretch;
+}
+.archIndex { border-top: 1px solid var(--ix-line); }
+.archRow {
+  display: grid;
+  grid-template-columns: 34px 1fr 24px;
+  align-items: start;
+  gap: 10px;
+  width: 100%;
+  padding: clamp(23px, 2.8vw, 39px) 5px clamp(23px, 2.8vw, 39px) 0;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid var(--ix-line);
+  background: transparent;
+  color: var(--ix-body);
+  cursor: pointer;
+  transition: color .25s ease;
+}
+.archRow[data-active='true'] { color: var(--ix-ink); }
+.archRow:hover { color: var(--ix-blue); }
+.archNumber { font-family: var(--font-mono); font-size: 10px; color: var(--ix-blue); padding-top: 6px; }
+.archName { font-size: clamp(19px, 2vw, 28px); line-height: 1.18; font-weight: 500; letter-spacing: -.03em; }
+.archName small { display: block; max-width: 39ch; font-size: 13px; line-height: 1.6; color: var(--ix-body); font-weight: 400; letter-spacing: 0; margin-top: 12px; }
+.archArrow { font-size: 16px; transform: translateY(3px); }
+.archFigure { margin: 0; align-self: stretch; display: flex; flex-direction: column; }
+.archPhoto { position: relative; width: 100%; flex: 1 1 auto; min-height: 390px; overflow: hidden; background: var(--ix-line); animation: artifactIn .52s ease both; }
+.archPhoto img { object-position: center; }
+.archDemo { position: absolute; inset: 0; display: grid; place-items: center; padding: clamp(20px, 4vw, 60px); background: var(--ix-paper); }
+.archDemo > .artwork { width: 100%; max-width: 690px; }
+.archFigure figcaption { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; font-family: var(--font-mono); font-size: 10px; color: var(--ix-body); border-bottom: 1px solid var(--ix-line); }
+.archFigure figcaption span:first-child { color: var(--ix-ink); }
+
+.workflowBand { background: var(--ix-white); padding-block: clamp(100px, 10vw, 156px); }
+.workflowHead { display: grid; grid-template-columns: 1.1fr .9fr; gap: 5vw; align-items: end; }
+.workflowHead h3 { margin-top: 22px; font-size: clamp(44px, 5.3vw, 80px); letter-spacing: -.053em; line-height: 1; font-weight: 500; }
+.workflowHead > p { max-width: 46ch; color: var(--ix-body); font-size: 16px; line-height: 1.65; }
+.stepNav { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ix-line); margin-top: clamp(48px, 6vw, 84px); }
+.stepNav button {
+  display: flex; align-items: baseline; flex-direction: column; justify-content: center; gap: 12px;
+  text-align: left; padding: 22px 14px 23px 0; min-width: 0; border: 0; border-bottom: 2px solid var(--ix-line);
+  background: transparent; color: var(--ix-body); cursor: pointer;
+  transition: color .2s ease, border-color .2s ease;
+}
+.stepNav button span { font-family: var(--font-mono); font-size: 10px; color: var(--ix-muted); }
+.stepNav button strong { font-size: clamp(14px, 1.25vw, 18px); font-weight: 500; }
+.stepNav button[data-active='true'] { color: var(--ix-ink); border-color: var(--ix-blue); }
+.stepNav button:hover { color: var(--ix-blue); }
+.workflowLayout { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(26px, 6vw, 96px); align-items: center; padding-block: clamp(36px, 5vw, 72px); }
+.workflowCopy { align-self: center; }
+.workflowOverline { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--ix-blue); text-transform: uppercase; }
+.workflowCopy h4 { margin-top: 21px; font-size: clamp(48px, 5.5vw, 82px); line-height: 1; letter-spacing: -.055em; font-weight: 500; }
+.workflowCopy p { font-size: 16px; line-height: 1.65; margin-top: 22px; color: var(--ix-body); max-width: 38ch; }
+.artwork { width: 100%; min-width: 0; border: 1px solid var(--ix-steel); background: var(--ix-white); border-radius: 6px; overflow: hidden; }
+.artHeader { height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 20px; border-bottom: 1px solid var(--ix-line); }
+.artHeaderNote { font-family: var(--font-mono); font-size: 8px; letter-spacing: .07em; color: var(--ix-muted); text-align: right; }
+.artBody { display: grid; grid-template-columns: 136px minmax(0, 1fr); min-height: 283px; }
+.artNav { padding: 18px 0; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid var(--ix-line); }
+.artNav span { font-size: 11px; color: var(--ix-body); padding: 11px 9px 11px 17px; border-left: 2px solid transparent; }
+.artNav span[data-current='true'] { color: var(--ix-blue); background: var(--ix-paper); border-color: var(--ix-blue); font-weight: 600; }
+.artContent { padding: 24px; min-width: 0; animation: artifactIn .35s ease both; }
+.artContentHead { display: flex; gap: 8px; flex-direction: column; border-bottom: 1px solid var(--ix-line); padding-bottom: 17px; }
+.artOverline { font-family: var(--font-mono); letter-spacing: .08em; font-size: 9px; color: var(--ix-body); text-transform: uppercase; }
+.artContentHead strong { font-size: clamp(16px, 1.6vw, 24px); letter-spacing: -.025em; font-weight: 600; }
+.inventory { display: flex; flex-direction: column; }
+.inventory > div { display: grid; grid-template-columns: 25px 1fr auto; gap: 10px; align-items: center; border-bottom: 1px solid var(--ix-line); padding: 17px 0; }
+.inventory b { font-size: 12px; font-weight: 500; }
+.inventory i { font-style: normal; font-size: 10px; color: var(--ix-body); }
+.itemIndex { font-family: var(--font-mono); font-size: 9px; color: var(--ix-blue); }
+.schedule { padding-top: 18px; }
+.scheduleHead, .scheduleLine { display: grid; grid-template-columns: minmax(66px, 1.2fr) repeat(3, minmax(0, 1fr)); align-items: center; gap: 8px; }
+.scheduleHead { padding-bottom: 13px; color: var(--ix-muted); font-family: var(--font-mono); font-size: 8px; }
+.scheduleLine { border-top: 1px solid var(--ix-line); padding: 13px 0; font-size: 10px; }
+.scheduleLine i { display: block; height: 14px; background: var(--ix-line); }
+.scheduleLine .slotA { background: var(--ix-blue); }
+.scheduleLine .slotB { background: var(--ix-steel); }
+.scheduleLine .slotC { background: var(--ix-cyan); }
+.scheduleLine .slotD { background: var(--ix-blue-bright); }
+.playback { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; padding-top: 20px; }
+.playbackImage { position: relative; min-height: 132px; }
+.playbackCopy { display: flex; flex-direction: column; gap: 9px; padding-top: 4px; }
+.playbackCopy b { font-size: 14px; font-weight: 500; }
+.playbackCopy span { font-size: 11px; color: var(--ix-blue); }
+.playbackCopy small { font-size: 10px; color: var(--ix-body); line-height: 1.5; }
+.proof { padding-top: 18px; }
+.chartHead { display: flex; justify-content: space-between; gap: 12px; font-size: 10px; color: var(--ix-body); }
+.chartHead span:first-child { color: var(--ix-ink); }
+.proof svg { width: 100%; height: auto; margin-top: 10px; overflow: visible; }
+.chartGrid { stroke: var(--ix-line); stroke-width: 1; fill: none; }
+.chartLine { stroke: var(--ix-blue); stroke-width: 2.2; stroke-linecap: round; fill: none; }
+.chartFoot { display: block; margin-top: 5px; text-align: right; color: var(--ix-muted); font-size: 10px; }
+.disclosure { margin: 0; color: var(--ix-muted); font-size: 11px; line-height: 1.5; }
+@keyframes artifactIn { from { opacity: .5; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1100px) {
+  .intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .title { font-size: clamp(50px, 6.2vw, 74px); }
+  .scene { height: 480px; }
+  .consoleLines i { display: none; }
+  .signalOne { top: 12%; }
+}
+@media (max-width: 900px) {
+  .intro, .archHeader, .archGrid, .workflowHead, .workflowLayout { grid-template-columns: minmax(0, 1fr); }
+  .intro { padding-block: 78px 90px; }
+  .title { font-size: clamp(46px, 9vw, 78px); }
+  .scene { max-width: 680px; width: 100%; height: 520px; justify-self: center; }
+  .architecture { padding-block: 82px; }
+  .archHeader { gap: 22px; }
+  .archHeader .eyebrow { grid-column: auto; }
+  .archPhoto { min-height: 390px; }
+  .workflowBand { padding-block: 82px; }
+  .workflowLayout { gap: 35px; }
+  .workflowCopy h4 { font-size: 58px; }
+  .stepNav { margin-top: 46px; }
+}
+@media (max-width: 620px) {
+  .title { font-size: clamp(43px, 12vw, 63px); }
+  .lede { font-size: 15px; }
+  .intro { gap: 40px; }
+  .scene { height: 365px; }
+  .sceneImage { width: 87%; height: 52%; }
+  .sceneConsole { width: 74%; bottom: 3%; min-height: 36%; }
+  .consoleTop > span { display: none; }
+  .consolePreview { gap: 9px; }
+  .consoleLines b { font-size: 12px; }
+  .consoleLines span { font-size: 9px; }
+  .sceneConsole > small { margin-top: 7px; font-size: 8px; }
+  .signalOne, .signalTwo { font-size: 8px; }
+  .signalTwo { bottom: 5%; }
+  .archHeader h3, .workflowHead h3 { font-size: clamp(40px, 10vw, 58px); }
+  .archRow { padding-block: 21px; }
+  .archName { font-size: 20px; }
+  .archPhoto { min-height: 270px; }
+  .archDemo { padding: 10px; }
+  .archFigure figcaption { flex-direction: column; gap: 5px; }
+  .stepNav { overflow-x: auto; display: flex; margin-inline: -20px; padding-inline: 20px; scrollbar-width: thin; }
+  .stepNav button { flex: 0 0 105px; }
+  .workflowCopy h4 { font-size: 54px; }
+  .artHeader { padding-inline: 12px; }
+  .artHeaderNote { font-size: 7px; }
+  .artBody { grid-template-columns: 76px minmax(0, 1fr); min-height: 245px; }
+  .artNav span { padding: 10px 4px 10px 7px; font-size: 9px; }
+  .artContent { padding: 12px; }
+  .artContentHead strong { font-size: 15px; }
+  .scheduleHead, .scheduleLine { gap: 3px; }
+  .scheduleHead { font-size: 6px; }
+  .scheduleLine { font-size: 8px; }
+  .inventory > div { grid-template-columns: 19px minmax(0,1fr); gap: 3px 6px; padding: 12px 0; }
+  .inventory i { grid-column: 2; }
+  .playback { grid-template-columns: 1fr; gap: 8px; }
+  .playbackImage { min-height: 80px; }
+  .playbackCopy small { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .archPhoto, .artContent { animation: none; }
+  .archRow, .stepNav button { transition: none; }
+}

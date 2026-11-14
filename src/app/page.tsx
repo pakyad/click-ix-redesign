@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import HeroCinematic from '@/components/home/HeroCinematic'
 import ClientRow from '@/components/home/ClientRow'
-import SystemLoop from '@/components/home/SystemLoop'
+import ConnectedStory from '@/components/home/ConnectedStory'
 import SoftwareBand from '@/components/home/SoftwareBand'
 import WorkRail, { type RailItem } from '@/components/home/WorkRail'
 import { caseCategories, caseStudies } from '@/lib/content'
@@ -58,7 +58,7 @@ export default function Home() {
 
       <ClientRow />
 
-      <SystemLoop />
+      <ConnectedStory />
 
       <SoftwareBand />
 
