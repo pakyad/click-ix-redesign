@@ -1,0 +1,46 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+.vercel/
+
+# environment
+.env
+.env.*
+!.env.example
+
+# secrets and keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# logs and local process files
+*.log
+*.pid
+*.tsbuildinfo
+
+# tooling artefacts
+.playwright-mcp/
+.21st/
+.hallmark/
+.opencode/
+
+# archives
+*.zip
+
+# internal material — kept locally, not part of the shared codebase
+evidence/
+source-data/
+design-handoff/
+references/
+tasks/
+handoff/
+PROMPT_FOR_CODEX.md
+PROGRESS.md
+MANIFEST.sha256
+
+# OS
+.DS_Store
+Thumbs.db

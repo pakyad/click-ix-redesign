@@ -1,0 +1,141 @@
+/* The close of the site: one white surface, ink type, no film. */
+
+.footer {
+  position: relative;
+  background: var(--ix-white);
+  color: var(--ix-ink);
+  padding-block: clamp(56px, 6vw, 88px) clamp(20px, 2vw, 26px);
+  border-top: 1px solid var(--ix-line);
+}
+
+/* -------------------------------- content ------------------------------ */
+
+.inner {
+  position: relative;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(34px, 4vw, 70px);
+  align-items: start;
+  padding-bottom: clamp(40px, 4.4vw, 64px);
+}
+
+.line {
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  color: var(--ix-ink);
+}
+
+.line span {
+  color: var(--ix-body);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 2.4vw, 34px);
+}
+
+.col {
+  min-width: 0;
+}
+
+.colTitle {
+  margin-bottom: 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  color: var(--ix-body);
+}
+
+.col ul {
+  display: grid;
+  gap: 8px;
+}
+
+.col li {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ix-ink);
+}
+
+.col a {
+  color: var(--ix-ink);
+  transition: color var(--dur-state) var(--ease-mech);
+}
+
+.col a:hover {
+  color: var(--ix-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ix-line);
+  font-size: 12px;
+  color: var(--ix-body);
+}
+
+.base a {
+  color: var(--ix-body);
+  transition: color var(--dur-state) var(--ease-mech);
+}
+
+.base a:hover {
+  color: var(--ix-ink);
+}
+
+/* A button because it moves the page, not to a fragment. */
+.toTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--ix-body);
+  cursor: pointer;
+  transition: color var(--dur-state) var(--ease-mech);
+}
+
+.toTop:hover {
+  color: var(--ix-ink);
+}
+
+/* ------------------------------ responsive ----------------------------- */
+
+@media (max-width: 860px) {
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+  }
+}
+
+@media (max-width: 620px) {
+  .cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 20px;
+  }
+
+  .col:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .col a,
+  .base a {
+    transition: none;
+  }
+}

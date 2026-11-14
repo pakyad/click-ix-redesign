@@ -1,0 +1,26 @@
+/* The copy control sits next to the address, same height as its line, and says
+   nothing until it has something to say. */
+.copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--ix-line);
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ix-body);
+  cursor: pointer;
+  transition:
+    border-color var(--dur-state) var(--ease-mech),
+    color var(--dur-state) var(--ease-mech);
+}
+
+.copy:hover {
+  border-color: var(--ix-ink);
+  color: var(--ix-ink);
+}

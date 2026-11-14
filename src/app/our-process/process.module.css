@@ -1,0 +1,245 @@
+.page {
+  background: var(--surface-light);
+}
+
+.hero {
+  padding-block: 72px 84px;
+}
+
+.heroTitle {
+  max-width: 13ch;
+  margin: 20px 0 28px;
+}
+
+.intro,
+.flowHead {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 44px;
+}
+
+.intro h2,
+.flowHead h2 {
+  margin-top: 16px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 2px solid var(--ix-blue);
+}
+
+.step {
+  padding: 24px 24px 28px 0;
+  border-right: 1px solid var(--border-light);
+}
+
+.step:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.step + .step {
+  padding-left: 24px;
+}
+
+.stepIndex {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--product-play);
+  margin-bottom: 18px;
+}
+
+.stepName {
+  font-size: clamp(19px, 1.9vw, 24px);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.stepDetail {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-light-secondary);
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.flowStep {
+  padding: 22px 22px 26px 0;
+  border-right: 1px solid var(--border-dark);
+}
+
+.flowStep:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.flowStep + .flowStep {
+  padding-left: 22px;
+}
+
+.flowStepName {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  color: var(--ix-ink);
+  margin-bottom: 8px;
+}
+
+.flowSystem {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.flowDetail {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-dark-secondary);
+}
+
+.audit {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.audit h2 {
+  margin-top: 16px;
+}
+
+.auditGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.auditList {
+  border-top: 1px solid var(--border-light);
+}
+
+.auditList li {
+  padding: 13px 0 13px 16px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 15px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.auditList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 21px;
+  width: 5px;
+  height: 5px;
+  background: var(--navy-900);
+}
+
+.auditNote {
+  padding: 22px;
+  background: var(--surface-light-raised);
+  border-left: 3px solid var(--product-play);
+}
+
+.auditNote p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-light-secondary);
+  margin-bottom: 22px;
+}
+
+.end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.endActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .step {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .step:nth-child(2) {
+    border-right: 0;
+  }
+
+  .steps .step:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .flow {
+    grid-template-columns: 1fr;
+  }
+
+  .flowStep,
+  .flowStep + .flowStep {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-dark);
+    padding: 18px 0;
+  }
+
+  .flowStep:last-child {
+    border-bottom: 0;
+  }
+
+  .audit {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro,
+  .flowHead,
+  .auditGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .auditGrid {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-block: 48px 56px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step,
+  .step + .step {
+    border-right: 0;
+    padding: 20px 0;
+  }
+}

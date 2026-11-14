@@ -1,0 +1,28 @@
+asset_id,path,status,notes,next_owner
+approved_visual_reference,references/APPROVED_DESKTOP_VISUAL_TARGET.png,available,"Concept art, not directly usable as page elements",design reference only
+animation_plan_reference,references/ANIMATION_PLACEMENT_REFERENCE.png,available,Shows proposed animation locations; needs final spec,reference only
+official_vertical_logo,source-data/brand/click-ix/click-ix-mark-yellow.png,available official raster,"Official knot mark supplied 2026-11-02; 427x431 transparent PNG; vector master still required",brand vector master
+official_horizontal_logo,source-data/brand/click-ix/click-ix-horizontal-black.png,available official raster,"Black and white horizontal lockups supplied 2026-11-02; 718x243 PNG; vector master still required",brand vector master
+official_brand_palette,source-data/facts/profile.json,partial,"Brand yellow sampled #FCD804; web palette relationship to existing cyan/lime tokens not approved",company approval
+hero_installation_photo,source-data/originals/profile-2026-images/,candidate supplied,"Real Maxis, Bukit Bintang and MotoGP photos supplied; rights, consent and resolution review required",rights and company approval
+hero_campaign_artwork,src/components/hero/CampaignGraphic.tsx,original illustrative creative,"Independent editable Signal/Connection studies; not client work or an approved company campaign",visual review
+solution_icons,,not approved,Professional consistent custom SVG set,ChatGPT/design approval
+cs_sign_hub_interface,,missing,Sanitized real UI or explicitly labelled demo,company approval
+case_study_photos,source-data/originals/,candidate supplied,"Ten cases have narrative; eight have inspected photography; all need rights, privacy and advertiser-creative clearance",rights and company approval
+case_study_outcomes,source-data/facts/proof.json,missing,"Both company decks leave Outcome/Results blank; no performance metric may be stated",company supplied
+process_icons,,not approved,Consistent 2D vector set,ChatGPT/design approval
+pixel_transition_assets,,prototype only,Previous experiment exists outside this pack; not production approved,later milestone
+solutions_original_artwork,src/components/experience/ServiceArtwork.tsx,prototype for visual review,"Six original editable illustrative SVG compositions; not photography or product UI",visual review
+original_logo_source,source-data/originals/cix-logo/,available,"CIX Logo.zip supplied 2026-11-02; official PNG lockups and knot mark; no official SVG",brand vector master
+cs_sign_hub_frontend_demo,src/components/sections/CsSignHub.tsx,illustrative simulation,"Functional draft/publish/queue demonstration; not actual product interface or a real device connection",company product UI approval
+process_screen_narrative,src/components/sections/Process.tsx,original illustrative SVG,"Continuous Plan/Design/Deploy/Manage study using existing workflow descriptions",visual review
+project_gallery_registry,src/lib/projects.ts,awaiting approved media,"Empty real-project registry; honest editorial presentation, no fabricated installations",company project and rights approval
+interior_service_studies,src/components/interior/PageScene.tsx,original illustrative SVG,"Editable conceptual studies for service planning; not installation evidence",visual review
+interior_process_study,src/components/interior/ProcessStudy.tsx,original illustrative interaction,"Reversible Plan/Design/Deploy/Manage study; editorial guidance not contracted scope",visual and company process review
+category_typography,src/components/interior/CategoryWord.tsx,original editorial motion,"Native-scroll reversible type reveal; no photography substituted",visual review
+leadership_profiles,source-data/facts/profile.json,partial,"Michael Tan, Lexus Gan and Vicky Yip names and roles supplied; biographies, portraits and publication approval missing",company supplied
+software_product_inventory,source-data/facts/offerings.json,available company supplied,"Eight offerings documented: CS Deals, CS Play, CS Play SSN, CS Sign Hub, OmniBuy DSP, SSP, Measurement, Data Partnerships; capability approval pending",company product approval
+cs_platform_logos,source-data/brand/platforms/,available official vector,"CS Play, CS SignHub, CS Deals, CS Context and City Screen SVGs supplied 2026-11-02",brand review
+source_knowledge_base,source-data/,available,"Extracted text, structured facts, source diagrams and analysis; originals gitignored",project reference
+product_ui_screenshots,source-data/originals/legacy-profile-images/,unsanitised,"Presentation captures of CS Play, measurement, OmniBuy and CS Context; client data and outdated UI; re-capture before publication",product and company approval
+synthetic_concept_renders,source-data/analysis/MEDIA_HIGHLIGHTS.md,not usable as work,"Lobby CMS render and Mont Kiara LED renders are AI-generated concepts; label as illustrative or exclude",design review

@@ -1,0 +1,192 @@
+.page {
+  background: var(--surface-light);
+}
+
+.hero {
+  padding-block: 72px 82px;
+}
+
+.heroTitle {
+  max-width: 14ch;
+  margin: 20px 0 26px;
+}
+
+.stance {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.stance h2 {
+  margin-top: 16px;
+}
+
+.stanceCopy {
+  display: grid;
+  gap: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-light-secondary);
+  max-width: 66ch;
+}
+
+.compat {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.compat h2 {
+  margin-top: 16px;
+}
+
+.compatCopy p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-dark-secondary);
+  max-width: 66ch;
+}
+
+.checklist {
+  margin: 24px 0 28px;
+  border-top: 1px solid var(--border-dark);
+}
+
+.checklist li {
+  padding: 11px 0 11px 16px;
+  border-bottom: 1px solid var(--border-dark);
+  font-size: 13px;
+  position: relative;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 5px;
+  height: 5px;
+  background: var(--ix-blue);
+}
+
+.end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.endActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+@media (max-width: 1000px) {
+  .catalogue {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .group:nth-child(2) {
+    border-right: 0;
+  }
+
+  .group:nth-child(3) {
+    padding-left: 0;
+    margin-top: 26px;
+    border-top: 1px solid var(--border-light);
+    padding-top: 26px;
+  }
+
+  .group:nth-child(4) {
+    margin-top: 26px;
+    border-top: 1px solid var(--border-light);
+    padding-top: 26px;
+  }
+}
+
+@media (max-width: 800px) {
+  .stance,
+  .compat {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-block: 48px 56px;
+  }
+
+  .catalogue {
+    grid-template-columns: 1fr;
+  }
+
+  .group,
+  .group + .group,
+  .group:nth-child(3),
+  .group:nth-child(4) {
+    border-right: 0;
+    padding: 22px 0;
+    margin: 0;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .group:first-child {
+    border-top: 0;
+  }
+
+  .endActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+/* The catalogue as a table: category, then what that category actually covers.
+   A list of forty nouns reads as inventory; four rows read as a spec. */
+.tableWrap {
+  margin-top: clamp(24px, 3vw, 36px);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 16px 16px 16px 0;
+  border-bottom: 1px solid var(--ix-line);
+  text-align: left;
+  font-weight: 400;
+  vertical-align: baseline;
+}
+
+.table thead th {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ix-muted);
+}
+
+.table tbody th {
+  width: 18%;
+  font-size: clamp(15px, 1.3vw, 17px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ix-ink);
+}
+
+.table td {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ix-body);
+}
+

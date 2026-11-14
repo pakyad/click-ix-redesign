@@ -1,0 +1,48 @@
+/* The channel change: one plate, one seam, then the page is back.
+
+   `cover` is instantaneous (no transition) so the plate is opaque before the
+   new page paints; `reveal` lifts it. Nothing here captures a click. */
+
+.wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  background: var(--ix-paper);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.wipe[data-phase='cover'] {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+
+.wipe[data-phase='reveal'] {
+  opacity: 0;
+  visibility: visible;
+  transition: opacity 280ms var(--ease-signal);
+}
+
+.seam {
+  display: block;
+  width: min(260px, 42vw);
+  height: 6px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--cyan-500) 0 14px,
+    transparent 14px 20px
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wipe {
+    display: none;
+  }
+}

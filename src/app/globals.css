@@ -1,0 +1,1092 @@
+/* ------------------------------------------------------------------
+   CLICK iX design system
+   Colour roles follow docs/PRD_CLICK_IX_WEBSITE.md §10.
+   Primitive tokens are defined once. Components use semantic tokens.
+------------------------------------------------------------------ */
+
+/* Temporary stand-ins until the licensed brand fonts are supplied.
+   See public/fonts/README.md.
+   Poppins is SIL Open Font License 1.1 — self-hosted, licence included. */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-500-latin.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-600-latin.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-500-latin.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* primitives */
+  --navy-900: #061321;
+  --navy-800: #0a1c2c;
+  --navy-700: #102a3d;
+  --paper-50: #f5f1e6;
+  --paper-0: #ffffff;
+  --yellow-500: #fcd804;
+  --cyan-500: #1bc8ed;
+  --lime-500: #c7f66b;
+  --blue-500: #1768ca;
+  --grey-500: #444647;
+  --slate-400: #8a97a3;
+  --slate-500: #4a5661;
+  --slate-600: #2f3b45;
+
+  /* ------------------------------------------------------------------
+     v3 pixel-billboard art direction (design-handoff/02_DESIGN_SYSTEM).
+     This overrides the *visual* layer only. Brand primitives above stay
+     untouched so the token test and every route keep working.
+     ------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------
+     Axion-derived surface. Cool paper, near-black ink, graphite, and a
+     single desaturated corporate blue. No neon: the LED cyans are pulled
+     down to steel so nothing reads as a gaming accent.
+     ------------------------------------------------------------------ */
+  --ix-paper: #f6f7f9;
+  --ix-white: #ffffff;
+  --ix-ink: #0b0f14;
+  --ix-deep: #151a21;
+  --ix-blue: #1d4e7a;
+  --ix-blue-bright: #2f6da3;
+  --ix-cyan: #2e7fb8;
+  --ix-teal: #4a8fa8;
+  --ix-line: #dfe3e8;
+  --ix-body: #5a6572;
+  --ix-prose: #2b2e33;
+  --ix-muted: #8a94a0;
+  --ix-steel: #c7ced6;
+
+  /* surfaces — one ground. Former dark chapters are white surfaces with ink
+     type; the names are kept so every section maps onto the same token set. */
+  --surface-dark: var(--ix-white);
+  --surface-dark-raised: var(--ix-white);
+  --surface-light: var(--ix-paper);
+  --surface-light-raised: var(--ix-white);
+
+  /* text */
+  --text-dark-primary: var(--ix-ink);
+  --text-dark-secondary: var(--ix-body);
+  --text-dark-muted: var(--ix-muted);
+  --text-light-primary: var(--ix-ink);
+  --text-light-secondary: var(--ix-body);
+  --text-light-muted: var(--ix-muted);
+
+  /* actions — blue on every surface. Ink is type, not a plate. */
+  --action-dark: var(--ix-blue);
+  --action-dark-text: #ffffff;
+  --action-hover-dark: #163f63;
+  --action-light: var(--ix-blue);
+  --action-light-text: #ffffff;
+  --action-hover-light: #163f63;
+
+  /* brand accent */
+  --brand-blue: var(--ix-blue);
+  --brand-blue-bright: #3d8ae0;
+  --brand-blue-deep: var(--ix-blue);
+
+  /* signals and product identity */
+  --signal-live: var(--cyan-500);
+  --signal-proof: var(--lime-500);
+  --signal-brand: var(--brand-blue);
+  --product-play: var(--blue-500);
+  --product-hub: var(--grey-500);
+  --product-ssn: #6fa8ff;
+
+  /* type */
+  --font-sans: 'Poppins', 'Archivo', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* lines and focus */
+  --border-dark: var(--ix-line);
+  --border-light: rgba(6, 19, 33, 0.12);
+  --focus-dark: var(--ix-blue);
+  --focus-light: var(--ix-blue);
+
+  /* legacy aliases consumed by existing interior styles */
+  --deep-navy: var(--navy-900);
+  --ink-navy: var(--navy-800);
+  --paper: var(--paper-50);
+  --text-on-light: var(--navy-900);
+  --text-on-dark: #ffffff;
+  --cyan: var(--cyan-500);
+  --lime: var(--lime-500);
+  --teal: #13a9c4;
+
+  /* layout */
+  --gutter: 24px;
+  --section-y: clamp(72px, 7.5vw, 132px);
+  --radius: 0px;
+  --radius-control: 999px;
+
+  /* motion — docs/MOTION_SYSTEM_PLAN.md §3.
+     Three curves and five durations. Nothing else. */
+  --ease-signal: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-switch: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-mech: cubic-bezier(0.2, 0.7, 0, 1);
+  --dur-micro: 120ms;
+  --dur-state: 180ms;
+  --dur-surface: 260ms;
+  --dur-block: 420ms;
+  --dur-editorial: 720ms;
+  --dur-band: 28s;
+  --travel: 20px;
+
+  /* One number the hero uses to slide its film under the sticky header. */
+  --header-h: 76px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* `max-width: 100vw` includes the scrollbar, which leaves a strip on the right
+   in some browsers. The document already cannot exceed its block size, so the
+   constraint is removed and only the clipping stays. */
+html,
+body {
+  width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--ix-white);
+  color: var(--ix-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+::selection {
+  background: var(--brand-blue);
+  color: #090918;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ---------------------------- layout ---------------------------- */
+
+.wrap,
+.container {
+  width: min(100% - (var(--gutter) * 2), 1200px);
+  margin-inline: auto;
+  min-width: 0;
+}
+
+.section,
+section {
+  padding-block: var(--section-y);
+}
+
+.section--dark,
+.section-dark {
+  background: var(--surface-dark);
+  color: var(--text-dark-primary);
+}
+
+.section--raised {
+  background: var(--surface-dark-raised);
+  color: var(--text-dark-primary);
+}
+
+.section--light,
+.section-light {
+  background: var(--surface-light);
+  color: var(--text-light-primary);
+}
+
+.section--paper {
+  background: var(--surface-light-raised);
+  color: var(--text-light-primary);
+}
+
+.section--flush {
+  padding-block: 0;
+}
+
+/* --------------------------- typography -------------------------- */
+
+/* A section marker, not a badge: the same family, case and ink as the text it
+   introduces. No tracked-out capitals — those read as template furniture. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  line-height: 1.4;
+  text-transform: none;
+  color: var(--text-dark-primary);
+}
+
+.section--light .eyebrow,
+.section-light .eyebrow {
+  color: var(--ix-ink);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+  flex: 0 0 auto;
+}
+
+.display {
+  font-size: clamp(38px, 5.2vw, 70px);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 400;
+}
+
+.h2 {
+  font-size: clamp(27px, 3.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.h3 {
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  font-weight: 500;
+}
+
+.lede {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.58;
+  letter-spacing: -0.008em;
+  color: var(--text-dark-secondary);
+  max-width: 58ch;
+}
+
+.section--light .lede,
+.section-light .lede {
+  color: var(--text-light-secondary);
+}
+
+.muted {
+  color: var(--text-dark-muted);
+}
+
+.section--light .muted,
+.section-light .muted {
+  color: var(--text-light-muted);
+}
+
+.meta {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.004em;
+  color: var(--text-dark-muted);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section--light .meta,
+.section-light .meta {
+  color: var(--text-light-secondary);
+}
+
+.rule {
+  height: 1px;
+  background: var(--border-dark);
+  border: 0;
+}
+
+.section--light .rule,
+.section-light .rule {
+  background: var(--border-light);
+}
+
+/* --------------------------- motion ------------------------------ */
+
+/* Reveals are opt-in and only ever armed when JavaScript is running, so no
+   content is hidden on a no-JS render. `html.js` is set by an inline script
+   before the body is parsed. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--travel));
+  transition:
+    opacity var(--dur-block) var(--ease-signal),
+    transform var(--dur-block) var(--ease-signal);
+  transition-delay: calc(var(--reveal-i, 0) * 60ms);
+}
+
+html.js [data-reveal][data-revealed='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Curtain: display type rises out of a clipped line box. Transform only —
+   no opacity, so the route title is never invisible for LCP. */
+html.js [data-curtain] {
+  overflow: hidden;
+}
+
+html.js [data-curtain] > span {
+  display: block;
+  transform: translateY(104%);
+  transition: transform var(--dur-editorial) var(--ease-signal);
+  transition-delay: calc(var(--i, 0) * 60ms);
+}
+
+html.js [data-curtain][data-revealed='true'] > span {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html.js [data-curtain] > span {
+    transform: none !important;
+  }
+}
+
+/* ---------------------------- actions ---------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 50px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: var(--action-light);
+  color: var(--action-light-text);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    background var(--dur-state) var(--ease-mech),
+    color var(--dur-state) var(--ease-mech),
+    border-color var(--dur-state) var(--ease-mech),
+    transform var(--dur-state) var(--ease-mech);
+}
+
+.btn:hover {
+  background: var(--action-hover-light);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: none;
+}
+
+.btn--dark {
+  background: var(--action-light);
+  color: var(--action-light-text);
+}
+
+.btn--dark:hover {
+  background: var(--action-hover-dark);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: currentColor;
+  border-color: var(--border-dark);
+}
+
+.btn--ghost:hover {
+  background: transparent;
+  border-color: currentColor;
+}
+
+.section--light .btn--ghost,
+.section-light .btn--ghost {
+  border-color: var(--border-light);
+}
+
+.btn--sm {
+  min-height: 44px;
+  padding-inline: 16px;
+  font-size: 13px;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.link-arrow span {
+  transition: transform var(--dur-state) var(--ease-mech);
+}
+
+.link-arrow:hover span {
+  transform: translateX(4px);
+}
+
+/* ----------------------------- tags ------------------------------ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.tag--live {
+  color: var(--cyan-500);
+}
+
+.tag--proof {
+  color: var(--lime-500);
+}
+
+.tag--illustrative {
+  color: var(--ix-body);
+}
+
+/* ---------------------------- focus ------------------------------ */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--focus-dark);
+  outline-offset: 3px;
+}
+
+.section--light :focus-visible,
+.section-light :focus-visible {
+  outline-color: var(--focus-light);
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 100;
+  padding: 12px 16px;
+  background: var(--ix-blue);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform 120ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ---------------------------- header -----------------------------
+   Axion geometry: a full-bleed sticky band that carries the page tone,
+   with the actual navigation floating inside it as a pill.
+
+   TONE follows the surface beneath the bar, sampled at runtime.
+   SETTLE follows scroll and firms the pill up.
+   ------------------------------------------------------------------ */
+
+.site-header-shell {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  --scroll-progress: 0;
+  padding-block: 12px;
+  /* One background, always. The bar does not react to the surface beneath it. */
+  background-color: var(--ix-paper);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-surface) var(--ease-switch);
+}
+
+.site-header-shell[data-settled='true'] {
+  border-bottom-color: var(--ix-line);
+}
+
+/* ------------------------------- pill ------------------------------- */
+
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(1410px, 100% - 32px);
+  margin-inline: auto;
+  min-height: 64px;
+  padding: 0 10px 0 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  -webkit-backdrop-filter: blur(16px) saturate(1.05);
+  backdrop-filter: blur(16px) saturate(1.05);
+  transition:
+    background-color var(--dur-surface) var(--ease-switch),
+    border-color var(--dur-surface) var(--ease-switch),
+    box-shadow var(--dur-surface) var(--ease-switch);
+}
+
+.site-header-shell .site-header {
+  background-color: #ffffff;
+  border-color: rgba(6, 19, 33, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 10px 28px -22px rgba(6, 19, 33, 0.5);
+}
+
+.site-header-shell[data-settled='true'] .site-header {
+  border-color: rgba(6, 19, 33, 0.12);
+}
+
+/* The bar stays white on every surface — dark chapters included. */
+
+/* ------------------------------ brand ------------------------------ */
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.brand-stack {
+  position: relative;
+  display: block;
+  width: 132px;
+  aspect-ratio: 718 / 243;
+  transition: width var(--dur-surface) var(--ease-switch);
+}
+
+.site-header-shell[data-settled='true'] .brand-stack {
+  width: 120px;
+}
+
+.brand-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity var(--dur-state) var(--ease-switch);
+}
+
+.brand-logo--light {
+  opacity: 0;
+}
+
+.brand-logo--dark {
+  opacity: 1;
+}
+
+/* ------------------------------- nav ------------------------------- */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.site-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* The mobile list is the same data, flattened. It only exists below 768px. */
+.site-nav-mobile {
+  display: none;
+}
+
+.site-nav-item {
+  position: relative;
+}
+
+/* One shape for plain links and menu triggers, so the bar keeps a single
+   rhythm whether an item opens a panel or not. */
+.nav-link,
+.nav-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ix-body);
+  cursor: pointer;
+  transition:
+    color var(--dur-state) var(--ease-mech),
+    background-color var(--dur-state) var(--ease-mech);
+}
+
+.nav-link:hover,
+.nav-trigger:hover,
+.site-nav-item[data-open='true'] .nav-trigger {
+  color: var(--ix-ink);
+  background-color: rgba(6, 19, 33, 0.05);
+}
+
+.nav-link[aria-current='page'] {
+  color: var(--ix-ink);
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(6, 19, 33, 0.08), 0 0 0 1px rgba(6, 19, 33, 0.06);
+}
+
+.site-nav-item[data-current='true'] .nav-trigger {
+  color: var(--ix-ink);
+}
+
+/* A hairline chevron, not an icon: it turns, it never bounces. */
+.nav-chevron {
+  width: 5px;
+  height: 5px;
+  margin-top: -3px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.55;
+  transition:
+    transform var(--dur-state) var(--ease-mech),
+    opacity var(--dur-state) var(--ease-mech),
+    margin var(--dur-state) var(--ease-mech);
+}
+
+.site-nav-item[data-open='true'] .nav-chevron {
+  margin-top: 2px;
+  transform: rotate(225deg);
+  opacity: 0.9;
+}
+
+/* ------------------------------ nav panel ---------------------------- */
+
+/* The panel is a piece of paper, not a dropdown widget: white ground, one
+   hairline, a soft shadow and columns with their own rules. */
+.nav-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  z-index: 60;
+  width: 440px;
+  padding: 26px 28px 22px;
+  background: var(--ix-white);
+  border: 1px solid var(--ix-line);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px -30px rgba(6, 19, 33, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition:
+    opacity var(--dur-state) var(--ease-mech),
+    transform var(--dur-state) var(--ease-mech),
+    visibility 0s var(--dur-state);
+}
+
+.nav-menu[data-size='wide'] {
+  width: 520px;
+}
+
+.site-nav-item[data-align='left'] .nav-menu {
+  right: auto;
+  left: 0;
+}
+
+/* Covers the gap between trigger and panel, so the pointer never crosses a
+   dead zone on its way in. */
+.nav-menu::before {
+  content: '';
+  position: absolute;
+  inset: -16px 0 auto;
+  height: 16px;
+}
+
+.site-nav-item[data-open='true'] .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.nav-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 36px;
+}
+
+.nav-menu-label {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ix-line);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  color: var(--ix-muted);
+}
+
+.nav-menu-group ul {
+  display: grid;
+  gap: 2px;
+}
+
+.nav-menu-link {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--ix-ink);
+  transition:
+    color var(--dur-state) var(--ease-mech),
+    transform var(--dur-state) var(--ease-mech);
+}
+
+.nav-menu-link:hover {
+  color: var(--ix-body);
+  transform: translateX(2px);
+}
+
+.nav-menu-link[aria-current='page'] {
+  color: var(--ix-blue);
+}
+
+.nav-menu-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 18px;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ix-line);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ix-muted);
+}
+
+.nav-menu-foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--ix-blue);
+  transition: color var(--dur-state) var(--ease-mech);
+}
+
+.nav-menu-foot a:hover {
+  color: var(--ix-ink);
+}
+
+/* The action sits in its own slot at the pill's right edge. */
+.site-nav .btn {
+  margin-left: 10px;
+  padding: 0 18px;
+  min-height: 42px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.site-nav .btn:hover {
+  color: #ffffff;
+}
+
+.site-nav .btn[aria-current='page'] {
+  box-shadow: none;
+}
+
+.site-nav .btn[aria-current='page']::after {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--ix-line);
+  color: var(--ix-ink);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* --------------------------- utilities --------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* --------------------------- mobile ------------------------------ */
+
+@media (max-width: 900px) {
+  :root {
+    --section-y: clamp(56px, 6.5vw, 96px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-menu[data-size='wide'] {
+    width: 460px;
+  }
+
+  .nav-menu[data-size='mid'] {
+    width: 400px;
+  }
+
+  .nav-link,
+  .nav-trigger {
+    padding-inline: 11px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 16px;
+    --section-y: 52px;
+    --header-h: 64px;
+  }
+
+  .display {
+    font-size: clamp(38px, 11vw, 60px);
+  }
+
+  .site-header {
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+
+  .brand-stack {
+    width: 132px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-header[data-menu-open='true'] {
+    border-radius: 26px;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-bottom: 16px;
+  }
+
+  .site-nav[data-open='true'] {
+    display: flex;
+  }
+
+  .site-nav-desktop {
+    display: none;
+  }
+
+  .site-nav-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .nav-mobile-link {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 13px 14px;
+    border-top: 1px solid var(--ix-line);
+    font-size: 15px;
+    color: var(--ix-ink);
+  }
+
+  .nav-mobile-link[aria-current='page'] {
+    color: var(--ix-blue);
+  }
+
+  .site-nav .btn {
+    margin: 12px 0 0;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .eyebrow::before {
+    background: CanvasText;
+  }
+}

@@ -1,0 +1,231 @@
+.page {
+  background: var(--surface-light);
+}
+
+.hero {
+  padding-block: 72px 80px;
+}
+
+.heroTitle {
+  max-width: 15ch;
+  margin: 20px 0 26px;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 44px;
+}
+
+.intro h2 {
+  margin-top: 16px;
+}
+
+.list {
+  border-top: 2px solid var(--ix-blue);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) 56px;
+  gap: 40px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rowTitle {
+  font-size: clamp(20px, 2vw, 26px);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.rowLine {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-light-secondary);
+  max-width: 48ch;
+}
+
+.rowScope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.rowScope li {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-light);
+  padding: 3px 7px;
+  color: var(--text-light-secondary);
+}
+
+.rowLink {
+  justify-self: end;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-light);
+  font-size: 18px;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.rowLink:hover {
+  background: var(--ix-paper);
+  color: var(--ix-ink);
+  border-color: var(--ix-line);
+}
+
+.hardwareNote {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--text-light-secondary);
+}
+
+.hardwareNote a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.end h2 {
+  margin: 16px 0 18px;
+}
+
+.endActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+}
+
+@media (max-width: 1100px) {
+  .row {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 48px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .row {
+    grid-template-columns: 1fr 48px;
+    gap: 14px;
+    padding: 22px 0;
+  }
+
+  .rowScope {
+    grid-column: 1 / -1;
+  }
+
+  .rowLink {
+    grid-row: 1;
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-block: 48px 56px;
+  }
+
+  .endActions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* The delivery band: four steps on one rule, the same rhythm as the commercial
+   flow on Products. */
+.delivery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: clamp(26px, 3vw, 40px) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ix-line);
+}
+
+.deliveryStep {
+  padding: 18px 22px 0 0;
+  border-right: 1px solid var(--ix-line);
+}
+
+.deliveryStep + .deliveryStep {
+  padding-left: 22px;
+}
+
+.deliveryStep:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.deliveryName {
+  display: block;
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--ix-ink);
+}
+
+.deliveryDetail {
+  margin: 8px 0 0;
+  max-width: 26ch;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ix-body);
+}
+
+@media (max-width: 900px) {
+  .delivery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 24px;
+  }
+
+  .deliveryStep:nth-child(even) {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .deliveryStep:nth-child(odd) {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .delivery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .deliveryStep,
+  .deliveryStep + .deliveryStep {
+    padding: 16px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--ix-line);
+  }
+
+  .deliveryStep:last-child {
+    border-bottom: 0;
+  }
+}
+

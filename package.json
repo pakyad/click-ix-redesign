@@ -1,0 +1,29 @@
+{
+  "name": "click-ix-website",
+  "version": "1.0.0",
+  "description": "The Click iX website: the software, services and documented deployments behind digital screen networks.",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test tests/foundation-recovery.test.mjs tests/route-foundation.test.mjs tests/navigation-shared-layout.test.mjs tests/project-content.test.mjs tests/catalog-content.test.mjs tests/design-tokens.test.mjs tests/work-trace.test.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gsap": "3.15.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}

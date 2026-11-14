@@ -1,0 +1,1 @@
+Needed: clean official logo source, signed-off installation photographs with case-study mapping, sanitized product screenshot, validated client metrics/copy/contact details. Do not upload credentials or private customer data.

@@ -1,0 +1,69 @@
+/* A small pixel stage: the badge assembles, then resolves. The plate and the
+   dots come from the chip, so the two states share one geometry. */
+
+.mark {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.3vw, 16px);
+  min-width: 0;
+}
+
+.stage {
+  position: relative;
+  width: clamp(64px, 5vw, 76px);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cell {
+  opacity: 0;
+  animation: cellOn 150ms steps(1, end) both;
+}
+
+/* The crisp badge arrives once the dots are placed. */
+.snap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: snapIn 200ms ease-out 0.42s both;
+}
+
+.name {
+  font-size: clamp(17px, 1.5vw, 21px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ix-ink);
+  white-space: nowrap;
+}
+
+@keyframes cellOn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes snapIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell,
+  .snap {
+    opacity: 1;
+    animation: none;
+  }
+}

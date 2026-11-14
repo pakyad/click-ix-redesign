@@ -1,0 +1,77 @@
+/* The statement shelf — the same lines in type, only one visible at a time. */
+
+/* Slides share one grid cell, so the shelf is as tall as the longest line and
+   nothing can overlap what follows. */
+.title {
+  position: relative;
+  display: grid;
+  margin: 0;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.12;
+  letter-spacing: -0.022em;
+  font-weight: 400;
+}
+
+.slide {
+  grid-area: 1 / 1;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 200ms linear,
+    visibility 0s linear 200ms;
+}
+
+.slide[data-active='true'] {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 160ms linear,
+    visibility 0s;
+}
+
+/* One mask per line. The line rises out of its own slot, the way a screen
+   switches a row of content in. */
+.lineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.line {
+  display: block;
+}
+
+.slide[data-active='true'] .line {
+  animation: lineRise 860ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.slide[data-active='true'] .lineMask:nth-child(2) .line {
+  animation-delay: 90ms;
+}
+
+/* The follow-on line recedes, the first states — the same rule as the rest of
+   the site. */
+.quiet {
+  color: #6b7683;
+}
+
+@keyframes lineRise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide[data-active='true'] .line {
+    animation: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .title {
+    font-size: clamp(31px, 9vw, 42px);
+  }
+}

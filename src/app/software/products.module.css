@@ -1,0 +1,297 @@
+.page {
+  background: var(--ix-paper);
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.heroSection {
+  padding-block: 0;
+  background: var(--ix-paper);
+}
+
+.hero {
+  padding-block: clamp(48px, 5.5vw, 84px) clamp(40px, 4.5vw, 64px);
+}
+
+.heroTitle {
+  max-width: 16ch;
+}
+
+.statement {
+  max-width: 34ch;
+  margin: 24px 0 0;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  color: var(--ix-body);
+}
+
+/* ----------------------------------------------------------------- index */
+
+.indexSection {
+  padding-block: 0 clamp(48px, 5vw, 72px);
+  background: var(--ix-white);
+}
+
+.group + .group {
+  margin-top: 8px;
+  border-top: 1px solid var(--ix-line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 40px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--ix-line);
+}
+
+.rowTitle {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+/* Holds the chip column on products with no supplied mark, so every name
+   starts on the same line. */
+.markSlot {
+  width: 56px;
+  height: 56px;
+}
+
+.titleText {
+  min-width: 0;
+}
+
+.rowName {
+  margin: 0;
+  font-size: clamp(24px, 2.2vw, 32px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--ix-ink);
+}
+
+.rowLink {
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-mech);
+}
+
+.rowLink:hover {
+  color: var(--ix-blue);
+}
+
+.rowRole {
+  margin: 5px 0 0;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ix-body);
+}
+
+.rowBody {
+  min-width: 0;
+}
+
+.rowBody > p {
+  max-width: 58ch;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ix-body);
+}
+
+.details {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ix-line);
+}
+
+.details summary {
+  display: inline-flex;
+  gap: 6px;
+  min-height: 24px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: var(--ix-body);
+  cursor: pointer;
+  list-style: none;
+}
+
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+.details summary::after {
+  content: '+';
+  color: var(--ix-muted);
+}
+
+.details[open] summary::after {
+  content: '–';
+}
+
+.details ul {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.details li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ix-body);
+}
+
+.details li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 6px;
+  height: 1px;
+  background: var(--ix-blue);
+}
+
+.screens {
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ix-body);
+}
+
+.screens span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ix-muted);
+}
+
+/* -------------------------------------------------------------- appendix */
+
+.appendix {
+  padding-block: clamp(48px, 5vw, 76px);
+}
+
+.note {
+  max-width: 52ch;
+  margin: 14px 0 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ix-body);
+}
+
+.tableWrap {
+  margin-top: 26px;
+  overflow-x: auto;
+}
+
+.map {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+}
+
+.map th,
+.map td {
+  padding: 14px 14px 14px 0;
+  border-bottom: 1px solid var(--ix-line);
+  text-align: left;
+  font-weight: 400;
+}
+
+.map thead th {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ix-body);
+}
+
+.map tbody th {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ix-ink);
+}
+
+.map td {
+  font-size: 11px;
+  color: var(--ix-blue);
+}
+
+.map .no {
+  color: #aeb7c1;
+}
+
+/* ------------------------------------------------------------------ flow */
+
+.flowSection {
+  padding-block: 0 clamp(48px, 5vw, 80px);
+}
+
+/* ------------------------------------------------------------------- end */
+
+.end {
+  padding-block: clamp(56px, 6vw, 92px);
+  background: var(--ix-ink);
+  color: #ffffff;
+}
+
+.endInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px 48px;
+}
+
+.endTitle {
+  max-width: 22ch;
+  margin: 0;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.endActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.endLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  transition: border-color var(--dur-state) var(--ease-mech);
+}
+
+.endLink:hover {
+  border-color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .endInner {
+    align-items: flex-start;
+  }
+}

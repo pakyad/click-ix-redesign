@@ -1,0 +1,185 @@
+/* The deployment rail: a native horizontal scroller with snap points. It never
+   auto-advances and never pins; arrows and trackpads move it, and every card is
+   still a real link in the tab order. */
+
+.wrap {
+  margin-top: clamp(20px, 2.4vw, 32px);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.count {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ix-body);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ix-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ix-ink);
+  font-size: 15px;
+  cursor: pointer;
+  transition:
+    border-color var(--dur-state) var(--ease-mech),
+    background-color var(--dur-state) var(--ease-mech);
+}
+
+.control:hover {
+  border-color: var(--ix-ink);
+  background: var(--ix-paper);
+}
+
+.rail {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0 0 10px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 clamp(240px, 23vw, 300px);
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.link {
+  display: block;
+}
+
+.frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--ix-paper);
+  border: 1px solid rgba(11, 15, 20, 0.06);
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* No photograph: the record carries itself, set in type on ink so the rail keeps
+   a rhythm of photographs and plates rather than four photos and ten gaps. */
+.plate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  background: var(--ix-ink);
+  color: #ffffff;
+}
+
+.plateSector {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.plateName {
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  display: grid;
+  gap: 3px;
+  margin-top: 12px;
+}
+
+.client {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ix-ink);
+}
+
+.sector {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ix-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ix-body);
+}
+
+.link:hover .client {
+  color: var(--ix-blue);
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex-basis: 78vw;
+  }
+
+  .bar {
+    margin-bottom: 12px;
+  }
+}
+
+/* Arrival: cards switch in along the rail, 60ms apart. */
+:global(html.js) .rail[data-arrive]:not([data-revealed='true']) .card {
+  opacity: 0;
+}
+
+:global(html.js) .rail[data-arrive][data-revealed='true'] .card {
+  animation: railIn 1ms steps(1, end) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+@keyframes railIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(html.js) .rail[data-arrive] .card {
+    animation: none;
+    opacity: 1;
+  }
+}

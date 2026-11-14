@@ -1,0 +1,154 @@
+/* The flow: one rule, five stops. The fill is a transform on a single element,
+   driven by the section's scroll progress — no layout, no pinning. */
+
+.flow {
+  --flow: 1;
+  position: relative;
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-top: 26px;
+}
+
+.track {
+  position: absolute;
+  inset-inline: 0;
+  top: 8px;
+  height: 1px;
+}
+
+.base {
+  position: absolute;
+  inset: 0;
+  background: var(--ix-line);
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  background: var(--ix-ink);
+  transform: scaleX(var(--flow));
+  transform-origin: left center;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  min-width: 0;
+  padding-right: clamp(16px, 2vw, 28px);
+}
+
+.dot {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--ix-line);
+  background: var(--ix-paper);
+  transition:
+    background-color 240ms var(--ease-mech),
+    border-color 240ms var(--ease-mech);
+}
+
+.step[data-on='true'] .dot {
+  background: var(--ix-ink);
+  border-color: var(--ix-ink);
+}
+
+.name {
+  display: block;
+  font-size: clamp(17px, 1.6vw, 21px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ix-muted);
+  transition: color 260ms var(--ease-mech);
+}
+
+.system {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ix-muted);
+  transition: color 260ms var(--ease-mech);
+}
+
+.detail {
+  margin: 8px 0 0;
+  max-width: 26ch;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ix-body);
+}
+
+.step[data-on='true'] .name {
+  color: var(--ix-ink);
+}
+
+.step[data-on='true'] .system {
+  color: var(--ix-body);
+}
+
+/* Scripting off, or motion reduced: the line is already complete. */
+.flow[data-live='false'] .fill,
+.flow[data-live='complete'] .fill {
+  transform: scaleX(1);
+}
+
+.flow[data-live='false'] .step .dot,
+.flow[data-live='complete'] .step .dot {
+  background: var(--ix-ink);
+  border-color: var(--ix-ink);
+}
+
+.flow[data-live='false'] .step .name,
+.flow[data-live='complete'] .step .name {
+  color: var(--ix-ink);
+}
+
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .track {
+    display: none;
+  }
+
+  .dot {
+    display: none;
+  }
+
+  .step {
+    padding-right: 0;
+  }
+
+  .name {
+    color: var(--ix-ink);
+  }
+
+  .system {
+    color: var(--ix-body);
+  }
+
+  .detail {
+    max-width: 46ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot,
+  .name,
+  .system {
+    transition: none;
+  }
+}

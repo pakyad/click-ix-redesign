@@ -1,0 +1,203 @@
+/* The shared interior page header.
+   Paper ground, 400-weight display, half-grey clause — the same grammar as the
+   homepage hero so no route reads as a different site. */
+
+.header {
+  background: var(--ix-paper);
+  color: var(--ix-ink);
+  padding-block: clamp(40px, 5vw, 76px) clamp(40px, 4.6vw, 68px);
+  border-bottom: 1px solid var(--ix-line);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 26px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  color: var(--ix-body);
+  transition: color var(--dur-state) var(--ease-mech);
+}
+
+.back:hover {
+  color: var(--ix-ink);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  line-height: 1.4;
+  color: var(--ix-ink);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.title {
+  margin: 18px 0 20px;
+  max-width: 19ch;
+  font-size: clamp(34px, 4.4vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 400;
+}
+
+.quiet {
+  color: #6b7683;
+}
+
+.lede {
+  max-width: 56ch;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.62;
+  color: var(--ix-body);
+}
+
+/* What this page actually contains, in the page's own words — not a stat strip. */
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  margin-top: clamp(26px, 3vw, 38px);
+  border-top: 1px solid var(--ix-line);
+  padding-top: 16px;
+}
+
+.contents li {
+  position: relative;
+  padding-right: 22px;
+  margin-right: 22px;
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+  color: var(--ix-body);
+}
+
+.contents li::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1px;
+  height: 12px;
+  transform: translateY(-50%);
+  background: var(--ix-line);
+}
+
+.contents li:last-child {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.contents li:last-child::after {
+  display: none;
+}
+
+/* A facts rule, same treatment as the homepage hero. */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin-top: clamp(32px, 3.6vw, 48px);
+  padding-top: 18px;
+  border-top: 1px solid var(--ix-line);
+}
+
+.facts dt {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  color: var(--ix-body);
+}
+
+.facts dd {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .title {
+    font-size: clamp(30px, 8.6vw, 44px);
+    max-width: 16ch;
+  }
+
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* -------------------------------------------------------------- arrival ---
+   Every interior page opens the same way: the back link, the label, the title,
+   the lede and the facts arrive in that order, 60ms apart. One language for
+   twenty routes. */
+:global(html.js) .header[data-arrive]:not([data-revealed='true']) .inner > * {
+  opacity: 0;
+}
+
+:global(html.js) .header[data-arrive][data-revealed='true'] .inner > * {
+  animation: headerIn 600ms var(--ease-signal) both;
+}
+
+:global(html.js) .header[data-arrive] .inner > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+:global(html.js) .header[data-arrive] .inner > *:nth-child(2) {
+  animation-delay: 60ms;
+}
+
+:global(html.js) .header[data-arrive] .inner > *:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+:global(html.js) .header[data-arrive] .inner > *:nth-child(4) {
+  animation-delay: 180ms;
+}
+
+:global(html.js) .header[data-arrive] .inner > *:nth-child(5) {
+  animation-delay: 240ms;
+}
+
+:global(html.js) .header[data-arrive] .inner > *:nth-child(6) {
+  animation-delay: 300ms;
+}
+
+@keyframes headerIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(html.js) .header[data-arrive] .inner > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+

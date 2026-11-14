@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1180" viewBox="0 0 720 1180" role="img" aria-label="Editorial abstract cyan/lime display artwork titled Make It Visible">
+<style>text{font-family:Arial,Helvetica,sans-serif}</style>
+<rect width="720" height="1180" fill="#0B2035"/>
+<rect width="720" height="32" fill="#1BC8ED"/>
+<text x="60" y="105" font-size="22" fill="#1BC8ED" letter-spacing="6">CAMPAIGN STUDY / 01</text>
+<text x="58" y="304" font-size="104" fill="#F7F9FB" font-weight="700" letter-spacing="-5">MAKE IT</text>
+<text x="58" y="406" font-size="104" fill="#1BC8ED" font-weight="700" letter-spacing="-5">VISIBLE.</text>
+<g transform="translate(90,480)">
+<circle cx="295" cy="260" r="218" fill="#1BC8ED"/>
+<circle cx="295" cy="260" r="146" fill="#0B2035"/>
+<circle cx="295" cy="260" r="74" fill="#1BC8ED"/>
+<path d="M30 450L565 84" stroke="#F7F9FB" stroke-width="14"/>
+<path d="M43 515L615 135" stroke="#F7F9FB" stroke-width="5"/>
+</g>
+<text x="60" y="1061" font-size="27" fill="#F7F9FB" letter-spacing="3">IDEAS NEED SPACE.</text>
+<path d="M60 1090H660" stroke="#1BC8ED" stroke-width="3"/>
+<text x="60" y="1135" font-size="20" fill="#F7F9FB">ORIGINAL DEMO ARTWORK</text>
+<text x="660" y="1135" text-anchor="end" font-size="20" fill="#1BC8ED">01 / 03</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1180" viewBox="0 0 720 1180" role="img" aria-label="Original editorial campaign with geometric form and sans-serif headline">
+<style>text{font-family:Arial,Helvetica,sans-serif}</style>
+<rect width="720" height="1180" fill="#F7F9FB"/>
+<rect x="0" y="0" width="720" height="26" fill="#0B2035"/>
+<text x="54" y="98" fill="#0B2035" font-size="22" letter-spacing="5">CAMPAIGN STUDY / 02</text>
+<text x="52" y="304" fill="#0B2035" font-size="99" font-weight="700" letter-spacing="-6">FORM.</text>
+<text x="52" y="402" fill="#1B4A63" font-size="99" font-weight="700" letter-spacing="-6">FOLLOWS</text>
+<text x="52" y="499" fill="#0B2035" font-size="99" font-weight="700" letter-spacing="-6">FEELING.</text>
+<g transform="translate(32,554)">
+<rect x="88" y="38" width="490" height="432" fill="#A9C1D4"/>
+<rect x="159" y="99" width="353" height="310" fill="#0B2035"/>
+<path d="M159 336L512 138V409H159Z" fill="#1BC8ED"/>
+<circle cx="341" cy="253" r="106" fill="#1BC8ED"/>
+<circle cx="341" cy="253" r="53" fill="#0B2035"/>
+</g>
+<text x="54" y="1115" fill="#0B2035" font-size="25" letter-spacing="4">THE EVERYDAY, REIMAGINED.</text>
+</svg>

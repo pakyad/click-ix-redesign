@@ -1,0 +1,968 @@
+/* Five surfaces, one system.
+
+   A technical plate, not a carousel. Every screen is visible at once; the index
+   spotlights one, a circuit trace connects the row to the screen, and nothing
+   moves on its own. No pinning, no scroll hijack, no pause control. */
+
+.band {
+  background: var(--ix-white);
+  color: var(--ix-ink);
+  padding-block: clamp(76px, 8vw, 130px);
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  grid-template-rows: auto auto;
+  column-gap: clamp(32px, 4.5vw, 68px);
+  align-items: start;
+}
+
+.head {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(18px, 2vw, 26px);
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+
+.headMain {
+  min-width: 0;
+}
+
+.head .lede {
+  justify-self: end;
+  max-width: 44ch;
+}
+
+.indexWrap {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.wallWrap {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* -------------------------------- head -------------------------------- */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  line-height: 1.4;
+  color: var(--ix-body);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.title {
+  margin: 16px 0 0;
+  color: var(--ix-ink);
+  font-size: clamp(46px, 8.2vw, 118px);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.quiet {
+  color: #6b7683;
+}
+
+.lede {
+  max-width: 44ch;
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--ix-body);
+  padding-bottom: 4px;
+}
+
+/* -------------------------------- index ------------------------------- */
+
+.index {
+  border-top: 1px solid var(--ix-line);
+}
+
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px;
+  width: 100%;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ix-line);
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--ix-blue);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s var(--ease-mech);
+}
+
+.row[data-active='true']::before {
+  transform: scaleY(1);
+}
+
+.glyph {
+  display: grid;
+  grid-template-columns: repeat(5, 3px);
+  grid-auto-rows: 3px;
+  gap: 1px;
+  align-content: start;
+  padding-top: 5px;
+}
+
+.glyph i {
+  background: rgba(6, 19, 33, 0.1);
+  transition: background-color 0.25s var(--ease-mech);
+}
+
+.glyph i[data-on='true'] {
+  background: var(--ix-muted);
+}
+
+.row[data-active='true'] .glyph i[data-on='true'] {
+  background: var(--ix-cyan);
+}
+
+.rowBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 14px;
+  row-gap: 3px;
+  align-items: baseline;
+}
+
+.rowLabel {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--ix-ink);
+}
+
+.rowProduct {
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ix-body);
+  white-space: nowrap;
+}
+
+.rowLine {
+  grid-column: 1 / -1;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ix-body);
+}
+
+.stackLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 32px;
+  margin-top: 26px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(11, 15, 20, 0.3);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ix-ink);
+  transition: border-color var(--dur-state) var(--ease-mech);
+}
+
+.stackLink:hover {
+  border-color: var(--ix-ink);
+}
+
+/* -------------------------------- wall -------------------------------- */
+
+.wall {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 16px 14px;
+  align-items: start;
+  /* The top 44px is a circuit channel for the trace. No screen lives there. */
+  padding-top: 44px;
+}
+
+.wallItem {
+  min-width: 0;
+}
+
+.wallItem[data-kind='menu'] {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.wallItem[data-kind='directory'] {
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 26px;
+}
+
+.wallItem[data-kind='campaign'] {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.wallItem[data-kind='proof'] {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.wallItem[data-kind='estate'] {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.screen {
+  position: relative;
+  overflow: hidden;
+  background: var(--ix-paper);
+  border: 1px solid rgba(6, 19, 33, 0.2);
+  padding: 5px;
+  transition:
+    opacity 0.28s var(--ease-mech),
+    filter 0.28s var(--ease-mech);
+}
+
+.wallItem[data-kind='menu'] .screen,
+.wallItem[data-kind='directory'] .screen {
+  aspect-ratio: 3 / 4;
+}
+
+.wallItem[data-kind='campaign'] .screen {
+  aspect-ratio: 16 / 10;
+}
+
+.wallItem[data-kind='proof'] .screen,
+.wallItem[data-kind='estate'] .screen {
+  aspect-ratio: 16 / 5;
+}
+
+.screenInner {
+  position: absolute;
+  inset: 5px;
+  overflow: hidden;
+}
+
+.wall[data-active] .screen {
+  opacity: 0.36;
+  filter: grayscale(1);
+}
+
+.wall[data-active] .wallItem[data-active='true'] .screen {
+  opacity: 1;
+  filter: none;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ix-body);
+}
+
+.foot {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ix-line);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ix-body);
+  text-align: right;
+}
+
+/* ----------------------------- screen UI ------------------------------ */
+
+.ui {
+  position: absolute;
+  inset: 0;
+  padding: 10px;
+  display: flex;
+}
+
+/* Menu board */
+
+.menu {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuMotif {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  width: 34%;
+  aspect-ratio: 1;
+}
+
+.menuMotif i {
+  background: rgba(6, 19, 33, 0.08);
+}
+
+.menuMotif i[data-on='true'] {
+  background: var(--ix-blue);
+}
+
+.menuRows {
+  display: grid;
+  gap: 9px;
+  margin-top: auto;
+}
+
+.menuRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menuRow i {
+  height: 4px;
+  background: rgba(6, 19, 33, 0.18);
+}
+
+.menuRow b {
+  width: 15px;
+  height: 4px;
+  margin-left: auto;
+  background: var(--ix-cyan);
+}
+
+.daypart {
+  display: flex;
+  gap: 3px;
+  margin-top: 12px;
+}
+
+.daypart i {
+  flex: 1;
+  height: 4px;
+  background: rgba(6, 19, 33, 0.12);
+}
+
+.daypart i[data-on='true'] {
+  background: var(--ix-blue);
+}
+
+/* Directory */
+
+.directory {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dirHead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dirHead i {
+  width: 8px;
+  height: 8px;
+  background: var(--ix-blue);
+}
+
+.dirHead b {
+  flex: 1;
+  height: 1px;
+  background: rgba(6, 19, 33, 0.16);
+}
+
+.dirRows {
+  display: grid;
+  gap: 2px;
+}
+
+.dirRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 0;
+  border-top: 1px solid rgba(6, 19, 33, 0.08);
+}
+
+.dirRow i {
+  flex: 0 0 auto;
+  width: 4px;
+  height: 4px;
+  background: rgba(6, 19, 33, 0.18);
+}
+
+.dirRow b {
+  height: 3px;
+  background: rgba(6, 19, 33, 0.18);
+}
+
+.dirRow em {
+  margin-left: auto;
+  width: 10px;
+  height: 1px;
+  background: rgba(6, 19, 33, 0.18);
+}
+
+.dirRow[data-on='true'] i {
+  background: var(--ix-cyan);
+}
+
+.dirRow[data-on='true'] b {
+  background: var(--ix-blue);
+}
+
+/* Campaign */
+
+.campaign {
+  flex-direction: column;
+  gap: 9px;
+}
+
+.campaignGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+}
+
+.campaignGrid > i {
+  position: relative;
+  background: rgba(6, 19, 33, 0.04);
+}
+
+.slotFill {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3px;
+  padding: 8px;
+}
+
+.slotFill b {
+  background: var(--ix-blue);
+}
+
+.slotFill b:nth-child(4n + 2),
+.slotFill b:nth-child(4n + 3) {
+  background: var(--ix-cyan);
+}
+
+.slotLines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+}
+
+.slotLines b {
+  height: 3px;
+  background: rgba(6, 19, 33, 0.2);
+}
+
+.timecode {
+  display: flex;
+  gap: 4px;
+}
+
+.timecode i {
+  flex: 1;
+  height: 3px;
+  background: rgba(6, 19, 33, 0.1);
+}
+
+.timecode i[data-on='true'] {
+  background: var(--ix-cyan);
+}
+
+/* Estate */
+
+.estate {
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.estateLine {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.estateLine::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 50%;
+  height: 1px;
+  background: rgba(6, 19, 33, 0.16);
+}
+
+.estateLine i {
+  position: relative;
+  z-index: 1;
+  width: 7px;
+  height: 7px;
+  background: var(--ix-paper);
+  border: 1px solid rgba(6, 19, 33, 0.3);
+}
+
+.estateLine i[data-on='true'] {
+  background: var(--ix-cyan);
+  border-color: var(--ix-cyan);
+}
+
+.estateSites {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.estateSites b {
+  height: 6px;
+  background: rgba(6, 19, 33, 0.16);
+}
+
+.estateSites b[data-on='true'] {
+  background: var(--ix-blue);
+}
+
+/* Proof */
+
+.proof {
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.proofBars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+  min-height: 44px;
+  border-bottom: 1px solid rgba(6, 19, 33, 0.14);
+}
+
+.proofBars i {
+  flex: 1;
+  background: rgba(6, 19, 33, 0.12);
+}
+
+.proofBars i[data-on='true'] {
+  background: var(--ix-blue);
+}
+
+.proofRows {
+  width: 42%;
+  display: grid;
+  gap: 4px;
+}
+
+.proofRows span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.proofRows i {
+  flex: 0 0 auto;
+  width: 4px;
+  height: 4px;
+  background: var(--ix-cyan);
+}
+
+.proofRows b {
+  height: 2px;
+  background: rgba(6, 19, 33, 0.2);
+}
+
+/* Scanline: one pass when a surface is inspected. */
+
+.scan {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scan::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--ix-cyan);
+}
+
+.wallItem[data-active='true'] .scan {
+  animation: scan 0.55s var(--ease-mech) forwards;
+}
+
+@keyframes scan {
+  0% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+/* ------------------------------- trace -------------------------------- */
+
+.trace {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tracePath {
+  fill: none;
+  stroke: var(--ix-blue);
+  stroke-width: 1;
+  opacity: 0.55;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 0.45s var(--ease-mech) forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---------------------------- entrance -------------------------------- */
+
+:global(html.js) .band:not([data-ready='true']) [data-system-head],
+:global(html.js) .band:not([data-ready='true']) [data-index] {
+  opacity: 0;
+}
+
+:global(html.js) .band:not([data-ready='true']) [data-screen] {
+  clip-path: inset(100% 0 0 0);
+}
+
+/* ---------------------------- responsive ------------------------------ */
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .title {
+    font-size: clamp(40px, 7vw, 78px);
+  }
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .head,
+  .wallWrap,
+  .indexWrap {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  .wallWrap {
+    margin-top: 0;
+  }
+
+  .indexWrap {
+    margin-top: 40px;
+  }
+
+  .foot {
+    text-align: left;
+  }
+
+  .trace {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .wall {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wallItem[data-kind='menu'] {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .wallItem[data-kind='directory'] {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 20px;
+  }
+
+  .wallItem[data-kind='campaign'] {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  .wallItem[data-kind='proof'] {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+
+  .wallItem[data-kind='estate'] {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  }
+
+  .title {
+    font-size: clamp(34px, 11vw, 54px);
+  }
+}
+
+@media (max-width: 420px) {
+  .row {
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 10px;
+    padding-left: 10px;
+  }
+
+  .glyph {
+    grid-template-columns: repeat(5, 2px);
+    grid-auto-rows: 2px;
+  }
+
+  .rowProduct {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen,
+  .row::before,
+  .glyph i,
+  .stackLink {
+    transition: none;
+  }
+
+  .scan,
+  .tracePath {
+    animation: none;
+  }
+
+  .scan {
+    display: none;
+  }
+}
+
+/* The wall powers on: five screens switch on in place, 80ms apart. Hard cells,
+   not fades — the same gesture as the hero film. */
+:global(html.js) .wall[data-arrive]:not([data-revealed='true']) .wallItem {
+  opacity: 0;
+}
+
+:global(html.js) .wall[data-arrive][data-revealed='true'] .wallItem {
+  animation: switchOn 1ms steps(1, end) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+@keyframes switchOn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(html.js) .wall[data-arrive] .wallItem {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+
+/* The five screens as content, not wireframe: a menu, a directory, a campaign
+   frame, an estate list, a playout chart. The note under the wall says what
+   they are, so nothing reads as a product screenshot. */
+.spec {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+  overflow: hidden;
+  padding: 12px;
+  background: #fff;
+  color: var(--ix-ink);
+}
+
+.specDark {
+  justify-content: space-between;
+  background: var(--ix-ink);
+  color: #fff;
+}
+
+.specHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.01em;
+}
+
+.specHead b {
+  font-weight: 600;
+}
+
+.specHead i {
+  font-style: normal;
+  font-size: 9px;
+  opacity: 0.55;
+}
+
+.specRows {
+  display: grid;
+  gap: 3px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.specRows li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(11, 15, 20, 0.12);
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+.specDark .specRows li {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.specRows b {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.specRows em {
+  font-style: normal;
+  font-size: 8.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.specRows li[data-on='true'] {
+  color: var(--ix-blue);
+}
+
+.specDark .specRows li[data-on='true'] {
+  color: var(--cyan-500);
+}
+
+.specRows li[data-off='true'] {
+  opacity: 0.45;
+}
+
+.specPhoto {
+  padding: 0;
+}
+
+.specPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.specTime {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(6, 19, 33, 0.72);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+}
+
+.specTime b {
+  font-weight: 600;
+}
+
+.specBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 46px;
+  margin-top: 4px;
+}
+
+.specBars i {
+  display: block;
+  flex: 1;
+  background: var(--ix-steel);
+}
+
+.specBars i[data-on='true'] {
+  background: var(--ix-blue);
+}
+
+.specFoot {
+  margin-top: 8px;
+  font-size: 9px;
+  opacity: 0.65;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ix-body);
+}
+

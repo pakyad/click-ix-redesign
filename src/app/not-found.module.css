@@ -1,0 +1,127 @@
+/* 404 — same grammar as every other chapter: paper ground, 400-weight display,
+   half-grey second clause, a hairline list instead of cards. */
+
+.page {
+  background: var(--ix-paper);
+  color: var(--ix-ink);
+}
+
+.inner {
+  padding-block: clamp(56px, 8vw, 128px) clamp(72px, 9vw, 148px);
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ix-muted);
+}
+
+.title {
+  margin: 18px 0 20px;
+  max-width: 18ch;
+  font-size: clamp(34px, 4.4vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 400;
+}
+
+.quiet {
+  color: #6b7683;
+}
+
+.lede {
+  max-width: 52ch;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.62;
+  color: var(--ix-body);
+}
+
+/* ------------------------------ destinations ------------------------- */
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 48px;
+  margin-top: clamp(36px, 4vw, 56px);
+  border-top: 1px solid var(--ix-line);
+}
+
+.link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'label arrow'
+    'note arrow';
+  align-items: center;
+  gap: 2px 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--ix-line);
+  transition: color var(--dur-state) var(--ease-mech);
+}
+
+.linkLabel {
+  grid-area: label;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.linkNote {
+  grid-area: note;
+  font-size: 12.5px;
+  color: var(--ix-muted);
+}
+
+.linkArrow {
+  grid-area: arrow;
+  font-size: 15px;
+  transition: transform var(--dur-state) var(--ease-mech);
+}
+
+.link:hover {
+  color: var(--ix-blue);
+}
+
+.link:hover .linkArrow {
+  transform: translateX(4px);
+}
+
+/* -------------------------------- actions ---------------------------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+  margin-top: clamp(32px, 3.4vw, 44px);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 32px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(11, 15, 20, 0.3);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color var(--dur-state) var(--ease-mech);
+}
+
+.textLink:hover {
+  border-color: var(--ix-ink);
+}
+
+@media (max-width: 760px) {
+  .links {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .actions :global(.btn) {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

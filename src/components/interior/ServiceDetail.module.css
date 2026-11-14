@@ -1,0 +1,143 @@
+.page {
+  background: var(--surface-light);
+}
+
+.hero {
+  padding-block: 48px 72px;
+}
+
+.back {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 12px;
+  color: var(--text-dark-secondary);
+  margin-bottom: 26px;
+}
+
+.back:hover {
+  color: var(--ix-ink);
+}
+
+.heroTitle {
+  margin: 18px 0 24px;
+  max-width: 18ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.grid h2 {
+  margin: 16px 0 20px;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-light-secondary);
+  max-width: 52ch;
+}
+
+.scope {
+  border-top: 2px solid var(--ix-blue);
+}
+
+.scope li {
+  padding: 18px 0 18px 22px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 17px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.scope li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 27px;
+  width: 8px;
+  height: 8px;
+  background: var(--product-play);
+}
+
+.noteRow {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+}
+
+.noteLabel {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.004em;
+}
+
+.note {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-light-secondary);
+  max-width: 78ch;
+}
+
+.connect {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.connect h2 {
+  margin: 16px 0 20px;
+}
+
+.connect .lede {
+  margin-bottom: 24px;
+}
+
+.related {
+  border-top: 1px solid var(--border-dark);
+}
+
+.relatedLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 64px;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--border-dark);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.relatedLink:hover {
+  color: var(--ix-blue);
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .connect {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .noteRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-block: 36px 52px;
+  }
+}
