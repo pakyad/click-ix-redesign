@@ -31,7 +31,7 @@ function SystemArtwork({ step }: { readonly step: number }) {
   return (
     <div className={styles.artwork} aria-label="Illustrative screen management interface">
       <div className={styles.artHeader}>
-        <ProductMark productId={step === 0 || step === 4 ? "cs-deals" : "cs-play"} label={step === 0 || step === 4 ? "CS Deals" : "CS Play"} height={18} tone="dark" />
+        <ProductMark productId={step === 0 || step === 4 ? "cs-deals" : "cs-play"} label={step === 0 || step === 4 ? "CS Deals" : "CS Play"} height={18} tone="light" />
         <span className={styles.artHeaderNote}>WORKFLOW STUDY / ILLUSTRATIVE</span>
       </div>
       <div className={styles.artBody}>
@@ -113,7 +113,7 @@ export default function ConnectedStory() {
             <circle cx="325" cy="35" r="4"/><circle cx="112" cy="205" r="4"/>
           </svg>
           <div className={styles.sceneConsole}>
-            <div className={styles.consoleTop}><ProductMark productId="cs-play" label="CS Play" height={17} tone="dark" /><span>CONTENT OPERATIONS</span></div>
+            <div className={styles.consoleTop}><ProductMark productId="cs-play" label="CS Play" height={17} tone="light" /><span>CONTENT OPERATIONS</span></div>
             <div className={styles.consolePreview}><div className={styles.consoleThumb}><Image src="/media/maxis-store.jpg" alt="Digital display in a Maxis retail location" fill sizes="160px" /></div><div className={styles.consoleLines}><b>Manage content</b><span>Plan · Schedule · Play</span><i/><i/><i/></div></div>
             <small>Illustrative system view</small>
           </div>
