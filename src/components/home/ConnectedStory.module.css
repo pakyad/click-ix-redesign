@@ -80,10 +80,10 @@
 }
 .circuit {
   position: absolute;
-  inset: 13% -1% 0 0;
+  inset: 0;
   width: 100%;
-  height: 78%;
-  z-index: 0;
+  height: 100%;
+  z-index: 2;
   pointer-events: none;
   overflow: visible;
   fill: none;
@@ -99,7 +99,7 @@
   width: 68%;
   min-height: 42%;
   background: var(--ix-white);
-  z-index: 2;
+  z-index: 3;
   border: 1px solid var(--ix-steel);
   border-radius: 7px;
   padding: clamp(10px, 1.7vw, 24px);
@@ -129,7 +129,7 @@
 .signalOne, .signalTwo {
   display: flex; align-items: center; gap: 9px;
   position: absolute; font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: .08em; color: var(--ix-ink); z-index: 3;
+  letter-spacing: .08em; color: var(--ix-ink); z-index: 4;
 }
 .signalOne b, .signalTwo b { color: var(--ix-blue); font-weight: 500; }
 .signalOne { left: 0; top: 16%; }
