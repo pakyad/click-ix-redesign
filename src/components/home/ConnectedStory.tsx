@@ -108,9 +108,9 @@ export default function ConnectedStory() {
             <Image src="/media/hero-poster.jpg" alt="Real large-format Click iX outdoor LED installation in Kuala Lumpur" fill sizes="(max-width: 900px) 90vw, 55vw" />
             <span className={styles.sceneCaption}>01 / THE PHYSICAL SCREEN</span>
           </div>
-          <svg className={styles.circuit} viewBox="0 0 500 245" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M325 35 V112 H230 V205 H112"/>
-            <circle cx="325" cy="35" r="4"/><circle cx="112" cy="205" r="4"/>
+          <svg className={styles.circuit} viewBox="0 0 600 600" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M485 290 H555 V485 H385"/>
+            <circle cx="485" cy="290" r="4"/><circle cx="385" cy="485" r="4"/>
           </svg>
           <div className={styles.sceneConsole}>
             <div className={styles.consoleTop}><ProductMark productId="cs-play" label="CS Play" height={17} tone="light" /><span>CONTENT OPERATIONS</span></div>
