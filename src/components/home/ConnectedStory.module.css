@@ -22,7 +22,7 @@
 .copy { align-self: center; }
 .title {
   margin: 30px 0 30px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(54px, 6vw, 94px);
   line-height: .99;
   font-weight: 500;
