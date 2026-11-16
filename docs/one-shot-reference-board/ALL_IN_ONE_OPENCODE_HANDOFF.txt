@@ -1,0 +1,708 @@
+CLICK IX — ONE-SHOT OPENCODE DESIGN HANDOFF
+REFERENCE BOARD: "CLICK IX_ Immersive Screen Networks.png" (user-supplied image, attach to OpenCode)
+REPOSITORY: https://github.com/pakyad/click-ix-redesign
+SCOPE: Home /, CS Play /cs-play/, Maxis anchored case /case-studies-retail-malls/#maxis
+
+HOW TO USE THIS FILE
+1) Give OpenCode this complete TXT AND the original reference-board image as separate visual input.
+2) Ask it to inspect the latest repository and work on a NEW feature branch.
+3) Use this file as the complete prompt + source inventory + draft copy.
+4) Brand marks, case photography and supplied content require their normal company publication checks.
+5) The asset-pack PowerShell script is included at the end; OpenCode can use it to copy verified local assets.
+6) Main branch must remain unchanged until review.
+
+----- START OF FULL HANDOFF -----
+
+
+
+================================================================================
+A | Master OpenCode implementation prompt
+SOURCE FILE: 01_OPENCODE_MASTER_PROMPT.md
+================================================================================
+
+# A — OPENCODE MASTER IMPLEMENTATION BRIEF
+## CLICK IX | Reference-board implementation | 16 November 2026
+
+**Repository:** https://github.com/pakyad/click-ix-redesign
+**Source branch:** main (inspect current branch before editing)
+**Design reference:** the user-supplied three-column image, "CLICK IX_ Immersive Screen Networks.png" (attach it to OpenCode)
+**Handoff companion files:** 02_ASSET_MANIFEST.csv and 03_READY_COPY_DECK.md in this directory.
+
+### 0. Mission and interpretation
+
+Act as a principal creative engineer, art director, accessibility engineer and Next.js maintainer.
+
+Implement the visual DESIGN SYSTEM of the supplied reference board as closely as practical, but replace all reference-board branding, imaginary visuals, fabricated dashboard data and unsourced copy with actual CLICK IX content and repo assets. This is a high-fidelity reconstruction from a composite **art-direction image**, not a literal copy of a deployed website. The three columns in the board describe (1) home, (2) ecosystem/process/interior modules, and (3) CS Play plus a case-study example. They are not three independently scrollable pages as pictured.
+
+**Goal:** one coherent premium B2B design with dark photographic openers, white documentary reading bands, oversized but controlled editorial typography, restrained brand blue, one layered ecosystem story, a dark linear process sequence, authentic deployments and useful contact pathways.
+
+**Nonnegotiable**: do not substitute generated logos or generated project photos. Do not draw pretend live software dashboards and present them as real. Real artifacts are more important than matching a fictitious detail in the reference.
+
+### 1. Repository facts discovered before this handoff
+
+- Stack: Next.js 15, React 19, TypeScript, CSS Modules, GSAP 3.15 already installed.
+- Main is static and has **flat routes** with trailing slashes. See src/lib/routes.ts. Do not silently add /software/cs-play/ or /case-studies/maxis/; neither currently exists.
+- Existing target routes:
+  - Home: /
+  - CS Play: /cs-play/
+  - Maxis story: /case-studies-retail-malls/#maxis
+  - Category listing: /case-studies-retail-malls/
+  - Product directory: /software/
+  - Process: /our-process/
+  - Services: /our-services/
+- Existing homepage: src/app/page.tsx, HeroCinematic, ClientRow, SystemLoop, SoftwareBand, WorkRail.
+- Product template: src/components/product/ProductDetail.tsx.
+- Case template: src/components/interior/CaseCategoryPage.tsx. It renders <article id="maxis"> from src/lib/content.ts.
+- One true contact method already wired: src/lib/contact.ts; preserve mailto() rather than inventing a demo booking or a contact form.
+- Source of company claims: src/lib/content.ts. Some entries have evidence: 'supplied' and are **not publication-approved facts**.
+- Logo source: public/brand/click-ix-horizontal-black.png and click-ix-horizontal-white.png, untouched.
+- Supplied product marks: public/brand/cityscreen/. Use the appropriate approved variant; do not recolour, crop or recreate.
+- Current hero media: public/media/hero.mp4, hero-poster.jpg. Current caption identifies MotoGP KL26 launch. Do not mislabel as Pavilion KL Fashion Week.
+- Repository AGENTS.md/README.md currently favor a paper/white site and prohibit decorative cards and shadows. The user has *now explicitly selected a dark/photo-led reference board*. Treat this task as a **scoped art-direction change proposal**, not permission to rewrite all 25 pages or silently break the existing rules. Record which visual rules are proposed exceptions, keep source-of-truth content and route policies intact, and implement on a review branch.
+
+### 2. Exact visual translation of reference board
+
+Build with the reference attached and visually compare side by side. Preserve approximate hierarchy, proportions and rhythm; avoid generic redesign.
+ 
+**Shared header**
+- Preserve supplied black/white official lockups exactly. Never type a replacement wordmark.
+- Use a compact white or translucent-white navigation capsule over the dark hero where contrast permits.
+- Reuse existing Header, PromoBar, navigation registry and Get a quote mailto link. Announcement bar uses existing approved copy and artwork.
+- Maintain keyboard and touch navigation; do not overlay controls on text.
+
+**Home hero**
+- Dark photographic opener with real hero.mp4/poster. Layout inspired by left-aligned large display title beside the dominant real screen visual. Retain the brand line "Smarter Screen. Smarter Business." as the durable message; "Immersive experience" may be a subordinate brand subline. Do not claim the reference-board slogan is approved.
+- Strong single CTA and secondary link; do not invent a Get a Demo service. Use Get a quote or Explore services and See the work.
+- Slight camera-motion atmosphere may be created using approved film frames *only*; preserve legible real screen and avoid fabricated buildings, screen imagery or advertiser creatives.
+- Pixel-cell reveal can stay if it complements the art direction. Stop all extra choreography when content is ready.
+
+**Quiet capability section**
+- White/document ground immediately following the hero. One declarative heading: "One partner for your screen network." Short paragraph and a thin five-part role index: hardware, software, installation, content, measurement.
+- Use a typographic row or lightly separated track, not generic 5 identical elevated cards.
+- No auto-scrolling or unnecessary icon gimmicks.
+
+**Connected ecosystem chapter**
+- A layered product or system sequence under a clear headline. Reference-board depth/stack is the spatial language, not a requirement for 3D tilt.
+- Lead with physical deployment photo (real), then official product identity and actual/approved software interface, then reporting or a truthful schema. Show cause and effect; no fake numeric performance data.
+- Use one primary layer active at a time and discreet next/previous controls, state label, accessible direct selection. Inactive items should remain recognizable but recede.
+- Existing products: CS Deals, CS Play, CS Play SSN, CS Sign Hub; supporting: OmniBuy DSP, CS Context (SSP), Measurement and Data Partnerships. Preserve actual product taxonomy from src/lib/content.ts.
+- Build a static fallback; no scroll-hijack, no compulsory pin, no autoplaying navigation.
+- Reuse actual ProductMark and existing heroPosters data where suitable.
+
+**Process band**
+- One dark band with a linear progression, not another carousel. Copy based on src/lib/content.ts deliverySteps: Discovery & audit → Compatibility & design → Pilot → Rollout & support. If visually shortened to Plan / Deploy / Run / Measure, make clear this is editorial shorthand, not a contractual process statement.
+- Thin sequence, typographic labels, no invented completion percentages.
+
+**Featured real work**
+- Use real Maxis and/or Cheras photography already present and the case records in content.ts. Provide a factual project teaser, route to the correct existing anchored article. Use real asset alt text and caption.
+- Do not manufacture logos for clients that have no approved mark file.
+
+**Insights**
+- Reference board includes three insight tiles. The repo has no demonstrated published Insights route or approved article inventory. DO NOT fabricate posts, dates, authors or links. Hide this section until real articles exist, or replace with a simple three-link section to actual existing Products / Process / Case Studies routes after editorial approval.
+
+**Closing**
+- Dark concluding band with direct Get a quote link and short, factual request. Optional film-derived photographic texture only if it improves legibility and does not create a new competing animation.
+
+**CS Play /cs-play/**
+- Dark hero with official CS Play mark, authentic deployment photography and factual product promise; actual CS Play screenshot only when approved.
+- Following page returns to white/paper technical reading environment.
+- A real feature matrix, compatible-screen list, and a clear Scheduling → Playback → Proof explanation sourced from product.capabilities and commercialFlow in content.ts.
+- Product sections can use tabs or master-detail, but never hide meaningful information without JS.
+- Related work must lead to existing real case anchors. The current ProductDetail template already handles related case names; improve layout without losing this behavior.
+
+**Maxis case chapter**
+- Source from the exact 'maxis' record in src/lib/content.ts. Use /media/maxis-store.jpg and/or /media/maxis-screen.jpg as available. Do not assume extra gallery photos exist.
+- Project opener: real store image; label Maxis and exact sourced story title.
+- Challenge: the source 'brief'; Delivery: actual listed 'did' items; Why it matters: the source 'why'; systems: from 'systems'; location: from 'where'.
+- If reference-board layout uses a dedicated case page, keep the existing category route and article anchor unless route change is separately approved. Create a component-level feature chapter inside current template if needed.
+- No invented outcome statistics or testimonials. Never put a client logo into a scene as if it were deployment photography.
+
+### 3. Layout system (start values to tune against screenshot)
+
+- Base width: existing .wrap; avoid arbitrary max-width changes across whole site.
+- Desktop: 12-column grid; 5/7 or 4/8 editorial splits.
+- Hero: 80–100vh visual impression on desktop, but avoid hiding content on short screens.
+- Display headline: responsive clamp; use existing licensed/self-hosted type. Keep optical line breaks controlled. No invented fonts.
+- White text panels: meaningful 80–140px section spacing depending on viewport and density.
+- Product stack: one dominant visual (about 60% width), 2–3 supporting offsets, clear role label; avoid decorative blur/glass on all elements.
+- Mobile: single-column reading order, native product chapter selectors, full-size images and readable labels.
+- Brand: use src/app/globals.css tokens. Dark hero may use existing ink/navy tokens; do not invent new colour constants per component.
+- Strong image crop and consistent baseline, rather than a global shadow system.
+
+### 4. Motion grammar (strict budget)
+
+Keep 3 families:
+1. **Pixel-cell staged reveal** in hero, only once.
+2. **Shared-element / measured 2D transitions** between the connected-story states; GSAP Flip only if justified by real shared geometry.
+3. **Short UI state feedback** for tabs, filters and arrows (opacity + transform, no bounce).
+
+Avoid extra pinned carousels, horizontal-on-scroll, global Lenis, arbitrary stagger on every section and custom cursors. Existing GSAP is sufficient; no new animation dependency.
+Initial motion targets: 160–240ms for microstate, 450–750ms for one editorial chapter; refine visually.
+Animation must not alter document reading order, cause layout shift or block keyboard controls.
+Use prefers-reduced-motion to remove movement and show complete static content.
+If no JS, textual explanations, labels, links, images and case facts remain visible.
+
+### 5. Engineering policy
+
+- Make a NEW implementation branch from the latest main. Do not edit main directly.
+- Read AGENTS.md, README.md, src/lib/content.ts, src/lib/routes.ts, CSS design tokens, product and case templates, all tests.
+- Audit existing styles/components first; reuse and refactor rather than creating a parallel component system.
+- Do not add new top-level routes. Metadata and sitemap must stay correct.
+- No unapproved content and no generated logos/brand marks. No photos sourced from internet without rights approval.
+- Do not introduce a real contact form or fake booking endpoint.
+- Respect Next static build constraints and trailing slash routes.
+- Use local responsive media. Reserve dimensions to avoid CLS.
+- Preserve one main per page, semantic heading sequence, visible focus and WCAG AA contrast.
+- Prefer the current installed stack. New dependency allowed only with one-sentence benefit and explicit approval.
+- LCP target <2.5s, CLS <0.05, INP <200ms under representative mobile network and hardware; measure instead of claiming.
+
+### 6. Exact execution plan
+
+**Step A — preflight audit, no mutation**
+- List existing assets and record their dimensions, formats and truthful attribution.
+- Compare all assets and statuses against 02_ASSET_MANIFEST.csv.
+- Determine whether there is an approved CS Play UI screenshot. If absent, use a factual diagram or hide the speculative visual instead of generating a dashboard.
+- Confirm the real URLs from routes.ts and project anchors from CaseCategoryPage.
+- Identify which repo design constraints need proposed changes to match the newly approved reference.
+
+**Step B — static visual first**
+- Implement shared dark/photo hero, white info sections, connected ecosystem, process band, evidence section and CTA with native content.
+- Implement CS Play and Maxis case template treatments.
+- No motion until static screenshots are approved locally.
+
+**Step C — interactive polish**
+- Add ONE user-controlled connected-story interaction and optional hero pixel reveal.
+- Test rapid forward/back navigation, resize, reduced motion and no-JS.
+- Do not add a second motion signature because the image board looks cinematic.
+
+**Step D — verification**
+- Run npm ci, npm run typecheck, npm test, npm run build.
+- Capture actual browser screenshots for Home, /cs-play/, and /case-studies-retail-malls/#maxis at 1440x900, 1024x768, 768x1024, 390x844.
+- Capture one brief screen recording for the signature interaction.
+- Check links, route registry, sitemap, keyboard navigation, focused controls, reduced motion and all factual attributions.
+- Compare to the attached design board: layout/contrast/hero proportion/type scale/layer positioning/section rhythm.
+- Provide a visual difference log and explain every deviation caused by missing verified assets or technical/accessibility requirements.
+- Produce a **draft** PR, leave main unchanged, and report what was actually tested.
+
+### 7. Definition of done
+
+- Exact original official CLICK IX branding, no AI replacement.
+- Art direction distinctly resembles the provided board in visual rhythm and hierarchy.
+- The three pages feel part of ONE design system.
+- Real local installation media used for hero and project evidence.
+- No fake CMS UI screenshots, case results, articles, or client logos.
+- Existing routes and navigation work; 25-route architecture preserved.
+- Accessibility and reduced-motion states are fully functional.
+- No regression against the existing verification commands.
+- Where reference-board visuals are unimplementable with supplied proof, the result is deliberately quiet and truthful, not made-up.
+
+**Final instruction:** This is not a generic inspirational redesign. Treat the reference board as a strict compositional goal and the repository as the strict factual/brand source of truth. When they conflict, preserve factual accuracy and brand integrity.
+
+
+================================================================================
+B | Verified repo asset inventory and missing approvals
+SOURCE FILE: 02_ASSET_MANIFEST.csv
+================================================================================
+
+"id","status","source_path_or_request","purpose","target_section","publication_gate","notes"
+"001","VERIFIED_REPO_FILE","public/brand/apac/apac-award.png","existing promo","Announcement","Inspect and confirm content/rights","Check dimensions, crop and attribution"
+"002","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-context-chip.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"003","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-context-color.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"004","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-context-dark.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"005","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-context-light.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"006","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-deals-chip.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"007","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-deals-color.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"008","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-deals-dark.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"009","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-deals-light.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"010","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-edgeinsights-chip.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"011","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-edgeinsights-color.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"012","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-edgeinsights-dark.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"013","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-edgeinsights-light.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"014","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-play-chip.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"015","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-play-color.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"016","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-play-dark.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"017","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-play-light.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"018","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-signhub-chip.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"019","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-signhub-color.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"020","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-signhub-dark.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"021","VERIFIED_REPO_FILE","public/brand/cityscreen/cs-signhub-light.svg","platform identity","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"022","VERIFIED_REPO_FILE","public/brand/click-ix-horizontal-black.png","header/footer logo","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"023","VERIFIED_REPO_FILE","public/brand/click-ix-horizontal-white.png","header/footer logo","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"024","VERIFIED_REPO_FILE","public/brand/click-ix-mark-yellow.png","header/footer logo","Asset inventory / editorial review","Use verbatim; verify correct light/dark variant","Check dimensions, crop and attribution"
+"025","VERIFIED_REPO_FILE","public/brand/clients/brandavision.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"026","VERIFIED_REPO_FILE","public/brand/clients/celcomdigi.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"027","VERIFIED_REPO_FILE","public/brand/clients/eraman.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"028","VERIFIED_REPO_FILE","public/brand/clients/kfc.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"029","VERIFIED_REPO_FILE","public/brand/clients/klia-tv.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"030","VERIFIED_REPO_FILE","public/brand/clients/maxis.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"031","VERIFIED_REPO_FILE","public/brand/clients/media-pertiwi.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"032","VERIFIED_REPO_FILE","public/brand/clients/mida.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"033","VERIFIED_REPO_FILE","public/brand/clients/nus.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"034","VERIFIED_REPO_FILE","public/brand/clients/out-of-home.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"035","VERIFIED_REPO_FILE","public/brand/clients/pantai.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"036","VERIFIED_REPO_FILE","public/brand/clients/proton.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"037","VERIFIED_REPO_FILE","public/brand/clients/seni-jaya.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"038","VERIFIED_REPO_FILE","public/brand/clients/shell.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"039","VERIFIED_REPO_FILE","public/brand/clients/sunway-medical-centre.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"040","VERIFIED_REPO_FILE","public/brand/clients/tesco.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"041","VERIFIED_REPO_FILE","public/brand/clients/triumph.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"042","VERIFIED_REPO_FILE","public/brand/clients/watsons.png","client proof row","Client row","Confirm current client trademark/publication approval","Already in src/lib/clients.ts if listed; do not modify logo"
+"043","VERIFIED_REPO_FILE","public/fonts/OFL-Archivo.txt","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"044","VERIFIED_REPO_FILE","public/fonts/OFL-IBM-Plex-Mono.txt","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"045","VERIFIED_REPO_FILE","public/fonts/README.md","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"046","VERIFIED_REPO_FILE","public/fonts/archivo-latin-var.woff2","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"047","VERIFIED_REPO_FILE","public/fonts/ibm-plex-mono-400-latin.woff2","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"048","VERIFIED_REPO_FILE","public/fonts/ibm-plex-mono-500-latin.woff2","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"049","VERIFIED_REPO_FILE","public/fonts/poppins-400-latin.woff2","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"050","VERIFIED_REPO_FILE","public/fonts/poppins-500-latin.woff2","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"051","VERIFIED_REPO_FILE","public/fonts/poppins-600-latin.woff2","existing type system","Global","Preserve license and font fallback","Check dimensions, crop and attribution"
+"052","VERIFIED_REPO_FILE","public/media/building-led.jpg","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"053","VERIFIED_REPO_FILE","public/media/cheras-mall.jpg","photography/film for editorial chapters","Case archive","Confirm image rights, client and advertiser permissions","Listed in src/lib/content.ts for Cheras project"
+"054","VERIFIED_REPO_FILE","public/media/frame.html","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","HTML reference, not an image to embed"
+"055","VERIFIED_REPO_FILE","public/media/hero-poster.jpg","photography/film for editorial chapters","Home hero","Confirm image rights, client and advertiser permissions","Current film poster; do not relabel as Pavilion/KLFW"
+"056","VERIFIED_REPO_FILE","public/media/hero.mp4","photography/film for editorial chapters","Home hero","Confirm image rights, client and advertiser permissions","Current hero film; MotoGP KL26 label in HeroCinematic"
+"057","VERIFIED_REPO_FILE","public/media/kpj2-lobby.jpg","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"058","VERIFIED_REPO_FILE","public/media/maxis-screen.jpg","photography/film for editorial chapters","Home/Maxis case","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"059","VERIFIED_REPO_FILE","public/media/maxis-store.jpg","photography/film for editorial chapters","Home/Maxis case","Confirm image rights, client and advertiser permissions","Listed in src/lib/content.ts for Maxis project"
+"060","VERIFIED_REPO_FILE","public/media/outdoor-network.png","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"061","VERIFIED_REPO_FILE","public/media/outdoor-street.jpg","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"062","VERIFIED_REPO_FILE","public/media/seam/cheras.jpg","photography/film for editorial chapters","Case archive","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"063","VERIFIED_REPO_FILE","public/media/seam/cubig.jpg","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"064","VERIFIED_REPO_FILE","public/media/seam/kpj2.jpg","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"065","VERIFIED_REPO_FILE","public/media/seam/maxis.jpg","photography/film for editorial chapters","Asset inventory / editorial review","Confirm image rights, client and advertiser permissions","Check dimensions, crop and attribution"
+"066","VERIFIED_REPO_FILE","public/media/studies/campaign-01-signal.svg","illustrative graphic only","Asset inventory / editorial review","Label illustrative; not software screenshot","Check dimensions, crop and attribution"
+"067","VERIFIED_REPO_FILE","public/media/studies/campaign-02-form.svg","illustrative graphic only","Asset inventory / editorial review","Label illustrative; not software screenshot","Check dimensions, crop and attribution"
+"068","VERIFIED_REPO_FILE","public/media/studies/campaign-03-flow.svg","illustrative graphic only","Asset inventory / editorial review","Label illustrative; not software screenshot","Check dimensions, crop and attribution"
+"069","VERIFIED_REPO_FILE","public/media/studies/pixel-corner.svg","illustrative graphic only","Asset inventory / editorial review","Label illustrative; not software screenshot","Check dimensions, crop and attribution"
+"070","VERIFIED_REPO_FILE","public/media/studies/pixel-reveal-cluster.svg","illustrative graphic only","Asset inventory / editorial review","Label illustrative; not software screenshot","Check dimensions, crop and attribution"
+"REFERENCE_IMAGE","NOT_VERIFIED_IN_REPO","Provided in chat: CLICK IX_ Immersive Screen Networks.png","Exact visual composition reference","All three templates","Attach to OpenCode; not a site asset","Composite board is not an authorized logo/product screenshot source"
+"CS_PLAY_REAL_UI","NOT_VERIFIED_IN_REPO","Approved screenshot of CS Play screens/inventory","Product proof","CS Play","Product owner approval and sanitization","Not verified present in public/media or public/brand"
+"CS_PLAY_SCHEDULE","NOT_VERIFIED_IN_REPO","Approved CS Play scheduling screenshot","Feature proof","CS Play","Product owner approval and privacy review","Not verified present"
+"CS_PLAY_REPORT","NOT_VERIFIED_IN_REPO","Approved proof-of-play/reporting example with safe data","Evidence proof","CS Play","Product owner approval and redaction","Not verified present; no fabricated stats"
+"MAXIS_GALLERY","NOT_VERIFIED_IN_REPO","Additional original Maxis deployment photographs","Case photo gallery","Maxis case","Customer and advertiser image approval","Only use existing photos until provided"
+"CHERAS_GALLERY","NOT_VERIFIED_IN_REPO","Additional Cheras LeisureMall installation photos","Case gallery","Case studies","Customer/media approval","Not verified beyond existing single photo"
+"INSIGHT_ARTICLES","NOT_VERIFIED_IN_REPO","Approved insights article text/images/date/URLs","Insights cards","Home","Editorial approval and real route","No verified published Insights route; omit until real"
+"CLIENT_MARK_CHERAS","NOT_VERIFIED_IN_REPO","Official Cheras LeisureMall mark","Client row","Home","Obtain permitted logo","No matching file under public/brand/clients"
+"CLIENT_MARK_ROLLTI","NOT_VERIFIED_IN_REPO","Official Rollti mark","Client row","Home","Obtain permitted logo","No matching file under public/brand/clients"
+"CLIENT_MARK_BIG_TREE","NOT_VERIFIED_IN_REPO","Official Big Tree Outdoor mark","Client row","Home","Obtain permitted logo","No matching file under public/brand/clients"
+"CLIENT_MARK_KPJ","NOT_VERIFIED_IN_REPO","Official KPJ mark","Client row","Home","Obtain permitted logo","No matching file under public/brand/clients"
+"CLIENT_MARK_LOREAL","NOT_VERIFIED_IN_REPO","Official L'Oréal mark","Client row","Home","Obtain permitted logo","No matching file under public/brand/clients"
+"CITYSCREEN_MASTER","NOT_VERIFIED_IN_REPO","Official City Screen standalone lockup if required","Promo/platform reference","Optional","Obtain official asset","Do not synthesize from product marks"
+
+
+
+================================================================================
+C | Home, CS Play and Maxis copy deck
+SOURCE FILE: 03_READY_COPY_DECK.md
+================================================================================
+
+# C — READY-TO-IMPLEMENT COPY DECK
+## CLICK IX | Home / CS Play / Maxis retail-network chapter | 16 November 2026
+
+This is the editorial draft for the design reference board. It is NOT a claim that any new wording, client material, software capability or case result has been approved for public release.
+
+**Truth source:** src/lib/content.ts, src/lib/routes.ts, src/lib/contact.ts and existing page components on main.
+**Statuses:** [EXISTING] worded or closely paraphrased from the published repository; [PROPOSED] art-directed copy requiring editorial review; [APPROVAL] client/product clearance required; [OMIT UNTIL SUPPLIED] do not show placeholders.
+**Implementation rule:** Make src/lib/content.ts the canonical data source; do not scatter company facts through JSX. Use these proposed strings to update appropriate copy objects only after review.
+
+---
+
+# PAGE 1 — HOME (/)
+
+## 01 Announcement [EXISTING]
+Text: Click iX presents City Screen in APAC
+Action: Visit page
+Link: Existing PromoBar.tsx external link (do not replace with a made-up destination)
+Visual: Existing supplied APAC award asset. Do not redraw either mark.
+
+## 02 Main navigation [EXISTING]
+Brand: official image from /brand/click-ix-horizontal-black.png or white variant, selected for contrast.
+Menus: derive from src/lib/navigation.ts and src/lib/routes.ts.
+CTA: Get a quote -> existing mailto('Quote').
+
+## 03 Hero [EXISTING primary, PROPOSED presentation]
+Brand eyebrow/subline: Immersive experience
+Headline:
+Smarter Screen.
+Smarter Business.
+Supporting copy:
+The software that runs, sells and proves digital screen networks — and the displays, players and installation that carry it. One team, Kuala Lumpur.
+Primary CTA: Explore our services -> /our-services/
+Secondary CTA: See the work -> /case-studies/
+Utility scope labels: Screens / Players / Software / Measurement
+Primary visual: /media/hero.mp4 with /media/hero-poster.jpg.
+Caption: Installation film · MotoGP KL26 launch (existing component label).
+Note: This real film is *not* the KL Fashion Week/Pavilion mockup image from the reference board. Do not change its identity. Preserve the existing PixelMark / HeroCinematic direction unless modifying the hero has been approved.
+
+## 04 Capability statement [PROPOSED]
+Eyebrow: ONE CONNECTED DELIVERY TEAM
+Heading: One partner for your screen network.
+Paragraph:
+CLICK IX brings physical displays, media players, software, content and measurement into one delivery conversation.
+Capabilities:
+- Hardware — Screens and media players.
+- Software — Platforms for content and operations.
+- Installation — Deployment and configuration.
+- Content — Publishing and campaign scheduling.
+- Measurement — Reporting and audience insights.
+Small note: Distinguish service scope from product licensing; do not imply every capability is bundled in every contract.
+CTA: Explore our services -> /our-services/
+
+## 05 Connected ecosystem [PROPOSED layout, EXISTING offering taxonomy]
+Eyebrow: THE SYSTEM BEHIND THE SCREEN
+Heading: More than the display.
+Supporting paragraph:
+The screen is what audiences see. Behind it sit the systems for bookings, scheduling, content delivery and evidence.
+Choose a chapter to inspect the physical screen, the operating workflow and the reporting layer.
+Selectable chapter names:
+01 / The physical network
+   One deployment, with the hardware and players that bring content to the screen.
+02 / Content operations
+   The software that manages what plays, where and when.
+03 / Evidence and measurement
+   Playback records and measurement support campaign reporting.
+Caption rules:
+- Image of a real installation: identify actual documented project.
+- Screenshot of real software: name version/screen only when verified, redact account/client data.
+- Conceptual diagram: label "Illustrative workflow, not a live system screenshot."
+Primary CTA: Explore our software -> /software/
+
+## 06 Software ecosystem [EXISTING product roles, PROPOSED section copy]
+Eyebrow: THE CLICK IX STACK
+Heading: Different jobs. One connected operation.
+Intro:
+Explore the products used across commercial operations, content delivery, programmatic media and measurement.
+Main products:
+- CS Deals — Media owner ERP and CRM.
+- CS Play — CMS for billboards and large-format screens.
+- CS Play SSN — CMS for indoor small-screen networks.
+- CS Sign Hub — CMS for in-house, non-advertising screens.
+Supporting:
+- OmniBuy DSP — Programmatic planning and buying.
+- CS Context — Supply-side inventory management.
+- Measurement — Audience measurement and campaign evidence.
+- Data Partnerships — Third-party data and activation; current partners and claims need verification.
+Use exact source capabilities from src/lib/content.ts for any further expansion.
+CTA: Compare the products -> /software/
+Visual: Existing official marks in /brand/cityscreen; if missing a specific logo, set the name as text without impersonating a trademark.
+
+## 07 Delivery process [EXISTING sourced stages]
+Eyebrow: HOW DELIVERY WORKS
+Heading: From the first screen audit to ongoing support.
+Lead:
+Plan a deployment around the estate that exists, its technical requirements and the operational work that follows.
+Ordered stages:
+01 Discovery & audit
+   Capture each screen, player, controller and resolution.
+02 Compatibility & design
+   Establish what can remain, what must change and how the network should be structured.
+03 Pilot
+   Validate the proposed workflow at a first site.
+04 Rollout & support
+   Extend the installation in phases and define ongoing support.
+CTA: See our process -> /our-process/
+Note: This is an editorial summary of deliverySteps; do not imply a fixed SLA, timeline or scope for every customer.
+
+## 08 Real deployments [EXISTING project inventory]
+Eyebrow: SELECTED WORK
+Heading: Real screens. Real installations.
+Paragraph:
+Explore documented work across retail environments, malls, outdoor LED and healthcare.
+Featured story A:
+Client: Maxis
+Title: Maxis retail network: every screen on one CMS
+Summary:
+A retail screen estate supported through hardware, CMS, content services and queue-system integration.
+Visual: /media/maxis-store.jpg or /media/maxis-screen.jpg; preserve genuine caption.
+Link: /case-studies-retail-malls/#maxis
+Featured story B:
+Client: Cheras LeisureMall
+Title: Cheras LeisureMall: the indoor network, maintained
+Summary:
+Indoor mall screens managed on CS Play SSN with an ongoing maintenance scope described in the source record.
+Visual: /media/cheras-mall.jpg
+Link: /case-studies-retail-malls/#cheras
+CTA: All case studies -> /case-studies/
+Do not invent installation counts, visitor results, performance improvements or testimonials.
+
+## 09 Insights [OMIT UNTIL SUPPLIED]
+The reference board has editorial article cards, but current repo audit did not verify a published Insights route or article data. Do not invent dates, bylines or headlines.
+Approved interim replacement, if desired: a quiet link trio to Products (/software/), Process (/our-process/) and Case Studies (/case-studies/). This is site navigation, not fabricated news.
+
+## 10 Closing contact [EXISTING idea, PROPOSED short edit]
+Heading: Start with your screen list.
+Paragraph:
+Share the locations, screen types, media players and requirements you are working with. We'll begin with a practical conversation about the estate and the next step.
+CTA: Get a quote -> existing mailto('Quote').
+Secondary: See the process -> /our-process/
+Visual: Dark ink band. Optional existing real installation frame; no stock/generated city image.
+
+---
+
+# PAGE 2 — CS PLAY PRODUCT (/cs-play/)
+
+## 01 Product hero [PROPOSED]
+Official mark: existing /brand/cityscreen/cs-play-light.svg or tone-appropriate variant through ProductMark.
+Eyebrow: PRODUCT / CS PLAY
+Heading: Run your large-format screens with confidence.
+Description:
+CS Play is CLICK IX's content management platform for billboards and large-format digital screens. It supports campaign scheduling, remote content delivery and proof-of-play reporting.
+Primary CTA: Start a review -> existing mailto('Product enquiry')
+Secondary CTA: Compare the stack -> /software/
+Visual:
+- Preferred: approved CS Play product screenshot [MISSING FROM VERIFIED PUBLIC ASSET INVENTORY].
+- Fallback: genuine relevant installation photo with no misleading UI overlay.
+- A schematic must be visibly labeled illustrative.
+
+## 02 Anchor navigation [PROPOSED]
+Overview / Scheduling / Playback / Evidence / Screen types / Related work.
+Implement as ordinary anchors first; no JS requirement and no fake feature route.
+
+## 03 Product overview [SOURCE: product id 'cs-play']
+Heading: Scheduling, playback and proof for large-format digital screens.
+Paragraph:
+Organize campaign content, deliver it to supported screens and review playback evidence from the CMS workflow.
+Highlights drawn from sourced product record:
+- Schedule campaigns with day-parting and slot/duration options.
+- Deliver content remotely to individual screens or groups.
+- Review per-screen proof-of-play records for advertiser reporting.
+Status: These capabilities are in content.ts with evidence 'supplied'; product-owner confirmation needed before publishing new emphasis or technical guarantees.
+
+## 04 Scheduling [SOURCE / PROPOSED explanation]
+Eyebrow: 01 / PLAN THE PLAYBACK
+Heading: Place the right content in the right slot.
+Paragraph:
+Schedules can be organized around screen availability, timing and campaign requirements.
+Visual: approved scheduling screenshot, redacted for publication, or no UI artifact. Do not invent a calendar resembling an actual customer account.
+Link: Discuss a deployment -> existing mailto('Product enquiry').
+
+## 05 Playback [SOURCE / PROPOSED explanation]
+Eyebrow: 02 / OPERATE THE NETWORK
+Heading: Keep content delivery under control.
+Paragraph:
+Supported screens can receive campaign content remotely while the operating team reviews delivery and network status.
+Visual: real deployment photo or approved content/playback specimen.
+
+## 06 Proof of play [SOURCE / PROPOSED explanation]
+Eyebrow: 03 / ACCOUNT FOR DELIVERY
+Heading: Playback records belong with the campaign.
+Paragraph:
+Per-screen logs support proof-of-play reporting. Measurement capabilities across the wider CLICK IX ecosystem can add context where deployed.
+Visual: approved redacted report. If not available, present a simple nonnumeric, clearly labeled explanatory workflow; never fabricate figures.
+
+## 07 Supported screen types [EXISTING from platformRows]
+Heading: Where CS Play fits.
+- Roadside billboards and outdoor LED
+- Building facades, atrium and concourse LED
+- Partner- or third-party-operated screens, subject to technical compatibility
+Use the existing platformRows and any relevant product.screens; do not expand supported hardware claims without approval.
+
+## 08 Related ecosystem [EXISTING]
+Heading: The next layer.
+Links:
+- CS Play SSN -> /cs-play-ssn/
+- CS Deals -> /cs-deals/
+- CS Context -> /cs-context/
+Copy source: src/lib/content.ts and ProductDetail RELATED registry.
+Reminder: CS Sign Hub is a distinct product for in-house screens; don't conflate it with CS Play.
+
+## 09 Related work [EXISTING]
+Heading: Where it is running.
+Reference the exact case studies whose systems include CS Play.
+For the Maxis retail network, use the current anchored case link.
+Use project descriptions from content.ts; no invented metrics.
+
+## 10 Contact [EXISTING]
+Heading: Put your screens on it.
+CTA: Start a review -> existing mailto('Product enquiry')
+Secondary CTA: Compare the stack -> /software/
+
+---
+
+# PAGE 3 — MAXIS RETAIL NETWORK (existing anchored article)
+
+Route: /case-studies-retail-malls/#maxis
+Source: src/lib/content.ts → caseStudies entry id='maxis'
+Editorial status: source supplied, client and publication approval must be checked.
+
+## 01 Case opener [SOURCE]
+Eyebrow: CASE STUDY / RETAIL & ENTERPRISE
+Client: Maxis
+Headline: Maxis retail network: every screen on one CMS
+Subheadline [PROPOSED]:
+Digital screens, queue displays and LED supported through one coordinated deployment and content workflow.
+Image: /media/maxis-store.jpg
+Alternative: /media/maxis-screen.jpg (inspect suitability).
+Alt text as supplied: Hanging LED screen above a Maxis MC+ store display.
+Do not use an imagined Maxis storefront hero generated by AI.
+
+## 02 Project context [SOURCE]
+Heading: The requirement.
+Copy:
+Maxis needed an end-to-end solution for digital screens, queue displays and LED across its Maxis Centres, enterprise partners and dealerships, with the estate managed through one CMS.
+
+## 03 Scope [SOURCE]
+Heading: What CLICK IX delivered.
+Use actual bullet facts from caseStudies[maxis].did:
+- LED designed to fit the pillars and walls of six MC+ flagship stores, coordinated with store-opening timelines.
+- CMS and content services across the retail estate.
+- Integration with queue systems so live queue information could appear with content.
+- Media player supply and maintenance, including installation and cabling.
+- A single-player and license configuration for the KLCC dual-sided LED.
+Publication: all scope statements require customer approval as documented in original source notes.
+
+## 04 Systems [SOURCE]
+Heading: Systems involved.
+- CS Play
+- LED
+- Media players
+- Queue integration
+Do not claim unsupported product integrations beyond these.
+
+## 05 Project location [SOURCE]
+Heading: Where it operates.
+Copy:
+The documented project includes Maxis Centres, enterprise partners and dealerships, with MC+ flagship examples including KLCC, Sunway Pyramid, The Gardens, Queensbay, Taman Molek and TRX.
+No exact address map is needed without validated individual site records.
+
+## 06 Why it matters [SOURCE, NO INVENTED KPI]
+Heading: One partner across the screen estate.
+Copy:
+The project combines hardware, installation, CMS and queue integration under a coordinated delivery scope.
+Do not turn this into a quantified claim about engagement, sales lift or reliability.
+
+## 07 Supporting media [EXISTING/MISSING]
+Use /media/maxis-store.jpg and /media/maxis-screen.jpg.
+If additional photos are not approved, use a two-image editorial arrangement or a single hero. Do not manufacture image variety by AI-recreating a store or inventing a before-and-after comparison.
+
+## 08 Related work and CTA [EXISTING routes]
+CTA: See retail & enterprise work -> /case-studies-retail-malls/
+Secondary: All case studies -> /case-studies/
+Final CTA: Get a quote -> existing mailto('Quote').
+
+---
+
+# OPTIONAL ALTERNATE — CHERAS LEISUREMALL
+Use if visual quality or client approval makes it a better case than Maxis.
+Route: /case-studies-retail-malls/#cheras
+Title: Cheras LeisureMall: the indoor network, maintained.
+Source 'brief': the indoor mall screen network needed ongoing operation and maintenance, not simply installation.
+Source 'did': mall screens on CS Play SSN; annual SLA for monitoring, support and software updates; a further 12-month term noted from October 2026.
+Source 'why': continued monitoring, support and software updates.
+Photo: /media/cheras-mall.jpg.
+No fabricated campaign performance or attendance numbers.
+
+---
+
+# GLOBAL MICROCOPY
+
+Navigation CTA: Get a quote (do not say Get a Demo unless there is a real process).
+Breadcrumb: Case Studies / Retail & Enterprise / Maxis.
+Image caption: identify actual installation, never fictional venue.
+Interface caption: "Illustrative workflow — not a live customer dashboard" for any conceptual visual.
+Error/empty state: "No approved visual is available for this section." (use only during editorial staging; for public site omit the visual instead).
+Footer CTA: "Talk through your screen requirements."
+
+# APPROVAL AND CONTENT GATES
+
+- The repository product taxonomy is sourced from the supplied 2026 company materials, but evidence='supplied' in src/lib/content.ts is not the same as company publication approval.
+- Real photos and client trademarks already tracked in the repo still need appropriate customer/advertiser rights checks.
+- Do not fabricate article lists to match the board's Insights area.
+- Do not invent CS Play screenshots or data.
+- Do not invent a dedicated case-study slug route without route policy approval.
+- Keep factual data in src/lib/content.ts; ensure layout copy uses that source or an approved extension to it.
+
+
+
+================================================================================
+Asset pack builder | PowerShell 5.1
+SOURCE FILE: 04_BUILD_ASSET_PACK.ps1
+================================================================================
+
+# STEP 1 ASSET PACK BUILDER
+# Run from Windows PowerShell 5.1+ inside the repository clone.
+# This copies only existing image/video/brand assets; no fonts, secrets or .env files.
+# It does NOT download, generate, alter or approve third-party logos or project photos.
+
+$ErrorActionPreference = 'Stop'
+$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
+$OutDir = Join-Path $RepoRoot 'CLICK_IX_one_shot_assets'
+$ZipPath = Join-Path $RepoRoot 'CLICK_IX_one_shot_assets.zip'
+New-Item -Path $OutDir -ItemType Directory -Force | Out-Null
+
+$SourceFiles = @(
+    'public\brand\click-ix-horizontal-black.png',
+    'public\brand\click-ix-horizontal-white.png',
+    'public\brand\click-ix-mark-yellow.png',
+    'public\brand\apac\apac-award.png',
+    'public\brand\cityscreen\cs-play-light.svg',
+    'public\brand\cityscreen\cs-play-dark.svg',
+    'public\brand\cityscreen\cs-play-color.svg',
+    'public\brand\cityscreen\cs-play-chip.svg',
+    'public\brand\cityscreen\cs-deals-light.svg',
+    'public\brand\cityscreen\cs-deals-dark.svg',
+    'public\brand\cityscreen\cs-signhub-light.svg',
+    'public\brand\cityscreen\cs-context-light.svg',
+    'public\brand\cityscreen\cs-edgeinsights-light.svg',
+    'public\brand\clients\maxis.png',
+    'public\brand\clients\triumph.png',
+    'public\brand\clients\pantai.png',
+    'public\media\hero.mp4',
+    'public\media\hero-poster.jpg',
+    'public\media\maxis-store.jpg',
+    'public\media\maxis-screen.jpg',
+    'public\media\cheras-mall.jpg',
+    'public\media\building-led.jpg',
+    'public\media\outdoor-street.jpg',
+    'public\media\outdoor-network.png',
+    'public\media\kpj2-lobby.jpg',
+    'public\media\seam\maxis.jpg',
+    'public\media\seam\cheras.jpg',
+    'public\media\seam\cubig.jpg',
+    'public\media\seam\kpj2.jpg'
+)
+
+$Copied = 0
+$Missing = @()
+foreach ($Relative in $SourceFiles) {
+    $Source = Join-Path $RepoRoot $Relative
+    if (-not (Test-Path -LiteralPath $Source -PathType Leaf)) {
+        $Missing += $Relative
+        continue
+    }
+    $Destination = Join-Path $OutDir $Relative
+    $Parent = Split-Path -Path $Destination -Parent
+    New-Item -Path $Parent -ItemType Directory -Force | Out-Null
+    Copy-Item -LiteralPath $Source -Destination $Destination -Force
+    $Copied++
+}
+
+$Readme = @'
+CLICK IX REFERENCE-BOARD ASSET PACK
+Source: the local repository at pakyad/click-ix-redesign.
+This is a curated copy of EXISTING visual files only. It contains no fonts, credentials or secrets.
+
+IMPORTANT:
+- All CLICK IX and CityScreen marks must be used unchanged.
+- Client logos and deployment photos require publication/advertiser approvals.
+- The hero film/poster is the MotoGP KL26 project; do not relabel it as Pavilion KLFW.
+- This pack does not contain a verified real CS Play scheduling/reporting screenshot.
+- This pack does not include the chat-attached reference-board image: supply it separately.
+- Additional project photographs must not be invented.
+- Inspect 02_ASSET_MANIFEST.csv for the full verified inventory and outstanding gaps.
+'@
+Set-Content -Path (Join-Path $OutDir 'README_ASSETS.txt') -Value $Readme -Encoding UTF8
+
+if (Test-Path -LiteralPath $ZipPath) { Remove-Item -LiteralPath $ZipPath -Force }
+Compress-Archive -Path (Join-Path $OutDir '*') -DestinationPath $ZipPath -CompressionLevel Optimal
+
+Write-Host "Existing files copied: $Copied"
+Write-Host "Asset folder: $OutDir"
+Write-Host "ZIP created: $ZipPath"
+if ($Missing.Count -gt 0) {
+    Write-Warning "Missing files:"
+    $Missing | ForEach-Object { Write-Warning $_ }
+}
+
+
+----- END OF FULL HANDOFF -----
