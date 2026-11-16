@@ -132,4 +132,164 @@ Motion matching / Match cut | Scenes align around visual object | Continuity | F
 
 FLIP is for 2D position/size changes; 3D Coverflow is separate. For CLICK IX: Mechanical Sequencing as grammar, Stepped Easing for the pixel hero, FLIP once in the system story. Reject global Magnetic/Elastic/Velocity Skew.
 
------ END OF FIRST TEXT SECTION; D1 CONTINUES BELOW -----
+D1.5 MATERIAL AND SURFACE DEVICES
+
+Dithering / Error diffusion | Limited-palette pixels represent gradients | Digital imaging | Pixel studies | Preprocess/shader | P1/E2 static, P4/E4 dynamic | R,S | Medium | https://tympanus.net/codrops/
+Halftone / Printed dot screen | Dot sizes reproduce tones | Print | Editorial artwork | Pre-render/SVG pattern | P1/E2 | S | Medium | https://www.pentagram.com/work
+Dot matrix / LED-cell raster | Addressable dots form images/letters | Digital signage | Hero | Canvas/DOM cell grid | P3/E3 (DOM count) | R,S | Low if authentic | https://tympanus.net/codrops/
+Scanline / Raster-line overlay | Thin horizontal lines evoke electronic scans | Digital display | Illustration | Repeating-linear-gradient | P1/E1 | S | High decorative | https://tympanus.net/codrops/
+Film grain / Noise texture | Subtle tonal variation adds photography texture | Materiality | Cinematic backdrop | Optimized static overlay | P1/E2 | S | Medium | https://www.aesop.com/
+Duotone / Two-ink treatment | Image remapped to two colors | Graphic coherence | Selected photos | Offline image process/CSS filter | P1/E2 | S | Medium | https://www.pentagram.com/work
+Blend modes / Compositing | Layers use color-mixing rules | Integration | Art | mix-blend-mode | P2/E3 (contrast QA) | S | Medium | https://tympanus.net/codrops/
+Chromatic aberration / RGB split | Color channels separated slightly | Optical imperfection | Experimental transition | Shader/pre-render | P3/E3 | R,S | High | https://tympanus.net/codrops/
+Glitch / Digital corruption | Image fragments/misaligns briefly | Instability | Experimental campaign | CSS slices/SVG/shader | P2/E3 (flashing risk) | R,S | Very high | https://tympanus.net/codrops/
+Pixel sorting / Directional pixel displacement | Pixels reorder according to brightness/color | Abstraction | Experiment | Offline processing/WebGL | P1/E3 static, P4/E5 live | R,S | High | https://tympanus.net/codrops/
+ASCII rendering / Character raster | Image represented using text characters | Retro computing | Technical interlude | Pre-render/canvas | P2/E3 | S,D | High | https://tympanus.net/codrops/
+Displacement mapping / Image distortion | A texture offsets an image's pixels | Refraction | Experimental hero | feDisplacementMap/WebGL | P3/E4 | R,S | High | https://tympanus.net/codrops/
+WebGL fragment shader / Shader effect | GPU computes each pixel | Real-time systems | Experimental chapter | WebGL/Three.js/OGL | P4/E5 | R,F,S | High purposeless | https://science.nasa.gov/eyes/
+Mesh gradient / Multi-point gradient | Soft blended color fields | Atmosphere | Rare backdrop | CSS/canvas | P1/E2 CSS, P3/E4 animated | R,S | Very high generic SaaS | https://stripe.com/
+Glassmorphism / Frosted glass | Translucent blur panel | Layering | Rare overlay | backdrop-filter blur | P3/E2 (backdrop cost) | S, solid fallback | High | https://www.apple.com/my/macbook-pro/
+Neumorphism / Soft UI | Shadows emboss a UI surface | Soft tactility | Avoid for controls | Multiple box-shadow | P2/E2, contrast problem | S, visible outlines | Very high | https://tympanus.net/codrops/
+Directional motion blur / Panning blur | Horizontal streaking implies movement | Speed, immersion | Approved film/footer | Offline image/video shutter | P1/E2 static, P3/E4 live | R,F | Medium | https://www.apple.com/my/macbook-pro/
+Posterization / Tonal quantization | Deliberately reduce number of tones | Digital translation | Pixel transition | Preprocess/shader | P1/E2 static | S | Medium | https://tympanus.net/codrops/
+
+CLICK IX JUDGMENT: Dot Matrix for existing hero, optional Dithering for one technical illustration and Directional Motion Blur from an approved real film still are relevant. Do not stack glitch, scanline, grain, aberration and pixel sorting on the same image.
+
+D1.6 IMAGE, VIDEO AND SPATIAL MEDIA
+
+Cinemagraph / Living photograph | Most image still, one region loops | Focused atmosphere | Closing film | Edited WebM/MP4 | P2/E3 | F,S | Medium | https://www.apple.com/my/macbook-pro/
+Ambient loop / Background video | Muted footage supports composition | Place/activity | Hero only | HTML video with poster/control | P3/E3 | F,S | Medium | https://www.apple.com/my/macbook-pro/
+Scroll-scrubbed video / Scroll-linked playback | Scroll controls video frame | Transformation | Experimental | video currentTime / sequence | P4/E5 (seeking) | P,F | High | https://tympanus.net/codrops/
+Canvas image sequence / Frame sequence | Prepared stills drawn in progression | Physical motion | Experimental reveal | Canvas 2D frame preloads | P4/E5 (memory) | P,F,S | Medium | https://www.apple.com/my/macbook-pro/
+Sprite-sheet scrub / Atlas animation | Frames packed into a sheet | Short sequence | Pixel/icon | CSS background-position / canvas | P2/E4 | R,S | Medium | https://tympanus.net/codrops/
+Before/after slider / Image comparison | Control reveals difference between photos | Transformation | Installation case | Clip images, range input | P1/E3 | U,S, both displayed | Low | https://tympanus.net/codrops/
+360-degree product viewer / Spin viewer | User rotates real hardware using photos | Hardware inspection | Hardware | Photo sequence | P3/E4 | U,S, static views | Medium | https://science.nasa.gov/eyes/
+3D model viewer / GLB viewer | Inspect genuine 3D model | Physicality | Hardware only | model-viewer | P4/E4 | U,S poster/spec | Medium | https://modelviewer.dev/
+Cursor image trail / Mouse trail | Images follow pointer | Exploration | Experimental gallery | Pointer events/layers | P3/E3 | R,S | Very high | https://tympanus.net/codrops/
+Hover pan/zoom / Ken Burns interaction | Subtle photo reframing | Inspection | Cases | object-position/transform | P1/E2 | R,U, full image available | Medium | https://www.pentagram.com/work
+Duotone-on-hover / Color reveal | Treated image returns to original color | Discovery | Gallery | Prepared versions / CSS filter | P2/E2 | R,U | Medium | https://www.pentagram.com/work
+Match-cut transition / Graphic match | Align visual object between shots | Continuity | Film→case | Edit/FLIP/matching crop | P2/E4 | F,S | Low | https://www.apple.com/my/macbook-pro/
+Rack-focus simulation / Depth-of-field reveal | Blurry surface sharpens | Attention | Interlude | Pre-rendered blurred image/filter | P2/E3 | R,S sharp final | Medium | https://tympanus.net/codrops/
+Parallax photograph / Layered photographic depth | Foreground and backdrop move at different speeds | Dimension | Experimental | Cutouts/transforms | P3/E4 | R,S | High | https://tympanus.net/codrops/
+Poster-frame art direction | Selected still represents entire film | Credibility | Hero, mobile | video poster/optimized image | P1/E2 | F,S | Low | https://www.apple.com/my/macbook-pro/
+
+ENGINEERING NOTE: Canvas sequence costs downloads, decode and memory; current Click iX installation footage benefits more from optimized poster plus accessible native video. 3D model viewer requires genuine approved model assets.
+
+D1.7 INTERACTION PATTERNS
+
+Tabs / Tabbed interface | Switch related views | Control | Product | Semantic tabs/buttons | P1/E2 | S,U | Low | https://design-system.service.gov.uk/components/
+Stepper / Multi-stage navigation | Navigate a defined process | Predictability | Sell→Schedule→Play | React state / ordered controls | P1/E3 | S,U | Low | https://service-manual.ons.gov.uk/design-system/components
+Accordion / Progressive disclosure | Expand details as needed | Focus | FAQ/specifications | Native details or accessible disclosure | P1/E1 | S,U | Low | https://design-system.service.gov.uk/components/
+Draggable rail / Drag-scroll carousel | Move gallery sideways | Exploration | Cases | Pointer/native overflow | P2/E3 | S,U | Medium | https://tympanus.net/codrops/
+Coverflow / 3D cover carousel | Selected card prominent, neighbors recede | Focus | Product viewer | CSS perspective/transforms | P3/E4 | R,S,U | High exaggerated | https://tympanus.net/codrops/2024/03/06/on-scroll-3d-stack-motion-effect/
+Arc carousel / Radial carousel | Cards follow curved spatial path | Sequence, depth | Existing product layers | GSAP arc timeline | P3/E4 | P,S,U | Medium | https://tympanus.net/codrops/2024/03/06/on-scroll-3d-stack-motion-effect/
+Ring carousel / Circular carousel | Items orbit circular track | Circularity | Experiment only | Trigonometry+transforms | P3/E5 | R,S,U | High | https://tympanus.net/codrops/
+Infinite carousel / Seamless loop | Gallery wraps around | Continuity | Optional media | GSAP/native loop | P2/E4 | R,S,U | High autoplay | https://tympanus.net/codrops/
+Product configurator / Guided configuration | Buyer specifies inputs and sees suitable setup | Fit | Hardware/services | React+verified business rules | P2/E5 | S,U | Low | https://www.apple.com/my/shop/buy-mac/macbook-pro
+Estimator / Calculator | Estimated outcome from stated assumptions | Decision support | Sales | Local React math | P1/E4 | S,U | High invented rates | https://stripe.com/en-my/payments/elements
+Interactive map / Pin map | Projects plotted geographically | Reach | Cases | SVG/map library | P2–4/E4 | M,S,U | High fake sites | https://science.nasa.gov/eyes/
+Filterable index / Faceted catalogue | Narrow by sector/capability | Control | Cases/software | Native controls/URL search | P1/E3 | S,U | Low | https://www.pentagram.com/work
+Comparison table / Feature matrix | Evaluate products against criteria | Clarity | Software/hardware | Semantic table | P1/E3 | S,D | Low | https://design-system.service.gov.uk/components/
+Decision tree / Guided selector | Answers lead to relevant product/service | Guidance | Finder | React state + approved rules | P1/E4 | S,U | Medium | https://design-system.service.gov.uk/
+Progress-gated narrative / Step-gated story | Next chapter unlocks after action | Discovery | Experimental demo | State machine + next/back | P2/E4 | S,U, all content accessible | High when compulsory | https://science.nasa.gov/eyes/
+Hotspot diagram / Interactive annotation | Select diagram region for explanation | Technical clarity | LED/controller | SVG hotspots+list | P1/E3 | S,U | Low | https://science.nasa.gov/eyes/
+Master-detail interface / Index and viewer | Index chooses large visible artifact | Focus | System layers | Grid+React selection | P1/E3 | S,U | Low | https://www.serko.ai/platform
+Command palette / Quick navigation | Searchable keyboard actions | Repeat-user speed | Software app, not marketing | Dialog/search | P2/E4 | S,U | Medium | https://linear.app/features
+Persistent contextual navigation / Section index | Jump between page chapters | Orientation | Long product | Sticky anchor nav | P1/E3 | S,U | Low | https://design-system.service.gov.uk/components/
+Accessible disclosure / Details panel | Secondary content available on request | Information control | Technical specs | Native details | P1/E1 | S,U | Low | https://design-system.service.gov.uk/components/
+
+CAROUSEL DIAGNOSIS: Current Arc Carousel is a navigation mechanic, not narrative. Combine Master-detail Interface + Stepper + Mechanical Sequencing + Shared-element Transition. Sequence: (1) physical screen and real company photo; (2) content operations with approved screenshot; (3) evidence and measurement with approved report or labelled schematic. Keep direct controls and mobile fallback.
+
+D1.8 TYPOGRAPHY DEVICES
+
+Display type scale / Fluid typography | Sizes follow hierarchy | Confidence | Global | clamp()/tokens | P1/E2 | S | Low | https://www.apple.com/my/macbook-pro/
+Mixed type families / Typeface pairing | Families differentiate function | Editorial identity | Typography | Grotesk + selective mono | P1/E2 | S | Medium | https://www.pentagram.com/work
+Variable-font axis animation | Font weight/width changes over time | Adaptability | Brand moment | font-variation-settings | P2/E3 | R,S | Medium | https://tympanus.net/codrops/
+Kinetic typography / Motion type | Words move to communicate | Energy | Hero | CSS/GSAP | P2/E3 | R,S | High repeated | https://tympanus.net/codrops/
+Split-text stagger / Character animation | Words/letters enter sequentially | Reveal | Short heading | GSAP/accessible semantic text | P2/E3 | R,S | High | https://tympanus.net/codrops/
+Text scramble / Decode | Random chars resolve to text | Computation | Technical detail | JS with preserved accessible text | P2/E3 | R,S | Very high | https://tympanus.net/codrops/
+Typewriter effect / Character-by-character | Text appears incrementally | Machine output | Demo | steps()/JS | P1/E2 | R,S | High | https://tympanus.net/codrops/
+Outline typography / Stroke type | Letters outlined rather than filled | Graphic scale | Poster-like heading | text-stroke with fill fallback | P1/E2 | S | Medium | https://www.pentagram.com/work
+Oversized numerals / Numeric anchors | Large numbers structure content | Scale/sequence | Verified stats/chapters | Fluid number scale | P1/E2 | S,D | High decorative | https://reutersagency.com/content/content-types/graphics/
+Running heads / Marginal headings | Editorial labels repeat chapter context | Orientation | Cases | CSS margin labels | P1/E2 | S | Medium | https://www.pentagram.com/work
+Hanging punctuation | Punctuation aligns beyond text edge | Typesetting precision | Quotes | CSS optical offset | P1/E2 | S | Low | https://www.aesop.com/
+Optical alignment / Optical centering | Elements aligned by appearance | Craft | Logo, heading, CTA | Manual CSS review | P1/E2 | S | Low | https://www.pentagram.com/work
+Tight display tracking / Negative letter-spacing | Large text becomes cohesive block | Editorial authority | Hero/chapter | CSS letter-spacing | P1/E1 | S | Low | https://www.serko.ai/platform
+Small-cap labels / Eyebrow | Compact labels indicate category | Classification | Section opener | Caps and tracking | P1/E1 | S | High on every object | https://linear.app/features
+Tabular numerals / Monospaced figures | Digits align across columns | Precision | Tables | font-variant-numeric | P1/E1 | S,D | Low | https://reutersagency.com/content/content-types/graphics/
+
+TYPOGRAPHY STARTING SYSTEM (not measurement of current CSS):
+Hero 64–104px desktop, 42–58px mobile; weight 500–600; tracking -0.04em.
+Major chapter 44–76px desktop, 34–48px mobile; weight 500; tracking -0.035em.
+Section headline 28–42px desktop, 26–34px mobile; weight 500–600.
+Lead 18–21px desktop, 16–18px mobile; line-height 1.5–1.6.
+Body 15–17px desktop, 15–16px mobile; line-height 1.55–1.7.
+Technical metadata 11–13px desktop, 11–12px mobile, existing mono only when functional.
+Use existing grotesk as sole primary family. No extra font required.
+
+D1.9 NARRATIVE STRUCTURES
+
+Hero→Proof→Product→CTA | Proposition, credibility, product, action | Buying confidence | Home | Semantic sections | P1/E2 | S | Low | https://stripe.com/en-my/payments/elements
+Problem–Agitate–Solve / PAS | Problem, consequence, solution | Relevance | Services | Copy sequence | P1/E2 | S | Medium exaggerated | https://stripe.com/
+AIDA / Attention–Interest–Desire–Action | Progress toward next step | Persuasion | Campaign | Ordered content | P1/E2 | S | Medium | https://www.apple.com/my/macbook-pro/
+Chaptered narrative / Episodic storytelling | Distinct questions form chapters | Comprehension | Home/product | Anchored sections | P1/E3 | S | Low | https://www.serko.ai/platform
+Proof-first narrative / Evidence before claims | Real deployment precedes description | Trust | Home/cases | Photo and caption | P1/E2 | S | Low | https://www.pentagram.com/work
+Case-study-led narrative | Delivered work proves expertise | Confidence | Cases/services | Case object model | P1/E3 | S | Low | https://www.pentagram.com/work
+One-idea-per-screen / Single-message beat | Each stage communicates one concept | Understanding | Interaction | Controlled states | P1/E3 | S,U | Low | https://www.serko.ai/platform
+Long-form visual essay | Images, diagrams, prose build argument | Depth | Flagship case | Semantic article | P2/E4 | S | Low | https://pudding.cool/
+Index-first catalogue | Choose relevant subject first | Control | Software | Taxonomy/links | P1/E3 | S,U | Low | https://www.pentagram.com/work
+Show the work / Process transparency | Display actual work done | Credibility | Case | Artifacts/timeline/captions | P1/E3 | S | Low | https://reutersagency.com/content/content-types/graphics/
+Before–During–After / Chronological story | Starting state, work, result | Accountability | Case | Three chapters | P1/E2 | S | Low | https://pudding.cool/
+Jobs-to-be-Done narrative / Outcome-led | Start with task customer needs | Relevance | Product | Use-case-first writing | P1/E3 | S | Low | https://linear.app/features
+Progressive disclosure / Layered explanation | Simple explanation before detail | Clarity | Product/FAQ | Chapters/details | P1/E2 | S,U | Low | https://design-system.service.gov.uk/components/
+Objection-handling sequence / Buyer reassurance | Address practical concerns in purchase order | Reduced uncertainty | Product/CTA | Compatibility/support/FAQ | P1/E3 | S | Low | https://stripe.com/
+Problem→System→Evidence / Causal narrative | Situation, method, proof | Confidence | Home/cases | Photos, verified diagrams/reports | P1/E3 | S,D | Low | https://reutersagency.com/content/content-types/graphics/
+Process-before-promise | Explain delivery before claims | Predictability | Services | Stages/roles | P1/E2 | S | Low | https://design-system.service.gov.uk/
+Capability-to-outcome mapping | Features linked to business jobs | Practical value | Product | Feature-to-task table | P1/E3 | S,D | Low | https://linear.app/features
+Audience-specific pathway / Role-based navigation | Paths for different buyers | Relevance | Home/product | Semantic links | P1/E3 | S,U | Medium oversegmented | https://stripe.com/
+
+MARKETING PSYCHOLOGY / BUYER QUESTIONS
+Can they handle it? → competence → genuine deployments/capabilities.
+Will it work in my estate? → compatibility uncertainty → verified requirements.
+Can they manage it afterward? → long-term risk → support scope/monitoring.
+Can they prove delivery? → accountability → actual proof-of-play/report evidence.
+Who is responsible? → ownership clarity → documented process and roles.
+How do I begin? → decision friction → direct CTA with specific requested inputs.
+Do not invent urgency, deployment scale, customer claims, results or figures.
+
+D1.10 ADDITIONAL SYSTEMS
+
+Evidence provenance / Source attribution | Every claim has approved support | Accountability | All pages | Typed content metadata | P1/E4 | S | Low | https://reutersagency.com/content/content-types/graphics/
+Progressive enhancement | Page works before optional JS | Reliability | Global | Server-rendered HTML, client enhancement | P1/E3 | S | Low | https://design-system.service.gov.uk/
+Responsive art direction | Mobile assets properly composed | Care | Photo sections | picture/sizes/crop | P2/E3 | S | Low | https://www.apple.com/my/macbook-pro/
+Intrinsic sizing / Layout stability | Reserve geometry before loading | Stability | Global | aspect ratio/width/height/font preload | P1/E2 | S | Low | https://developer.mozilla.org/
+Semantic visualization | Charts retain values in text | Verifiability | Reporting | SVG+accessible table | P1/E3 | S,D | Low | https://reutersagency.com/content/content-types/graphics/
+State-machine interaction | Explicit states and transitions | Predictability | Demo | React reducer/state model | P1/E4 | S,U | Low | https://rive.app/
+Adaptive motion / Motion budget | Effects simplify for device/preferences | Responsiveness | Global | matchMedia/media queries | P1/E3 | R,P | Low | https://gsap.com/
+Accessible data table | Inspect evidence without graph | Accuracy | Measurement | HTML table | P1/E2 | S,D | Low | https://design-system.service.gov.uk/components/
+Container queries / Component-responsive layout | Adapts to parent width | Robustness | Carousel | @container | P1/E3 | S | Low | https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries
+Poster-first video loading | Show still while video loads appropriately | Perceived speed | Hero | Optimized poster/loading | P1/E3 | F,S | Low | https://www.apple.com/my/macbook-pro/
+
+D1.11 DO-NOT-USE LIST / GENERATED-SITE TELLS
+
+Generic Bento-grid SaaS homepage | Unprioritized feature cards; P1/E2; S; very high cliché | Replace with Chaptered Narrative + Annotated Specimen | https://www.serko.ai/platform
+Glowing 3D orb | Generic AI abstract identity; shader P4/E4; R,S; very high | Documentary Design + Dot Matrix | https://science.nasa.gov/eyes/
+Fabricated floating dashboard | Visual claim without actual product evidence; P2/E3; S; very high | Approved Product Specimen + Evidence Provenance | https://linear.app/features
+Random particle field | Motion without information; Canvas/Three.js P4/E4; R,S; very high | Mechanical Sequencing | https://rive.app/
+Continuous magnetic buttons | Agency-demo interaction; pointer listeners P2/E3; R,U; high | Utility Modernism | https://design-system.service.gov.uk/components/
+Universal scroll reveal | Repeated template behavior; Observer P2/E2; R,S; very high | Quiet Chapter | https://www.aesop.com/
+Multiple competing pinned sequences | Scroll traps; ScrollTrigger P3/E4; P,S; very high | One Scrollytelling chapter + Native Scrolling | https://pudding.cool/
+Autoplay content carousel | Uncontrolled disappearing info; timer P2/E3; U,R; high | Master-detail Interface | https://design-system.service.gov.uk/components/
+Giant decorative numerals | Data-like graphic without meaning; P1/E1; S; high | Real Tabular Numerals or useful chapter indexes | https://reutersagency.com/content/content-types/graphics/
+Gradient-plus-glass everywhere | Generic tech landing page; blur P3/E2; S; very high | Quiet Luxury + Genuine Photography | https://www.aesop.com/
+Meaningless squiggly SVG lines | Simulated connectivity; SVG P1/E2; R,S; high | Annotated Specimen | https://science.nasa.gov/eyes/
+Permanent text scrambling | Reduces readability; JS P2/E3; R,S; high | Mechanical Sequencing | https://linear.app/features
+Endless logo marquee | Weak client evidence hierarchy; CSS translate P2/E2; R,S; high | Curated Documentary Client Work | https://www.pentagram.com/work
+Unmotivated horizontal scroll | Unconventional navigation for no reason; pinned X P3/E4; P,U; high | Native Horizontal Gallery | https://www.pentagram.com/work
+Whole-site smooth scrolling | Complexity in routine reading; Lenis/Locomotive P2/E4; R,S; high | Native Scrolling | https://www.gov.uk/
+All-purpose 3D Coverflow | Decorative cards for unrelated facts; perspective P3/E4; R,S,U; high | Index-first + Shared-element Transition | https://tympanus.net/codrops/
+Artificial urgency / unsupported statistics | Trust and compliance risk; copy P1/E1, verification E5; S,D; very high | Evidence Provenance + Proof-first Narrative | https://reutersagency.com/content/content-types/graphics/
+
+D1 FINAL JUDGMENT: Complexity that explains the service is justified. Complexity that advertises the designer is not. The physical screen, operating software and documented delivery are the right three connected ideas to animate.
+
+----- END D1; D2–D4 CONTINUE BELOW -----
