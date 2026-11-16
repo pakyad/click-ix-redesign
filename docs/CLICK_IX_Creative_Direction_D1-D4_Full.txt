@@ -292,4 +292,494 @@ Artificial urgency / unsupported statistics | Trust and compliance risk; copy P1
 
 D1 FINAL JUDGMENT: Complexity that explains the service is justified. Complexity that advertises the designer is not. The physical screen, operating software and documented delivery are the right three connected ideas to animate.
 
------ END D1; D2–D4 CONTINUE BELOW -----
+=====================================================================
+D2. THREE COHERENT ART DIRECTIONS
+=====================================================================
+
+These are distinct design systems rather than three light SaaS variations. Estimates cover the three representative page templates in D3 using existing repository and Figma, not an entire 25-route rebuild.
+
+COMPARISON
+Direction A: OPERATIONS LEDGER — conservative-excellent; engineering documentation; primary artifact photograph, specification, table; editorial grid/catalogue; minimal direct interactions; low technical risk; very high commercial suitability.
+Direction B: SIGNAL CHAIN — ambitious/shippable; connected physical-to-digital system; primary artifact real installation-to-software transformation; asymmetric stages/shared visual objects; coordinated signature transition; medium risk; very high commercial suitability; RECOMMENDED.
+Direction C: NIGHT TRANSMISSION — experimental; city-scale screen network at night; primary artifact immersive real installation film; full-bleed imagery; scroll-linked spatial sequence; high risk; conditional commercial suitability.
+
+A. OPERATIONS LEDGER — CONSERVATIVE-EXCELLENT
+THESIS: Make every screen, system and deployment understandable enough that procurement and operations teams could use the site as a serious reference.
+
+TYPE: Existing grotesk; hero 52–80px desktop, chapter 36–56px, body 16–18px. Headline tracking about -0.03em; normal body; mono only for functional technical metadata.
+COLORS: Paper #f6f7f9, ink #0b0f14, blue #1d4e7a.
+SURFACES: Paper, white, restrained borders, no decorative translucency.
+GRID: 12-column; mainly 4:8 and 5:7 asymmetry.
+PHOTOGRAPHY: Documentary, authentic full-context installations.
+NAVIGATION: Existing navigation, clear product/case indexes.
+MOTION: Minimal, short editorial transitions or directly user-controlled.
+BUYER BENEFIT: Evidence can be inspected without learning custom interaction.
+
+VISUAL LANGUAGE: Carefully typeset engineering publication. Preserve current installation-film hero; later sections use annotated photos, capability tables and project records. Typography, alignment and precise content selection carry the visual quality. Trust arises from facts not decorative motion.
+
+D1 ADOPTED: International Typographic Style; Documentary Design; Technical Manual; Specification-led Design; 12-column Grid; Asymmetric Split; Annotated Specimen; Table-led Layout; Index-first Architecture; Native Scrolling; Proof-first Narrative; Evidence Provenance.
+D1 REFUSED: Perspective Card Stack; Smooth-scroll Interpolation; Velocity Skew; Glassmorphism; Mesh Gradient; 3D Model Viewer; Universal Scroll Reveal; Autoplay Content Carousel.
+
+MOTION GRAMMAR:
+Page load → content settles immediately; no loading spectacle.
+Image entrance → optional short Cinematic Easing.
+Product comparison → direct Tabs.
+Case browsing → Filterable Index.
+Process → static Timeline Layout.
+Navigation → standard responsive navigation; no route wipes.
+
+THREE REFERENCES:
+Pentagram work: https://www.pentagram.com/work — editorial indexing/curation.
+GOV.UK Design System: https://design-system.service.gov.uk/components/ — semantic utility/clarity.
+Reuters Graphics: https://reutersagency.com/content/content-types/graphics/ — evidence-led analytical graphics.
+
+EFFORT: 7–11 focused engineering days, low performance risk. Main effort is content editing, approved photographs, templates and claim accuracy.
+WINS: Procurement credibility, clarity, maintainability.
+LOSES: Could underrepresent the immersive nature of large-format digital environments.
+
+B. SIGNAL CHAIN — AMBITIOUS, SHIPPABLE (RECOMMENDED)
+THESIS: A digital screen is the visible endpoint of a larger operating system; the site should reveal that system as one continuous story.
+
+TYPE: Existing grotesk; larger editorial display scale; display tracking roughly -0.035em to -0.045em, optically reviewed.
+HERO: Preserve current headline, film, supplied product mark and pixel-cell assembly.
+COLORS: Current paper/ink/corporate blue; real installations provide the only additional colour.
+SURFACES: White and paper; one purposeful dark closing band.
+GRID: 12-column, asymmetric splits, occasional full-width real photo.
+SIGNATURE ARTIFACT: One genuine screen installation visually connected to software and delivery evidence.
+MOTION: Mechanical Sequencing; limited FLIP; no more than one controlled scroll-linked chapter.
+NAVIGATION: Existing navigation and dedicated routes preserved.
+BUYER BENEFIT: Buyer understands both physical deployment and the operating systems behind it.
+
+THE SIGNAL CHAIN:
+SCREEN = physical evidence → CONTROL = operational workflow → PROOF = documented campaign delivery.
+
+CORE CHOREOGRAPHY:
+01 Establish real environment: show approved installation photograph and meaningful caption; remain still during reading.
+02 Reveal operating layer: Shared-element Transition/FLIP moves recognizable screen to supporting position as approved software specimen becomes primary.
+03 Explain evidence: Mechanical Sequencing reveals scheduling→playback logs→measurement relationship, with verified capabilities only.
+Do not show fictitious client dashboard figures, status or results.
+
+ANIMATION START VALUES (creative testing, not universal standards):
+State transition 500–750ms.
+Small hover feedback 150–220ms.
+Easing cubic-bezier(0.22,1,0.36,1).
+Translation roughly 12–28px.
+Depth mainly scale and position, not heavy 3D rotation.
+At most one guided scroll sequence.
+Mobile uses direct-select chapter controls and no compulsory pin.
+Reduced motion changes states immediately; all content stays accessible.
+
+D1 ADOPTED: Editorial Art Direction; Documentary Design; Motion Identity System; Asymmetric Split; Quiet Chapter; Shared-element Transition; FLIP; Mechanical Sequencing; Master-detail Interface; Stepper; Progressive Disclosure; Problem→System→Evidence; Poster-first Video Loading.
+D1 REFUSED: Ring Carousel; Infinite Carousel; Magnetic Hover; Universal Scroll Reveal; Velocity Skew; Fabricated Dashboard; Multiple Competing Pins; Mesh Gradient; 3D Model Viewer.
+
+THREE REFERENCES:
+Serko platform: https://www.serko.ai/platform — progressive explanation of sophisticated software.
+Apple MacBook Pro: https://www.apple.com/my/macbook-pro/ — art-directed product chapters/evidence.
+GSAP Flip docs: https://gsap.com/docs/v3/Plugins/Flip/ — mechanics for continuity across visual states.
+
+EFFORT: 11–18 focused development days; medium performance risk. Main challenge: approved sources, responsive state choreography, accessible and interruptible transitions.
+WINS: Distinctly connects physical screens, software, reporting.
+LOSES: Signature interaction weakens if approved software screenshots/system diagrams are unavailable.
+
+C. NIGHT TRANSMISSION — EXPERIMENTAL
+THESIS: Present CLICK IX as the technical infrastructure behind illuminated urban environments, with the actual city as the visual canvas.
+
+TYPE: Existing grotesk at larger scale; strong contrast.
+COLORS: Deep ink with real LED colors from actual company footage.
+SURFACES: Dark full-bleed scenes interspersed with pale technical panels.
+GRID: Full-bleed film, selective overlays, minimal text columns.
+SIGNATURE: Real nighttime installation footage, not invented imagery.
+MOTION: Directional Motion Blur; Match Cuts; Mask Reveals; one Scroll-linked Scrub.
+NAVIGATION: Existing accessible navigation.
+BUYER BENEFIT: Experience city-scale digital-out-of-home reach.
+
+VISUAL CONCEPT: Real installation film opens; movement through real Kuala Lumpur footage resolves into identifiable screen deployment. That scene transitions into factual technical explanation of relevant hardware and software. Unlike Signal Chain, cinema and physical space are primary; the interface is secondary.
+
+D1 ADOPTED: Full-bleed Composition; Dark Control-room Aesthetic; Directional Motion Blur; Motion Matching; Ambient Loop; Mask Reveal; Scrollytelling; Poster-frame Art Direction; potentially Canvas Image Sequence.
+D1 REFUSED: Bento Grid; Universal Scroll Reveal; Glassmorphism; Magnetic Hover; Neumorphism; Fabricated Dashboard.
+WEBGL RULE: No Three.js/OGL unless it solves a visual problem that cannot efficiently be handled by CSS or pre-rendered footage.
+
+THREE REFERENCES:
+Apple: https://www.apple.com/my/macbook-pro/ — cinematic chapter narrative.
+NASA Eyes: https://science.nasa.gov/eyes/ — immersive interfaces grounded in actual systems.
+Codrops 3D Stack: https://tympanus.net/codrops/2024/03/06/on-scroll-3d-stack-motion-effect/ — experimental motion exploration.
+
+EFFORT: 20–35 focused development days, high performance/QA risk. Main costs are real footage prep, delivery, timing, responsive media composition and testing.
+WINS: Strong atmosphere and physical-scale expression.
+LOSES: Technical buyers may experience it as showreel rather than procurement reference.
+
+D2 FINAL DECISION
+Select B — SIGNAL CHAIN. Borrow A's evidence organization; do not indiscriminately combine their visual identity. Reserve C for one showreel, case-study opener or future experimental microsite.
+
+=====================================================================
+D3. STORY FLOW — THREE REPRESENTATIVE PAGES
+=====================================================================
+
+GOVERNING PRINCIPLE: Follow buyer questions, not the available animation components. Each motion citation is a named D1 technique.
+
+PAGE 1 — HOME
+BUYER QUESTION: Can this company take responsibility for my digital screen network, from physical delivery to ongoing operation and evidence?
+
+NARRATIVE MAP
+01 Recognize the company.
+02 Believe the deployment.
+03 Understand the connected system.
+04 Discover relevant products.
+05 Inspect real project evidence.
+06 Understand delivery and support.
+07 Take the next step.
+
+SECTION 01 — HERO
+Buyer job: identify company/offering.
+Artifact: existing original installation film, official logo, existing positioning.
+Motion: Stepped Easing for current pixel assembly, then stillness.
+One sentence: CLICK IX supplies, operates and supports digital screen networks.
+Creative treatment: KEEP existing hero; only tune loading/clarity/ending. No simultaneous counters, animated copy or decorative distractions. Static poster fully usable.
+
+SECTION 02 — PROOF INTRODUCTION [DELIBERATELY QUIET]
+Buyer job: see real-world credibility.
+Artifact: one authentic company-approved installation photo with factual caption.
+Motion: None; Quiet Chapter.
+One sentence: This is real infrastructure, not a conceptual service.
+Use Documentary Design, optionally Full-bleed Composition. Pause after the animated hero.
+
+SECTION 03 — CONNECTED SYSTEM [SIGNATURE]
+Buyer job: understand the invisible system behind visible display.
+Artifact: real installation → approved software interface → verified delivery evidence, or clearly labelled accurate schematic when screenshots unavailable.
+Motion: Shared-element Transition + Mechanical Sequencing, optionally one Scrollytelling stage.
+One sentence: Screens, content management and delivery evidence belong to one operating system.
+Keep selectable Stepper or Master-detail controls; mobile becomes stacked/direct select, not pinned. No fake dashboards.
+
+SECTION 04 — SOFTWARE ECOSYSTEM [DELIBERATELY QUIET / INFORMATION-DENSE]
+Buyer job: identify products fitting commercial and operational jobs.
+Artifact: Capability-to-outcome Mapping and Table-led Layout.
+Motion: Tabs or Master-detail Interface only if useful; no compulsory film.
+One sentence: Different platforms address distinct jobs across the screen network.
+Relevant mapping:
+Commercial operations/bookings → CS Deals.
+Large-format digital-screen content → CS Play.
+Indoor small-screen networks → CS Play SSN.
+In-house menus/business content → CS Sign Hub.
+Programmatic buying → OmniBuy DSP.
+Supply-side inventory/access → CS Context.
+Audience insights/measurement → Measurement offerings.
+Supporting audience-data capabilities → Data Partnerships.
+Each row links to dedicated page; avoid fake device mockups.
+
+SECTION 05 — SELECTED WORK
+Buyer job: inspect comparable real deployment evidence.
+Artifact: real photography, approved project details.
+Motion: optional user-controlled Horizontal Gallery; no required second pin.
+One sentence: CLICK IX has delivered relevant work in real operating environments.
+Use Proof-first Narrative and Documentary Design. Show distinct case examples, not a long undifferentiated logo marquee. If eight-case-study scroll pin competes with signature chapter, remove pin and keep native gallery.
+
+SECTION 06 — DELIVERY AND SUPPORT
+Buyer job: understand engagement method.
+Artifact: true process stages and responsibilities.
+Motion: none or static Timeline Layout.
+One sentence: A defined process connects site assessment, deployment and ongoing support.
+Use Process-before-promise, linking to the dedicated Process page. No invented support guarantee.
+
+SECTION 07 — QUIET REASSURANCE [DELIBERATELY QUIET]
+Buyer job: reduce operational uncertainty.
+Artifact: concise, substantiated explanation of post-install responsibility and relevant support.
+Motion: none; Quiet Chapter.
+One sentence: The relationship extends beyond placing hardware on a wall.
+No gratuitous card grid.
+
+SECTION 08 — FINAL CTA
+Buyer job: know what to send.
+Artifact: existing direct-contact mechanism.
+Motion: none; Quiet Chapter and restrained contrast.
+One sentence: Start by sharing the screen estate or project requirements.
+Support CTA with project location, screen formats or existing estate details. Optional approved film-derived motion-blurred image may be tested; not required.
+
+HOME CREATIVE JUDGMENT
+The site starts with its genuine film and retains pixel-cell brand identity. Give one quiet proof moment, one animated connected-system chapter, one straightforward product comparison, documentary case evidence, factual process, and clear closing CTA. Remove message duplication and competing pinned sequences.
+
+PAGE 2 — PRODUCT: CS PLAY
+BUYER QUESTION: Does CS Play solve content scheduling, playback management and reporting requirements?
+
+SECTION 01 — PRODUCT INTRODUCTION
+Job: identify product role.
+Artifact: official CS Play mark + approved screen photograph.
+Motion: none, Quiet Chapter.
+Sentence: CS Play manages content delivery on supported screen networks.
+
+SECTION 02 — REAL PRODUCT EVIDENCE
+Job: establish what is being evaluated.
+Artifact: genuine approved screenshot or accurately labelled diagram.
+Motion: Annotated Specimen; optional Tabs.
+Sentence: The buyer can inspect the actual management workflow.
+
+SECTION 03 — SCHEDULING
+Job: explain important task.
+Artifact: authentic schedule artifact and approved capability list.
+Motion: Master-detail Interface.
+Sentence: Content can be organized and scheduled across supported screens.
+
+SECTION 04 — PLAYBACK AND MONITORING
+Job: explain operational oversight.
+Artifact: real playback/status evidence or documented workflow.
+Motion: Mechanical Sequencing only if helpful.
+Sentence: Operators can manage delivery and review its state.
+
+SECTION 05 — PROOF AND REPORTING [QUIET]
+Job: explain accountability.
+Artifact: approved report example or documented report fields.
+Motion: none, Table-led Layout.
+Sentence: Delivery evidence can support campaign reporting.
+
+SECTION 06 — DEPLOYMENT FIT [QUIET]
+Job: reduce technical compatibility uncertainty.
+Artifact: supported formats, players and requirements.
+Motion: none, Specification-led Design.
+Sentence: Buyers can assess whether CS Play fits their infrastructure.
+
+SECTION 07 — RELATED DEPLOYMENT
+Job: show practical use.
+Artifact: approved case study.
+Motion: Documentary Design, no motion required.
+Sentence: The software has documented real-world use.
+
+SECTION 08 — FAQ [QUIET]
+Job: handle commercial/technical objections.
+Artifact: verified factual questions and answers.
+Motion: Accordion.
+Sentence: Integration and operational requirements can be understood before contact.
+
+SECTION 09 — PRODUCT CTA
+Job: convert technical interest.
+Artifact: existing contact link.
+Motion: none, Quiet Chapter.
+Sentence: Buyers know how to discuss deployment requirements.
+
+PRODUCT DESIGN PRINCIPLE
+Treat CS Play as genuine technology, not a metaphor. Use Annotated Specimen, Master-detail Interface, Specification-led Design and Capability-to-outcome Mapping. Show real screenshot where approved. Direct buttons for Scheduling / Playback / Reporting. Scheduling view explains display/time assignment; Playback explains content delivery/status; Reporting explains evidence without invented values. Simple useful tab selection is preferable to complicated carousel. Keep Fit and FAQ quiet.
+
+PAGE 3 — CASE STUDY CHAPTER: RETAIL NETWORKS
+BUYER QUESTION: Has CLICK IX handled comparable environments, and what was actually delivered?
+Source: existing approved Maxis and other retail documentation; never create fake metrics, screen counts or claimed outcomes.
+
+SECTION 01 — PROJECT IDENTIFICATION
+Job: identify client, site and work.
+Artifact: genuine project photo, approved attribution/location.
+Motion: Full-bleed Composition, no mandatory animation.
+Sentence: This is a real documented deployment.
+
+SECTION 02 — REQUIREMENT [QUIET]
+Job: explain starting condition.
+Artifact: approved brief/factual summary.
+Motion: none, Quiet Chapter.
+Sentence: The deployment answered a specific operational requirement.
+
+SECTION 03 — SCOPE
+Job: distinguish responsibility.
+Artifact: approved hardware/software/service list.
+Motion: none, Table-led Layout.
+Sentence: Buyer can see exactly which components CLICK IX supplied or managed.
+
+SECTION 04 — DELIVERY
+Job: reveal execution work.
+Artifact: installation photos and labelled components.
+Motion: Annotated Specimen + Timeline Layout.
+Sentence: The solution involved real integration and delivery work.
+
+SECTION 05 — OPERATING SYSTEM
+Job: show how deployment functions.
+Artifact: approved system diagram or real interface.
+Motion: Mechanical Sequencing only if explanatory.
+Sentence: Hardware and software operate together at this project.
+
+SECTION 06 — SUPPORTED RESULT [QUIET]
+Job: state what evidence supports.
+Artifact: actual verified project records, documented functionality.
+Motion: none, Documentary Design.
+Sentence: The published result is traceable to real work.
+
+SECTION 07 — RELATED WORK
+Job: compare other relevant installations.
+Artifact: real case index.
+Motion: Filterable Index or Horizontal Gallery.
+Sentence: Buyers can inspect comparable deployments.
+
+SECTION 08 — CONTACT
+Job: make case relevant to buyer's request.
+Artifact: existing CTA.
+Motion: none, Quiet Chapter.
+Sentence: A comparable requirement can be discussed with CLICK IX.
+
+CASE STUDY CONTENT MODEL
+Client | Identify commissioning/operating organization.
+Location | Relevant site/estate.
+Requirement | What had to work.
+Scope | Hardware/software/integration/support.
+Systems | Approved products actually involved.
+Delivery | Documented actions.
+Evidence | Photos, reports, approved artifacts.
+Outcome | Substantiated only.
+Sources | Provenance of claims.
+
+CASE STUDY ART DIRECTION
+Documentary Design + Before–During–After + Annotated Specimen + Quiet Chapter.
+If actual before/after materials exist, a Before/after Slider is useful. Never fabricate the "before" state.
+
+=====================================================================
+D4. ORDERED BUILD PLAN
+=====================================================================
+
+PRINCIPLE: Ship credible static pages before enhanced motion. One engineer, existing Figma design, current Next.js repository, no new dependencies without a demonstrated need.
+
+PHASE 0 — BASELINE
+Work: Freeze approved identity, inventory real assets/routes/interactions. Capture desktop and mobile screenshots, compare Figma, inspect hero, pins, carousel and file sources.
+D1: Evidence Provenance + Progressive Enhancement.
+Deliverable: Baseline snapshots and brand/asset register.
+Gate: Source-of-truth established, no unexplained brand change.
+
+PHASE 1 — NARRATIVE ARCHITECTURE
+Work: Reorganize Home, Product and Case Study in Figma. For every section record buyer question, one message, evidence, layout, optional motion, responsive fallback.
+D1: Chaptered Narrative + Proof-first Narrative + Quiet Chapter.
+Deliverable: Three approved page compositions plus motion storyboard.
+Gate: Every section serves distinct buyer job, no duplicated explanation.
+
+PHASE 2 — STATIC IMPLEMENTATION
+Work: Responsive layout, real approved content, navigation, semantic controls, media intrinsic sizing and useful captions. All information in document flow without JS.
+D1: 12-column Grid + Asymmetric Split + Table-led Layout + Progressive Enhancement.
+Deliverable: Responsive static version of three templates.
+Gate: No missing content with JS disabled; mobile/tablet/desktop correct.
+
+PHASE 3 — SIGNATURE SYSTEM EXPERIENCE
+Work: Build one connected physical-to-digital chapter. Three explicit states, real artifacts, direct navigation. Develop as simple selectable component; add timeline only once reliable.
+D1: Shared-element Transition + FLIP + Mechanical Sequencing + Master-detail Interface.
+Deliverable: Interactive Screen/Control/Proof sequence.
+Gate: No layout jumps; keyboard focus, reduced motion, rapid selection, resize and reverse motion verified.
+
+PHASE 4 — PRODUCT AND CASE-STUDY TEMPLATES
+Work: Approved product specimens, supported compatibility, factual case data, source provenance.
+D1: Annotated Specimen + Specification-led Design + Documentary Design + Capability-to-outcome Mapping.
+Deliverable: One polished CS Play page, one retail case-study chapter.
+Gate: Claims verified; illustrative content clearly marked.
+
+PHASE 5 — SIMPLIFICATION
+Work: Remove redundant motion, duplicated explanations, useless labels, second competing pin and excess marquee/reveals.
+D1: Motion Identity System + Native Scrolling + Quiet Chapter.
+Deliverable: Coherent homepage motion hierarchy.
+Gate: One dominant signature motion system.
+
+PHASE 6 — ACCESSIBILITY AND PERFORMANCE
+Work: Validate real responsive/keyboard/reduced-motion/no-JS behavior, loading and Core Web Vitals.
+D1: Progressive Enhancement + Responsive Art Direction + Adaptive Motion.
+Deliverable: Measured QA and optimized media.
+Gate: LCP <2.5s, CLS <0.05, INP <200ms in representative target profile; WCAG AA, keyboard and fallbacks pass.
+
+PHASE 7 — FINAL ROLLOUT
+Work: Apply approved templates across current flat routes, preserve metadata/internal links, run tests and build.
+D1: Index-first Architecture + Specification-led Design.
+Deliverable: Production-ready site.
+Gate: All routes and facts intact.
+
+PHASE 0 CHANGE REGISTER
+Official logo and product marks: KEEP; never alter/recreate; brand integrity.
+Existing hero film: KEEP; optimize loading if required; authentic evidence.
+Pixel-cell hero: KEEP; motion cleanup only; established signature.
+Connected-system chapter: KEEP and refine; main technical explanation.
+Case-study pin: REASSESS, likely convert to native gallery; reduce motion competition.
+Product software evidence: KEEP approved; replace fake visuals only when genuine sources exist.
+Footer: preserve content; optional restrained final treatment; no motion repetition.
+
+PHASE 1 REQUIRED FIGMA FRAMES
+Home desktop: narrative and pacing.
+Home mobile: reading order and interaction.
+Product desktop/mobile: technical product evidence.
+Case desktop/mobile: real project documentation.
+Motion storyboard: initial/transition/final/reduced-motion/no-JS.
+Every layout and motion decision cites D1 named technique.
+
+PHASE 3 COMPONENT CONCEPT
+ConnectedSystemStory
+- SystemStoryHeading
+- ChapterNavigation
+  - PhysicalScreen
+  - ContentOperations
+  - DeliveryEvidence
+- VisualStage
+  - DeploymentArtifact
+  - ProductArtifact
+  - EvidenceArtifact
+- ChapterDescription
+- StaticFallback
+
+React state holds selected chapter; GSAP Flip only for meaningful two-dimensional shared-object movement; regular GSAP timeline for Mechanical Sequencing; no fake 3D FLIP requirement.
+
+INTERACTION ACCEPTANCE
+Initial render: first chapter visible.
+Select next: correct outgoing/incoming visuals.
+Select previous: coherent reverse.
+Rapid selection: latest state wins.
+Resize: no unexpected geometry jumps.
+Mobile: direct chapter buttons visible.
+Reduced motion: instantaneous switching.
+No JS: all content remains accessible.
+
+THREE HIGHEST-RISK ITEMS
+
+RISK 1 — AUTHENTIC PRODUCT EVIDENCE (HIGH EDITORIAL RISK)
+Failure: Fictional product interface undermines confidence in a company selling real software.
+D1: Evidence Provenance, Annotated Specimen, Specification-led Design, Documentary Design.
+De-risk: Approved asset register distinguishes real screenshots, genuine deployment photos, accurate diagrams and illustrative prototypes. Final animation starts only when approved assets exist.
+Failure gate: If genuine screenshot/diagram unavailable, keep factual text/workflow; never publish fabricated "live" interface.
+
+RISK 2 — COMPLEX SCROLL CHOREOGRAPHY (HIGH IMPLEMENTATION RISK)
+Failure: Pins/scrubs/carousels trap scroll, disrupt mobile or keyboard, break on interrupted animation.
+D1: Pinned Scene, Scroll-linked Scrub, FLIP, Stepper, Adaptive Motion.
+De-risk: Direct-select chapter first; test forward/back/rapid clicks/resize/focus/reduced motion. Add scroll control only if it improves understanding.
+Failure gate: Drop pin and keep direct-select when usability or performance fails.
+
+RISK 3 — HERO MEDIA AND PERFORMANCE (HIGH PERFORMANCE RISK)
+Failure: Video, pixel assembly, scroll motion and layered images compete for network/render/main-thread budget.
+D1: Poster-first Video Loading, Responsive Art Direction, Progressive Enhancement, Adaptive Motion.
+De-risk: Measure static baseline; add one effect at a time; reserve layout dimensions, optimize poster/video and defer noncritical media.
+Failure gate: Fail release if target performance/accessibility is unmet.
+
+RELEASE TARGETS
+LCP below 2.5 seconds on representative target 4G profile → correct hero poster, optimized media, priority.
+CLS below 0.05 → reserved media sizes, font geometry.
+INP below 200ms → small handlers, avoid heavy rerenders.
+Keyboard: real controls, visible focus, no trapped interaction.
+Reduced motion: remove decorative pin/scrub, content equivalent.
+No JS: server-rendered HTML and functional links.
+Do not treat one desktop Lighthouse run as sufficient.
+
+CUT LIST IF TIME RUNS OUT (ORDERED)
+1. Cut decorative shaders/gradients/distortion; preserve authentic photography.
+2. Cut second pinned carousel; preserve Native Scrolling + Horizontal Gallery.
+3. Cut global smooth-scroll dependency; preserve browser scrolling.
+4. Cut universal reveals and animation variants; preserve Motion Identity System.
+5. Cut decorative connector lines; preserve Annotated Specimen.
+6. Cut fancy case carousel; preserve Documentary Design and direct links.
+7. Cut advanced product animation; preserve real static screenshots.
+8. Cut experimental footer effects; preserve the direct contact CTA.
+
+NEVER CUT: verified content, official branding, keyboard support, reduced motion, functional routes, real captions, approved product evidence.
+
+FINAL CREATIVE ENGINEERING DECISION — SIGNAL CHAIN
+Art direction = Editorial Art Direction + Documentary Design.
+Information architecture = Chaptered Narrative + Proof-first Narrative.
+Grid = 12-column Grid + Asymmetric Split + Quiet Chapter.
+Signature interaction = Shared-element Transition + Mechanical Sequencing.
+Product explanation = Annotated Specimen + Specification-led Design.
+Cases = Documentary Design + Before–During–After.
+Scroll = Native Scrolling, at most one justified Pinned Scene.
+Accessibility = Progressive Enhancement + Adaptive Motion.
+Evidence = Evidence Provenance.
+Media/performance = Poster-first Video Loading + Responsive Art Direction.
+
+GOVERNING PRINCIPLE
+"The physical screen creates the first impression. The software explains the capability. The documented delivery earns the buyer's confidence."
+
+Everything else should support those three ideas. The existing website does not need a completely new visual identity; it needs a consistent relation between real installations, software and verifiable delivery. This is the art direction selected for CLICK IX.
+
+REFERENCE NOTE
+Linked sites illustrate established editorial, product and interaction approaches. Their production code may differ. GSAP documentation, MDN scroll-timeline documentation and Codrops demonstrations support implementation research.
+
+END OF COMPLETE D1–D4 REPORT
