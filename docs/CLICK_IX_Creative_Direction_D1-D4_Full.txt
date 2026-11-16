@@ -1,0 +1,135 @@
+CLICK IX — ART DIRECTION, MOTION LEXICON & STORY FLOW
+Creative Direction Specification · 16 November 2026 · Next.js 15 / React 19 / GSAP
+PLAIN-TEXT EDITION OF THE D1–D4 REPORT
+
+EXECUTIVE DECISION — TEN-LINE SUMMARY
+1. Sell operational confidence, not visual effects. The buyer must understand that one team can supply, install, operate and prove digital screen networks.
+2. Recommended art direction: Signal Chain. Make the movement from physical screen to software to campaign evidence the site's central visual narrative.
+3. Preserve the established identity. Keep the paper/ink/blue palette, existing grotesk, supplied logos, installation photography and current hero.
+4. Use one signature motion system. The pixel-cell hero can introduce the brand; a single connected-system transition should carry the main explanation.
+5. Make original project photography the primary artifact. Every important visual should demonstrate something the company has actually built or operated.
+6. Give each page a different job. Home creates confidence, Product explains capabilities and fit, Case Study demonstrates delivery.
+7. Reduce animation density. Native scrolling, intentional pauses and direct interactions should dominate over repeated pins, marquees and automated reveals.
+8. Treat software authenticity as a release gate. Use approved real interfaces, or clearly labelled diagrams when those interfaces are unavailable.
+9. Build progressively. A complete static page must exist before React, GSAP or any enhanced interaction executes.
+10. Ship the buyer narrative first. Aim for LCP below 2.5s, CLS below 0.05, INP below 200ms and WCAG AA without sacrificing clarity.
+
+=====================================================================
+D1. COMPLETE ART DIRECTION & MOTION LEXICON
+=====================================================================
+
+HOW TO READ
+Each entry includes term/aliases; plain gloss; what it communicates; where it belongs; actual implementation; relative performance/effort cost; accessibility fallback; cliché/tell risk; real reference.
+
+COST MODEL
+1: performance negligible / effort small CSS or content adjustment.
+2: performance limited paint/compositing / effort localized component.
+3: performance noticeable media/interaction / effort reusable component and testing.
+4: performance sustained animation or larger rendering / effort complex motion/responsive engineering.
+5: performance major graphics or media workload / effort specialized pipeline and extensive QA.
+Scores are estimates, not measured benchmarks.
+
+ACCESSIBILITY FALLBACK LEGEND
+S: All text, links, captions, images and relevant content remain visible without JavaScript.
+R: Reduced motion disables decorative transitions and displays final intended content immediately.
+P: Pinned/scrubbed scenes become regular vertical content without compulsory scroll progression.
+U: Visible keyboard-operable controls exist without hover/drag dependence.
+F: Video becomes poster or user-controlled playback; message never depends on motion.
+D: Data has accessible text or tabular equivalent.
+M: Map includes ordered location list and direct links.
+
+REFERENCE POLICY
+References are real websites/studios/demos illustrating technique, not claims of identical production code.
+Technical foundations: https://gsap.com/docs/v3/Plugins/ScrollTrigger/ ; https://gsap.com/docs/v3/Plugins/Flip/ ; https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines
+
+D1.1 ART-DIRECTION SYSTEMS
+Format: TERM | GLOSS | COMMUNICATES | WHERE | IMPLEMENTATION | P/E (reason) | FALLBACK | RISK | REFERENCE
+
+International Typographic Style / Swiss Modernism | Asymmetric grids and rigorous typography organize content | Order, precision | Global | CSS Grid, type scale, baseline rhythm | P1/E2 (CSS discipline) | S | Low | https://www.pentagram.com/work
+Editorial art direction / Magazine design | Headlines, photographs and varied pacing carry narrative | Authorship, judgment | Home, cases | Grid, editorial crops, type hierarchy | P1/E3 (responsive layouts) | S | Low | https://www.aesop.com/
+Documentary design / Evidence-led | Unstaged photos and factual captions form identity | Authenticity, accountability | Cases, services | Semantic figures, originals, captions | P1/E2 (asset curation) | S | Low | https://reutersagency.com/content/content-types/graphics/
+Technical manual / Field manual | Annotated diagrams explain actual systems and procedures | Engineering competence | Hardware, process | SVG diagrams, definitions, print CSS | P1/E3 (diagram authoring) | S,D | Low | https://design-system.service.gov.uk/
+Utility modernism / Industrial UI | Functional controls take priority over ornament | Reliability | Product, measurement | Sparse controls, semantic UI | P1/E2 (state styling) | S,U | Medium if excessive | https://linear.app/features
+Quiet luxury / Luxury restraint | Fewer elements and exact spacing emphasize objects | Confidence | Header, CTA | Spacing system, controlled accents | P1/E2 (design editing) | S | Medium if empty | https://www.aesop.com/
+Museum/gallery system / Curatorial | Projects presented as attributed, sequenced exhibits | Provenance | Cases | Catalogues, captions, filters | P1/E3 (content model) | S,U | Low | https://www.pentagram.com/work
+Digital brutalism / Neo-brutalism | Raw contrast and exposed structure reject convention | Independence | Experimental | Hard rules, bold type | P1/E2 (visual QA) | S | High for B2B | https://pudding.cool/
+Specification-led design / Spec-sheet | Detailed compatibility data becomes key visual content | Procurement confidence | Product, hardware | Semantic comparison tables | P1/E3 (fact modelling) | S,D | Low | https://design-system.service.gov.uk/components/
+Environmental graphic design / Wayfinding system | Digital labels borrow physical signage principles | Orientation | Navigation, process | Directional type, SVG markers | P1/E3 (consistency) | S | Medium if overlabelled | https://www.pentagram.com/work
+Blueprint aesthetic / Drafting board | Annotated grids reveal component relations | Systems thinking | Architecture | CSS grid, labelled SVG | P2/E3 (diagram accuracy) | S,D | High as wallpaper | https://science.nasa.gov/eyes/
+Newsprint design / Broadsheet | Dense editorial columns organize detail | Seriousness, information | Insights, About | CSS columns, type hierarchy | P1/E2 (mobile reflow) | S | Medium | https://pudding.cool/
+Dark control-room aesthetic / Operations console | High contrast suggests live technical oversight | Monitoring, command | Real product UI | Dark surfaces, tables, status | P2/E3 (contrast QA) | S,D | High if simulated | https://science.nasa.gov/eyes/
+Data-visualization-led design | Verified charts carry story | Measurable evidence | Measurement | SVG, D3, data table | P2/E4 (verification) | S,D | High if numbers invented | https://reutersagency.com/content/content-types/graphics/
+Kinetic-type-led design | Typography becomes signature moving element | Energy | Hero/chapter | CSS transforms, GSAP | P2/E3 (motion QA) | R,S | High repeated | https://tympanus.net/codrops/
+Motion identity system / Kinetic brand grammar | Small movement vocabulary coordinates components | Coordination | Site-wide | Shared easing and motion tokens | P1/E3 (governance) | R,S | Low if limited | https://linear.app/features
+
+D1.1 JUDGMENT: Combine International Typographic Style, Documentary Design and Specification-led Design, governed by a Motion Identity System. Dark Control-Room Aesthetic is for genuine software/monitoring evidence, not the entire website.
+
+D1.2 LAYOUT SYSTEMS
+
+12-column grid / Modular grid | Shared tracks control alignment | Consistency | Global | CSS repeat(12,1fr) | P1/E2 (CSS) | S | Low | https://stripe.com/en-my/payments/elements
+Broken grid / Grid violation | One important element crosses normal alignment intentionally | Curated emphasis | Hero, case | Grid span, negative offsets | P1/E3 (breakpoint QA) | S | Medium | https://www.pentagram.com/work
+Asymmetric split / 5:7 or 4:8 | Text and image receive unequal weight | Priority | Hero, product | CSS Grid fractions | P1/E2 | S | Low | https://www.serko.ai/platform
+Bento grid / Modular feature cards | Mixed rectangles summarize topics | Breadth | Product index | Grid template areas | P1/E2 | S | High if universal | https://www.apple.com/my/macbook-pro/
+Overlapping composition / Collage | Elements share space to imply relationships | Connection | System explainer | Positioning, z-index | P2/E3 (responsive) | S | Medium | https://www.pentagram.com/work
+Full-bleed composition / Edge-to-edge | Image/film takes full width | Physical scale | Film, case | Grid breakout | P2/E2 (bandwidth) | S,F | Medium repeated | https://www.apple.com/my/macbook-pro/
+Split-screen narrative / Paired pane | Explanation sits beside demonstration | Cause, evidence | Product | CSS Grid | P1/E2 | S | Low | https://www.serko.ai/platform
+Sticky sidecar / Sticky explanatory column | Artifact stays visible while copy advances | Comprehension | One chapter | position:sticky | P1/E3 (bounds) | P,S | Low once | https://pudding.cool/
+Horizontal gallery / Image rail | Browse photos sideways | Range | Cases | Native overflow + scroll snap | P1/E2 | S,U | Medium | https://www.pentagram.com/work
+Chaptered long-form page / Visual essay | Page moves through questions | Understanding | Home, product | Semantic sections/anchors | P1/E2 | S | Low | https://pudding.cool/
+Index-first architecture / Catalogue | Pick subject before detail | Control | Software | Filters/search/links | P1/E3 (taxonomy) | S,U | Low | https://www.pentagram.com/work
+Table-led layout / Comparison matrix | Structured comparison takes priority | Compatibility | Software, hardware | Semantic table | P1/E3 (facts) | S,D | Low | https://design-system.service.gov.uk/components/
+Timeline layout / Process rail | Events shown in real order | Predictability | Process, case | Ordered list+CSS track | P1/E2 | S | Medium | https://service-manual.ons.gov.uk/design-system/components
+Masonry composition / Staggered archive | Variable-ratio images form gallery | Variety | Work | Grid+ratios | P2/E3 (CLS) | S | Medium | https://www.pentagram.com/work
+Quiet chapter / Negative-space beat | One idea gets space without motion | Importance | Between chapters | Type+whitespace | P1/E1 | S | Low | https://www.aesop.com/
+Annotated specimen / Callout figure | Numbered labels explain real object | Technical clarity | Hardware, product | Figure+SVG+notes | P1/E3 (responsive) | S,D | Low | https://science.nasa.gov/eyes/
+
+D1.2 JUDGMENT: Use the 12-column Grid underneath; alternate Asymmetric Split, Quiet Chapter, Annotated Specimen and occasional Full-Bleed Composition. Avoid repetitive left-image/right-text layouts.
+
+D1.3 SCROLL MODELS
+
+Native scrolling / Document flow | Browser scrolls normally | Respect, speed | Default | Browser-native | P1/E1 | S | Low | https://www.gov.uk/
+CSS Scroll Snap | Gallery settles at optional snap points | Order | Archive | scroll-snap-type | P1/E2 | R,U | Medium | https://www.apple.com/my/macbook-pro/
+Scroll-triggered entrance / Reveal-on-enter | Animation starts on visibility | Discovery | Select headings | IntersectionObserver/GSAP | P1/E2 | R,S | High universally | https://linear.app/features
+Scroll-linked scrub / Timeline scrub | Scroll controls animation progress | Continuous causality | Signature | GSAP scrub | P2/E4 (synchronization) | P,R,S | Medium | https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+Pinned scene / Scroll pinning | Scene stays fixed while chapter unfolds | Deliberate revelation | One chapter | ScrollTrigger pin | P2/E4 (refresh) | P,S | High repeated | https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+Timeline snapping / Scroll snap to labels | Scrub settles on chapter states | Completion | Demo | ScrollTrigger snap | P2/E4 (UX) | P,U | High compulsory | https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+Horizontal-on-scroll / Horizontal translation | Vertical scroll moves gallery sideways | Exhibition | Experimental archive | GSAP x+pin | P3/E4 | P,U | High | https://tympanus.net/codrops/
+Sticky stack / Stacked scroll cards | New cards overlay earlier ones | Accumulation | Process only | CSS sticky/GSAP | P2/E3 | P,S | High template | https://tympanus.net/codrops/2024/03/06/on-scroll-3d-stack-motion-effect/
+Scroll mask wipe / Clipping reveal | Image progressively uncovered | Discovery | Film transition | clip-path+ScrollTrigger | P2/E3 | R,S | Medium | https://www.apple.com/my/macbook-pro/
+Parallax / Differential depth | Layers move at different speeds | Distance/immersion | Rare atmosphere | Transform+scroll | P2/E3 | R,S | High | https://tympanus.net/codrops/
+Scroll-velocity response / Velocity skew | Effect reacts to scroll speed | Energy | Experiment | GSAP getVelocity() | P3/E4 | R,S | High | https://tympanus.net/codrops/
+CSS Scroll-Driven Animations | CSS uses scroll timeline | Lightweight progression | Small effects | animation-timeline:scroll()/view() | P1/E3 (fallback) | R,S | Medium | https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines
+Scrollytelling / Sticky graphic essay | Graphic changes while text progresses | Comprehension | System explanation | Sticky+observer/GSAP | P2/E4 | P,S,D | Low factual | https://pudding.cool/
+Chapter progress rail / Scrollspy | Current chapter indicated | Orientation | Long product | Anchors+IntersectionObserver | P1/E3 | S,U | Medium | https://www.apple.com/my/macbook-pro/
+Perspective card stack / 3D stacked scroll | Cards recede in depth | Layering | Experimental | CSS perspective+GSAP | P3/E4 | P,S | High | https://tympanus.net/codrops/2024/03/06/on-scroll-3d-stack-motion-effect/
+Smooth-scroll interpolation / Lenis, Locomotive | Script smooths scrolling | Weighted movement | Experimental | Lenis/GSAP integration | P2/E4 (RAF/testing) | R,S | High unnecessary | https://lenis.dev/
+
+D1.3 DISTINCTION: pin, scrub and snap are different ScrollTrigger behaviors. Native CSS scroll timelines need feature detection and static fallback. CLICK IX should use Native Scrolling and at most one justified pinned or scrollytelling scene on Home.
+
+D1.4 MOTION PRIMITIVES
+
+Stepped easing / Mechanical animation | Moves by discrete steps | Digital addressing | Pixel hero | CSS steps()/GSAP | P1/E2 | R,S | Medium | https://tympanus.net/codrops/
+Cinematic easing / Controlled deceleration | Progressively settles | Composure | Transitions | cubic-bezier/GSAP | P1/E2 | R,S | Medium | https://www.apple.com/my/macbook-pro/
+Staggered entrance / Cascade | Related elements start sequentially | Order | Hero assembly | GSAP stagger/CSS delay | P1/E2 | R,S | High universal | https://tympanus.net/codrops/
+Cross-dissolve / Crossfade | Visuals overlap in opacity | Continuity | Photo states | Two layers, opacity | P1/E1 | R,S | Medium | https://www.apple.com/my/macbook-pro/
+Mask reveal / Matte reveal | Moving mask uncovers content | Uncovering | Product | mask-image/GSAP | P2/E3 | R,S | Medium | https://tympanus.net/codrops/
+Geometric wipe / Clip-path reveal | Shape opens over next artifact | Precision | Film | CSS clip-path | P2/E3 | R,S | Medium | https://tympanus.net/codrops/
+SVG path draw / Stroke reveal | Connection appears along path | Connectivity | Diagram | SVG dash/GSAP | P1/E3 | R,S,D | Medium | https://gsap.com/
+FLIP / First–Last–Invert–Play | Animates between measured positions | Spatial continuity | Screen-to-software | GSAP Flip | P2/E4 (geometry and interruptions) | R,S | Low meaningful | https://gsap.com/docs/v3/Plugins/Flip/
+Shared-element transition / Hero-object continuity | Recognizable object persists across states | Connected story | Hero/product | FLIP/View Transitions | P2/E4 | R,S | Low | https://gsap.com/docs/v3/Plugins/Flip/
+Layout animation / Animated reflow | Elements move on layout change | Responsiveness | Filters/tabs | GSAP Flip/WAAPI | P2/E3 | R,S | Medium | https://linear.app/features
+Spring animation / Damped oscillation | Simulated elasticity | Physical response | Drag gallery | Spring/GSAP | P2/E3 | R,U | High bouncy | https://rive.app/
+Inertial drag / Momentum | Dragged item coasts | Manipulation | Case gallery | Pointer/GSAP Draggable | P2/E4 | U,S | Medium | https://lenis.dev/
+Velocity skew / Kinetic distortion | Surface reacts to movement speed | Energy | Experiment | GSAP transform | P3/E4 | R,S | High | https://tympanus.net/codrops/
+Magnetic hover / Cursor attraction | Control shifts toward pointer | Playfulness | Rare exploration | Pointer+transform | P2/E3 | R,U | High corporate CTA | https://tympanus.net/codrops/
+Elastic hover / Rubber-band | Control stretches and overshoots | Playfulness | Experimental nav | CSS spring/GSAP | P1/E2 | R,U | High | https://rive.app/
+Perspective hover / 3D tilt | Object tilts toward cursor | Dimension | Hardware | CSS perspective/pointer | P2/E3 | R,U | High photography | https://tympanus.net/codrops/2024/03/06/on-scroll-3d-stack-motion-effect/
+Page transition / Route wipe | Transition accompanies navigation | Continuity | Routes | CSS/GSAP/View Transitions | P2/E4 | R,S | High if delayed | https://tympanus.net/codrops/
+View Transitions API / Browser-managed transition | Browser animates snapshots | Seamless change | Optional routes/components | document.startViewTransition() | P1/E3 | R,S | Low restrained | https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API
+Vector morphing / Path interpolation | SVG changes shape | Transformation | Product illustration | SVG/Rive | P2/E4 | R,S | High decorative | https://rive.app/
+Mechanical sequencing / Relay timing | Elements activate in cause-effect order | System operation | Screen→CMS→evidence | GSAP timeline | P1/E3 | R,S,D | Low | https://science.nasa.gov/eyes/
+Motion matching / Match cut | Scenes align around visual object | Continuity | Film→system | Edited footage/matched crop | P2/E4 | F,S | Low | https://www.apple.com/my/macbook-pro/
+
+FLIP is for 2D position/size changes; 3D Coverflow is separate. For CLICK IX: Mechanical Sequencing as grammar, Stepped Easing for the pixel hero, FLIP once in the system story. Reject global Magnetic/Elastic/Velocity Skew.
+
+----- END OF FIRST TEXT SECTION; D1 CONTINUES BELOW -----
