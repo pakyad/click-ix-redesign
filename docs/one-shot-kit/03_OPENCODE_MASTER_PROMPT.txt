@@ -1,0 +1,106 @@
+CLICK IX / OPENCODE MASTER IMPLEMENTATION PROMPT
+VERSION 2026-11-16
+REFERENCE IMAGE: Attach "CLICK IX_ Immersive Screen Networks.png" to this OpenCode conversation before execution.
+DOCS: /docs/one-shot-kit/00_READ_ME_FIRST.md
+      /docs/one-shot-kit/01_ASSET_MANIFEST.csv
+      /docs/one-shot-kit/02_READY_PAGE_COPY.md
+REPO: https://github.com/pakyad/click-ix-redesign
+
+ROLE
+Principal frontend engineer + art director + motion designer + meticulous content editor. Deliver a reviewed implementation that matches the supplied visual reference's composition, hierarchy, spacing, visual emphasis and material treatment while faithfully using the CLICK IX repo's actual branding, photographs, product catalog and case data. This is NOT authorization to invent assets or content.
+
+MANDATORY ORDER — NO SHORTCUTS
+1. Checkout the current user's working branch intentionally. Do not overwrite uncommitted changes. Create a new feature branch based on the user-approved implementation base; do not commit to main.
+2. Read README.md, AGENTS.md, src/lib/content.ts, src/lib/routes.ts, src/lib/navigation.ts, src/lib/clients.ts, src/app/globals.css, src/app/page.tsx, src/components/home/HeroCinematic.tsx, src/components/product/ProductDetail.tsx, src/components/interior/CaseCategoryPage.tsx. Also read all four docs in /docs/one-shot-kit/.
+3. Open the attached reference image and annotate each distinct composition. The target includes multiple page columns. Separate HOMEPAGE, ECOSYSTEM, CS PLAY and CASE STUDY; do not cram them all into one homepage.
+4. Run a baseline of existing tests and capture the current site at 1440x900, 1024x768, 768x1024 and 390x844. Compare existing approved Hero and other components with target image, list what remains intact.
+5. Inspect all asset files in the CSV manifest. Match reference visuals to actual repository images. Stop short of fictional software screenshot or case photograph if source absent. Prefer genuine asset over reference-image resemblance when those conflict.
+6. Implement three EXISTING pages: /, /cs-play/, /case-studies-retail-malls/#maxis. Do not create nested alternate routes. Do not break the other routes.
+7. Check desktop/tablet/mobile and static fallback, run npm run typecheck, npm test, npm run build, fix introduced regressions.
+8. Provide draft PR, before/after screenshots, implementation summary, exact asset list, missing-asset list, and manual test notes. DO NOT merge or deploy without explicit approval.
+
+HIGH-FIDELITY VISUAL TARGET
+- Study the reference's typographic hierarchy, image framing, panel proportions, section pacing, the relation between dark media and light content, negative space, and the rhythm between dense and quiet content.
+- The reference image is a DESIGN SPECIMEN, not a valid raster asset for the site.
+- Keep one approved CLICK IX logo asset in the Header, never generate/trace/recolour it. Actual files:
+  public/brand/click-ix-horizontal-black.png
+  public/brand/click-ix-horizontal-white.png
+- Use correct CityScreen marks from public/brand/cityscreen. Reuse ProductMark where applicable.
+- Use real public/media photographs and /media/hero.mp4. Do not create street scenes, fake client storefronts, KL skyline or generated dashboard screens.
+- Retain the site's established paper, ink and blue semantic tokens and its supplied official banner. Reference's dark visual chapters can be implemented as purposeful localized media surfaces if compatible with AGENTS.md; do not globally rebrand the light layout just because the reference board is dark.
+- The user's key requirement is CLOSE COMPOSITIONAL FIDELITY, not generic 'inspiration'. Prioritize grid widths, photography scale, typographic proportions, section grouping, how overlays sit, and artifact selection. The reference must be recognizably followed at major compositions.
+- Use existing grotesk and font assets, not new external fonts. Navigation remains the current site system unless the precise board placement warrants a localized adjustment and usability tests pass.
+- Keep it corporate and documentary: no glossy orb, stock-like AI screenshot, arbitrary metrics, floating sparkles, decorative repeated hairlines or repetitive Bento grids.
+
+HOMEPAGE IMPLEMENTATION
+- Preserve the current hero's real film, headline and original logo; do not replace with an invented night cityscape. Use supplied film/hero poster.
+- Match board's first-chapter impact through scale, typography, spacing, and strong media aspect ratio. Do not change the hero message merely to imitate a generated slogan.
+- Client proof: reuse only marks in src/lib/clients.ts, maintain original colors/ratios, ensure company approves public usage.
+- Quiet 'One partner for your screen network' section: large editorial type + concise source-grounded capability mapping. The five categories are Hardware, Software, Installation, Content, Measurement.
+- Connected-system story: 01 physical display -> 02 content operations -> 03 playback evidence/measurement. Use genuine photo as visual anchor, then a factual diagram or approved real CS Play UI. Do not draw fake product screens and imply they are real.
+- Product ecosystem: eight real products from src/lib/content.ts. Use a curated 3–4 item visible primary view with access to the others, not eight equal fictitious cards. Preserve all product routes and names.
+- Process: short real delivery stages from deliverySteps in src/lib/content.ts, not marketing promise timelines.
+- Case studies: real images; use a simple user-controlled gallery / index. Do not create a second pinned carousel merely to show motion.
+- Closing: retain the existing "Start with your screen list." and established contact mechanism rather than a made-up form.
+- Avoid injecting an empty Insights page or fake published articles simply because the reference board shows a news grid. If genuine content is absent, omit that section and maintain intended whitespace hierarchy.
+
+CS PLAY PAGE IMPLEMENTATION /cs-play/
+- Correct canonical route: /cs-play/, NOT /software/cs-play/.
+- Existing page is src/app/cs-play/page.tsx and uses ProductDetail. Keep fact data driven via src/lib/content.ts and existing official mark.
+- Improve hero with large product positioning and one physical deployment image OR approved product screenshot (if provided). No fabricated UI.
+- Build a visual overview/feature architecture with verified capabilities: scheduling; remote content delivery; live video/HTML5; playback/online status; proof-of-play; programmatic readiness.
+- Screen-format compatibility must follow platformRows and product.screens, not imagined supported hardware.
+- Workflow chapter: Schedule -> Play -> Prove clearly shows how CS Play participates in broader commercial workflow, without claiming CS Deals functions belong to CS Play.
+- Link to genuine related cases from actual case registry; cite real assets within code comments where mapping is non-obvious.
+- CTA uses actual mailto helper from src/lib/contact.ts.
+
+MAXIS CASE IMPLEMENTATION
+- Correct existing location: /case-studies-retail-malls/#maxis. Do not invent /case-studies/maxis/.
+- Source: caseStudies id=maxis in src/lib/content.ts.
+- Hero photo: /media/maxis-store.jpg; optionally /media/maxis-screen.jpg as distinct second approved view.
+- Headline is the real source record "Maxis retail network: every screen on one CMS".
+- Case sections: requirement, delivered work, operational significance, systems used, photo(s), next case, inquiry.
+- Keep current exact systems: CS Play, LED, Media players, Queue integration. Do not substitute CS Sign Hub for this case.
+- Do not fabricate deployment-count graphics, performance percentages, new exterior photographs, client quotes, or an unsupported green Maxis building hero.
+- If the target board shows a visual that cannot be represented by the real images, maximize photographic presence from verified actual images; note exact fidelity limitation.
+
+CONTENT
+Use /docs/one-shot-kit/02_READY_PAGE_COPY.md as editorial draft, cross-check factual phrases against src/lib/content.ts before publication. New proposed wording still requires approval. Do NOT silently reconcile conflicting marketing sources or invent facts.
+Treat product.evidence status 'supplied' as provenance classification, not a universal permission grant.
+Use existing client marks with company publication approval.
+Never hardcode actual email addresses or phone numbers; use src/lib/contact.ts.
+
+ANIMATION
+- Current code already has an established pixel-cell hero. Keep its core behavior.
+- One signature interaction for connected screen to management to proof, activated by an accessible Stepper or buttons. A short FLIP transition is acceptable if real shared element geometry needs to shift; else prefer transform and opacity.
+- Stop pointless auto-play of critical content. User must be able to control all chapters directly.
+- One meaningful pinned sequence maximum, preferably zero unless scroll pin demonstrably improves comprehension.
+- No global Lenis or new animation packages.
+- Motion reduced: immediate static chapter change; JS-off: all important chapters readable.
+- Visually test rapid clicks, reverse movement, focus, resize and image load jitter.
+- Move the same architectural idea across visual states rather than cycling generic cards.
+
+ACCESSIBILITY
+WCAG AA target. Semantic main/heading hierarchy. Visible focus. Buttons labelled. Carousels with keyboard prev/next and active state announcements without chatter. Proper captions for images. No click/hover-only information. Reduced-motion and JS-off meaningful fallback.
+Do not use hoverable fake charts and unsupported statistics.
+
+ENGINEERING / PERFORMANCE
+Next.js 15 App Router static export, React 19, TypeScript, CSS Modules, GSAP already installed. Do not add dependency without stating concrete value. Make data-driven components with no duplicated project claims. Intrinsic image sizes; appropriate Next Image/static-export behavior; poster-first video; lazy-load below-fold media.
+Targets: LCP <2.5s under specified mobile 4G test, CLS <0.05, INP <200ms; report measurement conditions and actual numbers. Do not claim success based on mere lint/test output.
+
+ACCEPTANCE TESTS
+- Visual side-by-side against exact attached reference image, section by section.
+- Original company logo unchanged byte-for-byte and correct horizontal lockup.
+- No AI-generated/reconstructed client artwork, no fake SaaS dashboard or marketing metrics.
+- Correct route structure; existing pages and metadata untouched unless explicitly scoped.
+- Home/CS Play/Maxis content maps to actual data source, not hand-coded unverified statements.
+- 390/768/1024/1440 responsive checks and no horizontal overflow.
+- Reduced motion and no JS state checked.
+- Run npm ci, npm run typecheck, npm test, npm run build.
+- Draft PR on separate feature branch with explicit asset/source and approval blockers.
+
+WHAT TO REPORT BACK
+(1) Short visual target decomposition, (2) implementation changes, (3) existing assets reused with exact paths, (4) missing/approval blockers, (5) before/after desktop + mobile screenshots, (6) test/build results, (7) residual differences from target and why, (8) draft PR URL. DO NOT MERGE.
+
+EXECUTION RULE
+Proceed with scoped implementation using available assets; do not stop just to ask optional creative questions. When essential publishable media is missing, choose the honest documentary fallback and explicitly report it. A functioning high-fidelity implementation with verified assets is better than an exact-looking false representation.
